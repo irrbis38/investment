@@ -1,0 +1,214 @@
+@use 'sass:math';
+
+%svg-common {
+	background: url("../images/sprites/main.svg") no-repeat;
+}
+
+.svg-image-clock {
+	@extend %svg-common;
+	background-position: 92.94755877034358% 15.126050420168067%;
+	background-size: math.div(586, 33)*100% auto;
+	width: 33px;
+
+}
+@mixin svg-pos-image-clock {
+	background-position: 92.94755877034358% 15.126050420168067%;
+}
+@mixin svg-image-clock-hover {
+	.svg-image-clock {
+		@include svg-pos-image-clock-hover
+	}
+}
+
+.svg-image-clock:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(38, 33)*100%;
+}
+
+.svg-image-clock-dims {
+	width: 33px;
+	height: 38px;
+}
+
+.svg-image-money {
+	@extend %svg-common;
+	background-position: 97.33096085409252% 14.693877551020408%;
+	background-size: math.div(586, 24)*100% auto;
+	width: 24px;
+
+}
+@mixin svg-pos-image-money {
+	background-position: 97.33096085409252% 14.693877551020408%;
+}
+@mixin svg-image-money-hover {
+	.svg-image-money {
+		@include svg-pos-image-money-hover
+	}
+}
+
+.svg-image-money:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(24, 24)*100%;
+}
+
+.svg-image-money-dims {
+	width: 24px;
+	height: 24px;
+}
+
+.svg-image-money-hover {
+	@extend %svg-common;
+	background-position: 91.45907473309609% 22.448979591836736%;
+	background-size: math.div(586, 24)*100% auto;
+	width: 24px;
+
+}
+@mixin svg-pos-image-money-hover {
+	background-position: 91.45907473309609% 22.448979591836736%;
+}
+@mixin svg-image-money-hover-hover {
+	.svg-image-money-hover {
+		@include svg-pos-image-money-hover-hover
+	}
+}
+
+.svg-image-money-hover:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(24, 24)*100%;
+}
+
+.svg-image-money-hover-dims {
+	width: 24px;
+	height: 24px;
+}
+
+.svg-image-personal {
+	@extend %svg-common;
+	background-position: 95.39007092198581% 22.357723577235774%;
+	background-size: math.div(586, 22)*100% auto;
+	width: 22px;
+
+}
+@mixin svg-pos-image-personal {
+	background-position: 95.39007092198581% 22.357723577235774%;
+}
+@mixin svg-image-personal-hover {
+	.svg-image-personal {
+		@include svg-pos-image-personal-hover
+	}
+}
+
+.svg-image-personal:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(22, 22)*100%;
+}
+
+.svg-image-personal-dims {
+	width: 22px;
+	height: 22px;
+}
+
+.svg-image-personal-hover {
+	@extend %svg-common;
+	background-position: 99.29078014184397% 22.357723577235774%;
+	background-size: math.div(586, 22)*100% auto;
+	width: 22px;
+
+}
+@mixin svg-pos-image-personal-hover {
+	background-position: 99.29078014184397% 22.357723577235774%;
+}
+@mixin svg-image-personal-hover-hover {
+	.svg-image-personal-hover {
+		@include svg-pos-image-personal-hover-hover
+	}
+}
+
+.svg-image-personal-hover:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(22, 22)*100%;
+}
+
+.svg-image-personal-hover-dims {
+	width: 22px;
+	height: 22px;
+}
+
+.svg-image-phone-rounded {
+	@extend %svg-common;
+	background-position: 100% 0;
+	background-size: math.div(586, 72)*100% auto;
+	width: 72px;
+
+}
+@mixin svg-pos-image-phone-rounded {
+	background-position: 100% 0;
+}
+@mixin svg-image-phone-rounded-hover {
+	.svg-image-phone-rounded {
+		@include svg-pos-image-phone-rounded-hover
+	}
+}
+
+.svg-image-phone-rounded:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(72, 72)*100%;
+}
+
+.svg-image-phone-rounded-dims {
+	width: 72px;
+	height: 72px;
+}
+
+.svg-image-programmer {
+	@extend %svg-common;
+	background-position: 0 0;
+	background-size: math.div(586, 514)*100% auto;
+	width: 514px;
+
+}
+@mixin svg-pos-image-programmer {
+	background-position: 0 0;
+}
+@mixin svg-image-programmer-hover {
+	.svg-image-programmer {
+		@include svg-pos-image-programmer-hover
+	}
+}
+
+.svg-image-programmer:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(514, 514)*100%;
+}
+
+.svg-image-programmer-dims {
+	width: 514px;
+	height: 514px;
+}
+
+
+.image-by-height { width:auto; }
+.image-by-height:before { content:none; }
+.image-by-height > svg { height: inherit; }
+.image-by-height > img { height: inherit !important; vertical-align: top !important; margin: 0 !important; padding: 0 !important; max-width: none !important; max-height: none !important; border: 0 !important; opacity: 0 !important; }

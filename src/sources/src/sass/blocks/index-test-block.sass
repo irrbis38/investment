@@ -1,0 +1,46 @@
+.test-block
+    &__sprite-svg
+        margin-bottom: 50px
+        span
+            display: inline-block
+            vertical-align: middle
+            margin: 10px 5px
+        .some-block
+            background: url("../images/sprites/main.stack.svg#image-phone-rounded") 5px 0 no-repeat
+            padding-left: 40px
+            background-size: 30px
+            line-height: 30px
+
+            // Пример миксина для адаптива, xs — max-width: 699px, остальные смотри и настраивай при необходимости в _mixins.sass
+            +xs
+                &
+                    padding-left: 20px
+                    background-size: 15px
+                    line-height: 15px
+
+        img, object
+            vertical-align: middle
+            margin: 10px 5px
+            max-width: 100px
+        .just-hover:hover
+            @include svg-image-money-hover
+            @include svg-image-personal-hover
+        .anim-hover
+            display: inline-block
+            span
+                transition: width 0.5s ease, transform 0.5s ease
+            &:hover
+                span
+                    width: 80px
+                span.svg-image-personal
+                    transform: rotate(360deg)
+                @include svg-image-money-hover
+                @include svg-image-personal-hover
+        
+        .icon-transition-hover
+            .icon
+                color: blue
+                transition: color 0.5s ease-out
+                &:hover
+                    color: red
+
