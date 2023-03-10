@@ -5,33 +5,27 @@
     @media only screen and (max-height: $height)
         @content
 
-@mixin xl
-    @media (min-width: 1600px)
-        @content
-
-@mixin lg
-    @media (min-width: 1300px) and (max-width: 1599px)
-        @content
-
 @mixin md
-    @media (min-width: 1000px) and (max-width: 1299px)
+    @media (max-width: 1280px)
         @content
 
 @mixin sm
-    @media (min-width: 700px) and (max-width: 999px)
+    @media (max-width: 1024px)
         @content
 
 @mixin xs
-    @media (max-width: 699px)
+    @media (max-width: 768px)
         @content
 
+@mixin xxs
+    @media (max-width: 576px)
+        @content
 
 @mixin font-face($font-name,$font-file)
     @font-face
         font-family: '#{$font-name}'
         font-display: swap
         src: url('../fonts/#{$font-file}.woff') format('woff'), url('../fonts/#{$font-file}.woff2') format('woff2')
-
 
 // Fluid fonts
 // See https://habr.com/post/310186/
@@ -59,6 +53,6 @@
     @media (min-width: $w-min)
         @if ($fallback)
             font-size: $fallback
-        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px)
+            font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px)
     @media (min-width: $w-max)
         font-size: $f-max
