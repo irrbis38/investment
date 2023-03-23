@@ -1,0 +1,43 @@
+mixin header(color)
+
+    header.header(class=color)
+
+        .container.header__container
+
+            .header__navbar
+
+                .header__logo.logo
+                    .logo__main Venrex
+                    .logo__descr Venrex Investment#[br]Management
+                    a.logo__link(href="#")
+
+                .header__line
+
+                nav.header__menu.menu
+
+                    ul.menu__list
+
+                        li.menu__item
+                            a.menu__link(href="#") Portfolio
+
+                        li.menu__item
+                            a.menu__link(href="#") About
+
+                        li.menu__item
+                            a.menu__link(href="#") Team
+
+                        li.menu__item
+                            a.menu__link(href="#") Blog
+
+                        li.menu__item
+                            a.menu__link(href="#") Contacts
+
+                .header__lang Eng
+
+            .header__auth.auth
+
+                a.auth__login(href='#') Login
+
+                a.auth__signup(href="#")
+                    span Sign Up
+                    span ->
