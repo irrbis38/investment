@@ -1,0 +1,13 @@
+.header.white {
+  &,
+  .header__link {
+    color: var(--white-color);
+  }
+}
+
+.header.dark {
+  &,
+  .header__link {
+    color: var(--blue-color);
+  }
+}
