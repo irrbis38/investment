@@ -18,7 +18,7 @@
 
 .header {
   position: absolute;
-  top: 63px;
+  top: 41px;
   left: 0;
   width: 100%;
 }
@@ -40,16 +40,19 @@
 }
 
 .logo {
-  position: relative;
   display: flex;
   align-items: center;
 }
 
 .logo__main {
+  position: relative;
+  top: -5px;
   margin-right: 18px;
   font-weight: 700;
   font-size: 35px;
   line-height: 44px;
+  color: var(--white-color);
+  text-decoration: none;
 }
 
 .logo__descr {
@@ -57,15 +60,6 @@
   font-size: 10px;
   line-height: 100%;
   letter-spacing: -0.01em;
-}
-
-.logo__link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
 }
 
 .header__line {
@@ -87,7 +81,26 @@
 }
 
 .menu__item {
+  position: relative;
   list-style-type: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    border: 1px solid var(--white-color);
+    visibility: hidden;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  &:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(4px);
+  }
 }
 
 .menu__link {
@@ -100,11 +113,18 @@
 }
 
 .header__lang {
-  margin-right: 160px;
-  font-weight: 700;
-  font-size: 19px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
+  cursor: pointer;
+
+  // select style
+
+  .choices__inner {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    background-color: transparent;
+    border: none;
+  }
 }
 
 .auth {
@@ -114,24 +134,50 @@
 
 .auth__login,
 .auth__signup {
+  display: flex;
+  align-items: flex-end;
+  height: 68px;
+  margin-top: 9px;
   font-weight: 700;
   font-size: 19px;
   line-height: 24px;
   letter-spacing: -0.01em;
   color: var(--white-color);
   text-decoration: none;
+  transition: var(--transition);
 }
 
 .auth__login {
-  margin-right: 69px;
-  margin-bottom: 18px;
+  margin-right: 14px;
+  width: 145px;
+  padding: 24px 0 18px 0;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--blue-color);
+    border-radius: 6px;
+  }
 }
 
 .auth__signup {
-  display: inline-block;
   width: 188px;
-  height: 68px;
-  margin-top: 9px;
-  padding: 26px 33px 18px 44px;
+  padding: 24px 30px 18px 41px;
   border: 1px solid rgba(255, 255, 255, 0.6);
+
+  .icon__arrow {
+    display: inline-block;
+    margin-left: 27px;
+    transform: rotate(-45deg);
+    transition: var(--transition);
+  }
+
+  &:hover {
+    background-color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+    border-radius: 6px;
+  }
+
+  &:hover .icon__arrow {
+    transform: rotate(0);
+  }
 }

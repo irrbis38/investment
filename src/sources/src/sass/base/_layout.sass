@@ -1,4 +1,7 @@
 @import "./normalize"
+
+@import '../libs/choices/choices.min.css'
+
 @import "./vars"
 @import "./mixins"
 @import "./fonts"
@@ -9,25 +12,25 @@
 //@import "../libs/LIB_NAME/path/to/style.scss"
 
 *
-    box-sizing: border-box
-    padding: 0
-    margin: 0
+  box-sizing: border-box
+  padding: 0
+  margin: 0
     // min-height: 0.001vw; // — Fixes Safari bug with viewport units in calc()
 
 body
-    display: flex
-    flex-direction: column
-    width: 100%
-    height: 100%
-    min-height: 100vh
-    -webkit-font-smoothing: antialiased
-    -moz-osx-font-smoothing: grayscale
+  display: flex
+  flex-direction: column
+  width: 100%
+  height: 100%
+  min-height: 100vh
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
 
 .container
-    width: 100%
-    max-width: 1500px
-    min-width: 320px
-    margin: 0 auto
-    padding: 0 63px
-    @include xs
-        padding: 0 28px
+  width: 100%
+  max-width: 1500px
+  min-width: 320px
+  margin: 0 auto
+  padding: 0 63px
+  @include xs
+    padding: 0 28px

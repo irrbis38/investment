@@ -7,9 +7,8 @@ mixin header(color)
             .header__navbar
 
                 .header__logo.logo
-                    .logo__main Venrex
+                    a.logo__main(href="#") Venrex
                     .logo__descr Venrex Investment#[br]Management
-                    a.logo__link(href="#")
 
                 .header__line
 
@@ -32,7 +31,14 @@ mixin header(color)
                         li.menu__item
                             a.menu__link(href="#") Contacts
 
-                .header__lang Eng
+                .header__lang.lang
+
+                    select.lang__select
+
+                        option(value="eng" selected) English
+                        option(value="rus") Russian
+                        option(value="cni") Chinese
+                        option(value="es") Spain
 
             .header__auth.auth
 
@@ -40,4 +46,4 @@ mixin header(color)
 
                 a.auth__signup(href="#")
                     span Sign Up
-                    span ->
+                    +iconArrowRight(color)

@@ -28,9 +28,8 @@
     <header class="header white">
       <div class="container header__container">
         <div class="header__navbar">
-          <div class="header__logo logo">
-            <div class="logo__main">Venrex</div>
-            <div class="logo__descr">Venrex Investment<br/>Management</div><a class="logo__link" href="#"></a>
+          <div class="header__logo logo"><a class="logo__main" href="#">Venrex</a>
+            <div class="logo__descr">Venrex Investment<br/>Management</div>
           </div>
           <div class="header__line"></div>
           <nav class="header__menu menu">
@@ -42,9 +41,19 @@
               <li class="menu__item"><a class="menu__link" href="#">Contacts</a></li>
             </ul>
           </nav>
-          <div class="header__lang">Eng</div>
+          <div class="header__lang lang">
+            <select class="lang__select">
+              <option value="eng" selected="selected">English</option>
+              <option value="rus">Russian</option>
+              <option value="cni">Chinese</option>
+              <option value="es">Spain</option>
+            </select>
+          </div>
         </div>
-        <div class="header__auth auth"><a class="auth__login" href="#">Login</a><a class="auth__signup" href="#"><span>Sign Up</span><span>-></span></a></div>
+        <div class="header__auth auth"><a class="auth__login" href="#">Login</a><a class="auth__signup" href="#"><span>Sign Up</span>
+            <svg class="icon__arrow" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.814346 9.48124C0.871929 9.53882 0.939246 9.58644 1.02001 9.6175C1.09944 9.64805 1.17653 9.65665 1.24535 9.65665L17.2862 9.65665L10.2256 16.7173C10.1117 16.8312 10.0392 16.9814 10.0392 17.1483C10.0392 17.3152 10.1117 17.4654 10.2256 17.5793C10.3395 17.6932 10.4897 17.7656 10.6566 17.7656C10.8235 17.7656 10.9737 17.6932 11.0876 17.5793L19.1857 9.48124C19.2995 9.36737 19.372 9.21711 19.372 9.05024C19.372 8.88336 19.2995 8.7331 19.1857 8.61924L11.0876 0.521183C10.9737 0.407316 10.8235 0.334825 10.6566 0.334825C10.4897 0.334825 10.3395 0.407316 10.2256 0.521183C10.1117 0.635049 10.0392 0.785303 10.0392 0.952181C10.0392 1.11906 10.1117 1.26931 10.2256 1.38318L17.2862 8.44382L1.24535 8.44382C0.904566 8.44382 0.638932 8.70946 0.638932 9.05024C0.638932 9.11906 0.647528 9.19614 0.678079 9.27557C0.709142 9.35634 0.756764 9.42365 0.814346 9.48124Z" fill="white" stroke="white" stroke-width="0.6"></path>
+            </svg></a></div>
       </div>
     </header>
     <main class="main">

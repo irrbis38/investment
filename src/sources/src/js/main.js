@@ -1,7 +1,17 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    // Your code here
-    
+document.addEventListener("DOMContentLoaded", function (event) {
+  headerInit();
 });
 
-// Your functions here
+function headerInit() {
+  // custom select by choices.js library
 
+  const selects = document.querySelectorAll(".lang__select");
+
+  selects.forEach((el) => {
+    new Choices(el, {
+      allowHTML: false,
+      searchEnabled: false,
+      itemSelectText: "",
+    });
+  });
+}
