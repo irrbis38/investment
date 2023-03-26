@@ -280,6 +280,11 @@ body {
   margin: 0 auto;
   padding: 0 63px
 }
+@media only screen and (max-width:1399px) {
+  .container {
+    padding: 0 40px
+  }
+}
 @media (max-width:768px) {
   .container {
     padding: 0 28px
@@ -356,8 +361,18 @@ body {
   height: 59px;
   background-color: var(--white-color)
 }
+@media only screen and (max-width:1399px) {
+  .header__line {
+    margin-right: 35px
+  }
+}
 .header__menu {
   margin-right: 117px
+}
+@media only screen and (max-width:1399px) {
+  .header__menu {
+    margin-right: 60px
+  }
 }
 .menu__list {
   min-width: 394px;
@@ -370,6 +385,11 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center
+}
+@media only screen and (max-width:1399px) {
+  .menu__list {
+    min-width: 380px
+  }
 }
 .menu__item {
   position: relative;

@@ -67,10 +67,18 @@
   width: 1px;
   height: 59px;
   background-color: var(--white-color);
+
+  @include r(1399px) {
+    margin-right: 35px;
+  }
 }
 
 .header__menu {
   margin-right: 117px;
+
+  @include r(1399px) {
+    margin-right: 60px;
+  }
 }
 
 .menu__list {
@@ -78,6 +86,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include r(1399px) {
+    min-width: 380px;
+  }
 }
 
 .menu__item {

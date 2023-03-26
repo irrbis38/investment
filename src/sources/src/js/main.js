@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   headerInit();
 });
 
+// header logic
+
 function headerInit() {
   langMenuHandler();
   changeLang();
