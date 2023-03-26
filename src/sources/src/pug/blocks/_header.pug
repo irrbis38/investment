@@ -43,19 +43,22 @@ mixin header(color)
 
                         li.lang__item(data-lang="Eng")
                             .lang__icon
-                                +picture('header/english', 'png', 'x2')
+                                img(src='./images/header/english.svg' alt='Eng')
                             span.lang__value English
-                        li.lang__item(data-lang="Rus") Russian
+
+                        li.lang__item(data-lang="Rus")
                             .lang__icon
-                                +picture('header/english', 'png', 'x2')
+                                img(src='./images/header/russian.svg' alt='Eng')
                             span.lang__value Russian
-                        li.lang__item(data-lang="Cni") Chinese
+
+                        li.lang__item(data-lang="Cni")
                             .lang__icon
-                                +picture('header/english', 'png', 'x2')
+                                img(src='./images/header/chinese.svg' alt='Eng')
                             span.lang__value Chinese
-                        li.lang__item(data-lang="Es") Spain
+
+                        li.lang__item(data-lang="Es")
                             .lang__icon
-                                +picture('header/english', 'png', 'x2')
+                                img(src='./images/header/spanish.svg' alt='Eng')
                             span.lang__value Spain
 
             .header__auth.auth
