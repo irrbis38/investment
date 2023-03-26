@@ -513,12 +513,13 @@ template {
   font-display: swap;
   src: url(../fonts/Compose-Bold.ttf) format("ttf"),url(../fonts/Compose-Bold.woff) format("woff"),url(../../fonts/Compose-Bold.woff2) format("woff2")
 }
-.svg-image-arrow-white-up-45 {
+.svg-image-arrow-white-up-45,
+.svg-image-shevron {
   background: url(../images/sprites/main.svg) no-repeat
 }
 .svg-image-arrow-white-up-45 {
   background-position: 0 0;
-  background-size: 100% auto;
+  background-size: 143.3333333333% auto;
   width: 30px
 }
 .svg-image-arrow-white-up-45:before {
@@ -531,6 +532,22 @@ template {
 .svg-image-arrow-white-up-45-dims {
   width: 30px;
   height: 30px
+}
+.svg-image-shevron {
+  background-position: 100% 0;
+  background-size: 330.7692307692% auto;
+  width: 13px
+}
+.svg-image-shevron:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 69.2307692308%
+}
+.svg-image-shevron-dims {
+  width: 13px;
+  height: 9px
 }
 .image-by-height {
   width: auto
@@ -569,6 +586,7 @@ p {
 body {
   font-family: var(--main-font);
   color: var(--blue-color);
+  background-color: #fff;
   min-width: 320px
 }
 body.lock {
@@ -676,10 +694,10 @@ body {
   background-color: var(--white-color)
 }
 .header__menu {
-  margin-right: 115px
+  margin-right: 117px
 }
 .menu__list {
-  min-width: 396px;
+  min-width: 394px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -719,16 +737,42 @@ body {
   color: var(--white-color);
   text-decoration: none
 }
-.header__lang {
+.lang .svg-image-shevron {
+  transition: var(--transition)
+}
+.lang.active .svg-image-shevron {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1)
+}
+.lang__selected {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 12px;
   cursor: pointer
 }
-.header__lang .choices__inner {
+.lang__value {
   font-weight: 700;
   font-size: 19px;
   line-height: 24px;
   letter-spacing: -.01em;
-  background-color: transparent;
-  border: none
+  color: var(--white-color)
+}
+.lang__icon {
+  width: 29px;
+  height: 29px
+}
+.lang__icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%
+}
+.lang__dropdown {
+  display: none
 }
 .auth {
   display: -webkit-flex;
@@ -757,7 +801,7 @@ body {
   transition: var(--transition)
 }
 .auth__login {
-  margin-right: 14px;
+  margin-right: 20px;
   width: 145px;
   padding: 24px 0 18px 0;
   -webkit-justify-content: center;

@@ -42,12 +42,39 @@
             </ul>
           </nav>
           <div class="header__lang lang">
-            <select class="lang__select">
-              <option value="eng" selected="selected">English</option>
-              <option value="rus">Russian</option>
-              <option value="cni">Chinese</option>
-              <option value="es">Spain</option>
-            </select>
+            <div class="lang__selected">
+              <div class="lang__icon"><img src="./images/header/english.svg" alt="Eng"/></div><span class="lang__value">Eng</span><span class="icon svg-image-shevron"></span>
+            </div>
+            <ul class="lang__dropdown">
+              <li class="lang__item" data-lang="Eng">
+                <div class="lang__icon">
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/header/english.webp, images/header/english@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/header/english.png" srcset="images/header/english.png, images/header/english@2x.png 2x" alt=""/>
+                  </picture>
+                </div><span class="lang__value">English</span>
+              </li>
+              <li class="lang__item" data-lang="Rus">Russian
+                <div class="lang__icon">
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/header/english.webp, images/header/english@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/header/english.png" srcset="images/header/english.png, images/header/english@2x.png 2x" alt=""/>
+                  </picture>
+                </div><span class="lang__value">Russian</span>
+              </li>
+              <li class="lang__item" data-lang="Cni">Chinese
+                <div class="lang__icon">
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/header/english.webp, images/header/english@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/header/english.png" srcset="images/header/english.png, images/header/english@2x.png 2x" alt=""/>
+                  </picture>
+                </div><span class="lang__value">Chinese</span>
+              </li>
+              <li class="lang__item" data-lang="Es">Spain
+                <div class="lang__icon">
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/header/english.webp, images/header/english@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/header/english.png" srcset="images/header/english.png, images/header/english@2x.png 2x" alt=""/>
+                  </picture>
+                </div><span class="lang__value">Spain</span>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="header__auth auth"><a class="auth__login" href="#">Login</a><a class="auth__signup" href="#"><span>Sign Up</span>

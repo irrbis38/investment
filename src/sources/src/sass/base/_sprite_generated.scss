@@ -7,7 +7,7 @@
 .svg-image-arrow-white-up-45 {
 	@extend %svg-common;
 	background-position: 0 0;
-	background-size: math.div(30, 30)*100% auto;
+	background-size: math.div(43, 30)*100% auto;
 	width: 30px;
 
 }
@@ -31,6 +31,35 @@
 .svg-image-arrow-white-up-45-dims {
 	width: 30px;
 	height: 30px;
+}
+
+.svg-image-shevron {
+	@extend %svg-common;
+	background-position: 100% 0;
+	background-size: math.div(43, 13)*100% auto;
+	width: 13px;
+
+}
+@mixin svg-pos-image-shevron {
+	background-position: 100% 0;
+}
+@mixin svg-image-shevron-hover {
+	.svg-image-shevron {
+		@include svg-pos-image-shevron-hover
+	}
+}
+
+.svg-image-shevron:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(9, 13)*100%;
+}
+
+.svg-image-shevron-dims {
+	width: 13px;
+	height: 9px;
 }
 
 
