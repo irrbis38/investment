@@ -1,3 +1,6 @@
+// different color adn bg-color
+// depending color attribute in header mixin
+
 .header.white {
   &,
   .logo__main,
@@ -20,8 +23,17 @@
     border: 1px solid var(--white-color);
   }
 
-  .header__line {
+  .header__line,
+  .auth::after {
     background-color: var(--white-color);
+  }
+
+  .header__burger {
+    span,
+    &::after,
+    &::before {
+      background-color: var(--white-color);
+    }
   }
 }
 
@@ -47,10 +59,21 @@
     border: 1px solid var(--blue-color);
   }
 
-  .header__line {
+  .header__line,
+  .auth::after {
     background-color: var(--blue-color);
   }
+
+  .header__burger {
+    span,
+    &::after,
+    &::before {
+      background-color: var(--blue-color);
+    }
+  }
 }
+
+// header styles
 
 .header {
   position: absolute;
@@ -64,6 +87,14 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
+  @include md {
+    padding: 0 51px 0 30px;
+  }
+
+  @include r(350px) {
+    padding: 0 20px;
+  }
 }
 
 .header__navbar {
@@ -73,11 +104,19 @@
 
 .header__logo {
   margin-right: 38px;
+
+  @include md {
+    margin-right: 0;
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
+
+  @include md {
+    display: block;
+  }
 }
 
 .logo__main {
@@ -104,6 +143,19 @@
 
   @include r(1399px) {
     margin-right: 35px;
+  }
+
+  @include md {
+    display: none;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+
+  @include md {
+    display: none;
   }
 }
 
@@ -267,11 +319,36 @@
   }
 }
 
-// auth styles
+// panel styles
+
+.header__panel {
+  display: flex;
+  align-items: center;
+
+  @include md {
+    position: relative;
+    top: -15px;
+    justify-content: space-between;
+    min-width: 115px;
+  }
+}
 
 .auth {
   display: flex;
   align-items: flex-end;
+
+  @include md {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 59px;
+    }
+  }
 }
 
 .auth__login,
@@ -293,16 +370,46 @@
   width: 145px;
   padding: 24px 0 18px 0;
   justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: var(--blue-color);
     border-radius: 6px;
+  }
+
+  svg {
+    display: none;
+  }
+
+  @include md {
+    width: auto;
+    height: auto;
+    margin-right: 34px;
+    margin-top: 0;
+
+    span {
+      display: none;
+    }
+
+    svg {
+      display: block;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 }
 
 .auth__signup {
   width: 188px;
   padding: 24px 30px 18px 41px;
+
+  @include md {
+    display: none;
+  }
 
   .icon__arrow {
     display: inline-block;
@@ -332,4 +439,47 @@
 .dark .auth__signup:hover path {
   fill: var(--white-color);
   stroke: var(--white-color);
+}
+
+// burger styles
+
+.header__burger {
+  display: none;
+  position: relative;
+  width: 31px;
+  height: 23px;
+  align-items: center;
+  cursor: pointer;
+
+  @include md {
+    display: flex;
+  }
+
+  span,
+  &::before,
+  &::after {
+    width: 100%;
+    height: 3px;
+    border-radius: 20px;
+    background-color: var(--white-color);
+  }
+
+  span {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 54.84%;
+  }
 }

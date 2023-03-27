@@ -1,28 +1,28 @@
 .intro {
-    width: 100%;
-    height: 100vh;
-    min-width: 500px;
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
 }
 
 .intro__slider,
 .intro__wrapper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .intro__item {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .intro__bg {
+  width: 100%;
+  height: 100%;
+
+  img {
+    display: block;
     width: 100%;
     height: 100%;
-
-    img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+    object-fit: cover;
+  }
 }
