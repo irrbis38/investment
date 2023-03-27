@@ -176,13 +176,12 @@ template {
   font-display: swap;
   src: url(../fonts/Compose-Bold.ttf) format("ttf"),url(../fonts/Compose-Bold.woff) format("woff"),url(../../fonts/Compose-Bold.woff2) format("woff2")
 }
-.svg-image-arrow-white-up-45,
-.svg-image-shevron {
+.svg-image-arrow-white-up-45 {
   background: url(../images/sprites/main.svg) no-repeat
 }
 .svg-image-arrow-white-up-45 {
   background-position: 0 0;
-  background-size: 143.3333333333% auto;
+  background-size: 100% auto;
   width: 30px
 }
 .svg-image-arrow-white-up-45:before {
@@ -195,22 +194,6 @@ template {
 .svg-image-arrow-white-up-45-dims {
   width: 30px;
   height: 30px
-}
-.svg-image-shevron {
-  background-position: 100% 0;
-  background-size: 330.7692307692% auto;
-  width: 13px
-}
-.svg-image-shevron:before {
-  content: "";
-  display: block;
-  font-size: 0;
-  line-height: 0;
-  padding-top: 69.2307692308%
-}
-.svg-image-shevron-dims {
-  width: 13px;
-  height: 9px
 }
 .image-by-height {
   width: auto
@@ -293,14 +276,42 @@ body {
 .header.white,
 .header.white .auth__login,
 .header.white .auth__signup,
+.header.white .lang__selected .lang__value,
+.header.white .logo__main,
 .header.white .menu__link {
   color: var(--white-color)
+}
+.header.white .auth__signup {
+  border: 1px solid rgba(255,255,255,.6)
+}
+.header.white .auth__signup:hover {
+  border: 1px solid var(--blue-color)
+}
+.header.white .menu__item::after {
+  border: 1px solid var(--white-color)
+}
+.header.white .header__line {
+  background-color: var(--white-color)
 }
 .header.dark,
 .header.dark .auth__login,
 .header.dark .auth__signup,
+.header.dark .lang__selected .lang__value,
+.header.dark .logo__main,
 .header.dark .menu__link {
   color: var(--blue-color)
+}
+.header.dark .auth__signup {
+  border: 1px solid rgba(0,17,79,.6)
+}
+.header.dark .auth__signup:hover {
+  border: 1px solid var(--blue-color)
+}
+.header.dark .menu__item::after {
+  border: 1px solid var(--blue-color)
+}
+.header.dark .header__line {
+  background-color: var(--blue-color)
 }
 .header {
   position: absolute;
@@ -346,7 +357,6 @@ body {
   font-weight: 700;
   font-size: 35px;
   line-height: 44px;
-  color: var(--white-color);
   text-decoration: none
 }
 .logo__descr {
@@ -358,8 +368,7 @@ body {
 .header__line {
   margin-right: 51px;
   width: 1px;
-  height: 59px;
-  background-color: var(--white-color)
+  height: 59px
 }
 @media only screen and (max-width:1399px) {
   .header__line {
@@ -401,7 +410,6 @@ body {
   bottom: -3px;
   left: 0;
   width: 100%;
-  border: 1px solid var(--white-color);
   visibility: hidden;
   opacity: 0;
   transition: var(--transition)
@@ -417,16 +425,15 @@ body {
   font-size: 21px;
   line-height: 26px;
   letter-spacing: -.01em;
-  color: var(--white-color);
   text-decoration: none
 }
 .lang {
   position: relative
 }
-.lang .svg-image-shevron {
+.lang .lang__shevron {
   transition: var(--transition)
 }
-.lang.active .svg-image-shevron {
+.lang.active .lang__shevron {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1)
 }
@@ -459,8 +466,7 @@ body {
   font-weight: 700;
   font-size: 19px;
   line-height: 24px;
-  letter-spacing: -.01em;
-  color: var(--white-color)
+  letter-spacing: -.01em
 }
 .lang__icon {
   width: 29px;
@@ -490,6 +496,9 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: var(--transition)
+}
+.lang__dropdown .lang__value {
+  color: var(--blue-color)
 }
 .lang__item {
   display: -webkit-flex;
@@ -539,7 +548,6 @@ body {
   font-size: 19px;
   line-height: 24px;
   letter-spacing: -.01em;
-  color: var(--white-color);
   text-decoration: none;
   transition: var(--transition)
 }
@@ -557,8 +565,7 @@ body {
 }
 .auth__signup {
   width: 188px;
-  padding: 24px 30px 18px 41px;
-  border: 1px solid rgba(255,255,255,.6)
+  padding: 24px 30px 18px 41px
 }
 .auth__signup .icon__arrow {
   display: inline-block;
@@ -575,6 +582,14 @@ body {
 .auth__signup:hover .icon__arrow {
   -webkit-transform: rotate(0);
   transform: rotate(0)
+}
+.dark .auth__login:hover,
+.dark .auth__signup:hover {
+  color: var(--white-color)
+}
+.dark .auth__signup:hover path {
+  fill: var(--white-color);
+  stroke: var(--white-color)
 }
 .main {
   -webkit-flex-grow: 1;

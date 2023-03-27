@@ -1,18 +1,54 @@
 .header.white {
   &,
+  .logo__main,
   .menu__link,
   .auth__login,
-  .auth__signup {
+  .auth__signup,
+  .lang__selected .lang__value {
     color: var(--white-color);
+  }
+
+  .auth__signup {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .auth__signup:hover {
+    border: 1px solid var(--blue-color);
+  }
+
+  .menu__item::after {
+    border: 1px solid var(--white-color);
+  }
+
+  .header__line {
+    background-color: var(--white-color);
   }
 }
 
 .header.dark {
   &,
+  .logo__main,
   .menu__link,
   .auth__login,
-  .auth__signup {
+  .auth__signup,
+  .lang__selected .lang__value {
     color: var(--blue-color);
+  }
+
+  .auth__signup {
+    border: 1px solid rgba(0, 17, 79, 0.6);
+  }
+
+  .auth__signup:hover {
+    border: 1px solid var(--blue-color);
+  }
+
+  .menu__item::after {
+    border: 1px solid var(--blue-color);
+  }
+
+  .header__line {
+    background-color: var(--blue-color);
   }
 }
 
@@ -51,7 +87,6 @@
   font-weight: 700;
   font-size: 35px;
   line-height: 44px;
-  color: var(--white-color);
   text-decoration: none;
 }
 
@@ -66,7 +101,6 @@
   margin-right: 51px;
   width: 1px;
   height: 59px;
-  background-color: var(--white-color);
 
   @include r(1399px) {
     margin-right: 35px;
@@ -102,7 +136,6 @@
     bottom: -3px;
     left: 0;
     width: 100%;
-    border: 1px solid var(--white-color);
     visibility: hidden;
     opacity: 0;
     transition: var(--transition);
@@ -120,19 +153,18 @@
   font-size: 21px;
   line-height: 26px;
   letter-spacing: -0.01em;
-  color: var(--white-color);
   text-decoration: none;
 }
 
 .lang {
   position: relative;
 
-  .svg-image-shevron {
+  .lang__shevron {
     transition: var(--transition);
   }
 
   &.active {
-    .svg-image-shevron {
+    .lang__shevron {
       transform: scaleY(-1);
     }
 
@@ -160,7 +192,6 @@
     left: -30%;
     right: -50%;
     height: 70px;
-    // background-color: #f00;
   }
 }
 
@@ -169,7 +200,6 @@
   font-size: 19px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: var(--white-color);
 }
 
 .lang__icon {
@@ -205,6 +235,10 @@
   visibility: hidden;
   opacity: 0;
   transition: var(--transition);
+
+  .lang__value {
+    color: var(--blue-color);
+  }
 }
 
 .lang__item {
@@ -250,7 +284,6 @@
   font-size: 19px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: var(--white-color);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -270,7 +303,6 @@
 .auth__signup {
   width: 188px;
   padding: 24px 30px 18px 41px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
 
   .icon__arrow {
     display: inline-block;
@@ -288,4 +320,16 @@
   &:hover .icon__arrow {
     transform: rotate(0);
   }
+}
+
+// if main color is dark-blue
+
+.dark .auth__login:hover,
+.dark .auth__signup:hover {
+  color: var(--white-color);
+}
+
+.dark .auth__signup:hover path {
+  fill: var(--white-color);
+  stroke: var(--white-color);
 }

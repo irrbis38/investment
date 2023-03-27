@@ -1,5 +1,7 @@
 mixin header(color)
 
+    - let svgColor = color === 'white' ? 'white' : '#00114f';
+
     header.header(class=color)
 
         .container.header__container
@@ -37,7 +39,8 @@ mixin header(color)
                         .lang__icon
                             img(src='./images/header/english.svg' alt='Eng')
                         span.lang__value Eng
-                        +icon('shevron')
+                        svg.lang__shevron(width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M1 1L5.94975 5.94975M9.58579 1L4.63604 5.94975" stroke=svgColor stroke-width="2")
 
                     ul.lang__dropdown
 
@@ -67,4 +70,8 @@ mixin header(color)
 
                 a.auth__signup(href="#")
                     span Sign Up
-                    +iconArrowRight(color)
+                    +iconArrowRight(svgColor)
+
+            .header__small
+
+                .header__auth
