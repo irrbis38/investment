@@ -7,11 +7,46 @@ block page
 
     section.intro
 
-        .intro__slider.swiper-slider
+        .intro__panel
 
-            .intro__wrapper.swiper-wrapper
+            .intro__next
+                span Next
+                button.intro__btn
 
-                .intro__item.swiper-item
+            .intro__pagination.pagination 
+
+                button.pagination__item 01
+
+                button.pagination__item 02
+
+                button.pagination__item 03
+
+            .intro__bottom
+
+                .container
+
+                    .intro__inner
+
+                        a.intro__scroll(href="#")
+                            span Scroll Down#[br]
+                            span to Learn More#[br]
+                            +icon()
+
+                .intro__signup
+
+                    a.intro__link(href="#")
+
+                    p.intro__sup Take it easy
+
+                    p.intro__text Create account
+
+                    +icon()
+
+        .intro__slider
+
+            .intro__wrapper
+
+                .intro__item
 
                     .intro__bg
 

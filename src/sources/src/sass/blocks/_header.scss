@@ -1,5 +1,7 @@
-// different color adn bg-color
+// different color and bg-color
 // depending color attribute in header mixin
+
+// for color 'white'
 
 .header.white {
   &,
@@ -37,6 +39,8 @@
   }
 }
 
+// for color 'dark'
+
 .header.dark {
   &,
   .logo__main,
@@ -73,13 +77,14 @@
   }
 }
 
-// header styles
+// header general styles
 
 .header {
   position: absolute;
   top: 41px;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .header__container {
