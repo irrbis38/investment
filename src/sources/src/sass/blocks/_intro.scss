@@ -4,6 +4,10 @@
   height: 100vh;
   min-height: 700px;
   max-height: 1500px;
+
+  @include xs {
+    min-height: 600px;
+  }
 }
 
 .intro__panel,
@@ -66,7 +70,8 @@
 .pagination {
   position: relative;
   display: flex;
-  max-width: 110px;
+  width: 110px;
+  height: 21px;
   justify-content: space-between;
   align-items: center;
   margin: 0 21px 103px auto;
@@ -106,6 +111,7 @@
   height: 45px;
   border-radius: 50%;
   background-color: #042185;
+  // transform: translateX(10px);
 }
 
 .intro__bottom {

@@ -64,6 +64,11 @@ function changeLang() {
 // intro logic
 
 function introInit() {
+  introSignupHandler();
+  introPaginationByNumber();
+}
+
+function introSignupHandler() {
   const introSingnup = document.querySelector(".intro__signup");
   const introBG = document.querySelector(".intro__bg");
   const startGradient =
@@ -97,5 +102,53 @@ function introInit() {
 
   introSingnup.addEventListener("mouseleave", () => {
     introTL.reverse();
+  });
+}
+
+// move pagination__pointer by pagination
+
+function introPaginationByNumber() {
+  const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
+
+  pagItems.forEach((item) =>
+    item.addEventListener("click", (e) => {
+      const currBtn = e.target;
+      const isActive = currBtn.classList.contains("active");
+      if (!isActive) {
+        pagItems.forEach((item) => item.classList.remove("active"));
+        currBtn.classList.add("active");
+
+        // check index of active item
+        const index = pagItems.indexOf(currBtn);
+        setNewPosition(index);
+      }
+    })
+  );
+}
+
+function setNewPosition(idx) {
+  const pointer = document.querySelector(".pagination__pointer");
+
+  let newPosition = "0";
+
+  switch (idx) {
+    case 0:
+      newPosition = "0";
+      break;
+    case 1:
+      newPosition = "45.5px";
+      break;
+    case 2:
+      newPosition = "92.5px";
+      break;
+
+    default:
+      break;
+  }
+
+  gsap.to(pointer, {
+    duration: 1,
+    ease: Power3.easeOut,
+    x: newPosition,
   });
 }
