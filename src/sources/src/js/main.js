@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   headerInit();
+
+  // intro
+  const intro = document.querySelector(".intro");
+  if (intro) {
+    introInit();
+  }
 });
+
+// init GSAP
+gsap.registerPlugin(ScrollTrigger);
 
 // header logic
 
@@ -47,8 +56,46 @@ function changeLang() {
         langSelectedIcon.setAttribute("src", currIconUrl);
         langSelectedIcon.setAttribute("alt", currItemContent);
         langSelectedContent.textContent = currItemContent;
-        // console.log(currItemContent);
       }
     });
+  });
+}
+
+// intro logic
+
+function introInit() {
+  const introSingnup = document.querySelector(".intro__signup");
+  const introBG = document.querySelector(".intro__bg");
+  const startGradient =
+    "linear-gradient(277.24deg, #071b64 33.49%, #265792 104.72%)";
+  const endGradient =
+    "linear-gradient(277.66deg, #071B64 -57.44%, #3368A5 105.08%)";
+  const introArrow = introSingnup.querySelector(
+    ".intro__signup .svg-image-intro-arrow-up-45-white"
+  );
+  const duration = 0.2;
+
+  // timeline for intro__signup arrow
+
+  const introTL = gsap.timeline();
+
+  introTL
+    .to(introArrow, duration, { rotate: 45 })
+    .fromTo(
+      introBG,
+      duration,
+      { background: startGradient },
+      { background: endGradient },
+      0
+    );
+
+  // intro__signup handlers
+
+  introSingnup.addEventListener("mouseenter", () => {
+    introTL.play();
+  });
+
+  introSingnup.addEventListener("mouseleave", () => {
+    introTL.reverse();
   });
 }

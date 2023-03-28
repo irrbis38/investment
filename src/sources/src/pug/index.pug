@@ -9,17 +9,21 @@ block page
 
         .intro__panel
 
-            .intro__next
-                span Next
-                button.intro__btn
+            .container
 
-            .intro__pagination.pagination 
+                .intro__next
+                    span Next
+                    button.intro__btn
 
-                button.pagination__item 01
+                .intro__pagination.pagination
 
-                button.pagination__item 02
+                    button.pagination__item.active 01
 
-                button.pagination__item 03
+                    button.pagination__item 02
+
+                    button.pagination__item 03
+
+                    .pagination__pointer
 
             .intro__bottom
 
@@ -30,17 +34,21 @@ block page
                         a.intro__scroll(href="#")
                             span Scroll Down#[br]
                             span to Learn More#[br]
-                            +icon()
+                            +icon('arrow-white-down-45')
 
                 .intro__signup
 
                     a.intro__link(href="#")
 
-                    p.intro__sup Take it easy
+                    .intro__bg
 
-                    p.intro__text Create account
+                    .intro__descr
 
-                    +icon()
+                        p.intro__sup Take it easy
+
+                        p.intro__text Create account
+
+                    +icon('intro-arrow-up-45-white')
 
         .intro__slider
 
@@ -48,8 +56,17 @@ block page
 
                 .intro__item
 
-                    .intro__bg
+                    .intro__image
 
-                        +picture('main/intro-bg1', 'png', 'x2')
+                        .intro__overlay
 
-                    .container
+                        +picture('intro/intro-bg1', 'png', 'x2')
+
+                    .intro__content
+
+                        .container
+
+                            p.intro__suptitle Begin your investment
+
+                            h2.intro__title.
+                                Investment#[br]in Most Ambitious#[br]Projects
