@@ -64,8 +64,12 @@ function changeLang() {
 // intro logic
 
 function introInit() {
+  const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
+  const nextBtn = document.querySelector(".intro__btn");
+
   introSignupHandler();
-  introPaginationByNumber();
+  introPaginationByNumber(pagItems);
+  nextBtn.addEventListener("click", () => introPaginationByNext(pagItems));
 }
 
 function introSignupHandler() {
@@ -107,9 +111,7 @@ function introSignupHandler() {
 
 // move pagination__pointer by pagination
 
-function introPaginationByNumber() {
-  const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
-
+function introPaginationByNumber(pagItems) {
   pagItems.forEach((item) =>
     item.addEventListener("click", (e) => {
       const currBtn = e.target;
@@ -126,8 +128,32 @@ function introPaginationByNumber() {
   );
 }
 
+// move pagination__pointer by 'Next' button
+function introPaginationByNext(pagItems) {
+  const activeIndex = pagItems.findIndex((item) =>
+    item.classList.contains("active")
+  );
+
+  // if last item is active
+  if (activeIndex === pagItems.length - 1) {
+    setNewPosition(0);
+    setActiveItem(pagItems, 0);
+  } else {
+    setNewPosition(activeIndex + 1);
+    setActiveItem(pagItems, activeIndex + 1);
+  }
+}
+
+function setActiveItem(items, idx) {
+  items.forEach((item) => item.classList.remove("active"));
+  items[idx].classList.add("active");
+}
+
+// set new pagination__pointer position
 function setNewPosition(idx) {
   const pointer = document.querySelector(".pagination__pointer");
+  const nextBtn = document.querySelector(".intro__btn");
+  const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
 
   let newPosition = "0";
 
@@ -146,9 +172,12 @@ function setNewPosition(idx) {
       break;
   }
 
-  gsap.to(pointer, {
-    duration: 1,
-    ease: Power3.easeOut,
-    x: newPosition,
-  });
+  const tl = gsap.timeline();
+  tl.set([nextBtn, ...pagItems], { disabled: true })
+    .to(pointer, {
+      duration: 1,
+      ease: Power3.easeOut,
+      x: newPosition,
+    })
+    .set([nextBtn, ...pagItems], { disabled: false });
 }
