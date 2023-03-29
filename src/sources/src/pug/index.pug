@@ -6,18 +6,18 @@ block header
 block page
 
     -
-        var obj = [ {
+        const sliderData = [ {
             url: 'intro/intro-bg1',
             sup: 'Begin your investment',
-            title: 'Investment#[br]in Most Ambitious#[br]Projects'
-            },: {
+            title: 'Investment<br>in Most Ambitious<br>Projects'
+            }, {
                 url: 'intro/intro-bg2',
                 sup: 'Begin your investment',
-                title: 'Investment#[br]in Most Ambitious#[br]Projects'
+                title: 'Investment<br>in Most Ambitious<br>Projects'
             }, {
                 url: 'intro/intro-bg3',
                 sup: 'Begin your investment',
-                title: 'Investment#[br]in Most Ambitious#[br]Projects'
+                title: 'Investment<br>in Most Ambitious<br>Projects'
             },
         ]
 
@@ -33,11 +33,11 @@ block page
 
                 .intro__pagination.pagination
 
-                    button.pagination__item.active 01
+                    button.pagination__item.active(data-index='0') 01
 
-                    button.pagination__item 02
+                    button.pagination__item(data-index='1') 02
 
-                    button.pagination__item 03
+                    button.pagination__item(data-index='2') 03
 
                     .pagination__pointer
 
@@ -70,11 +70,7 @@ block page
 
             .intro__wrapper
 
+                each item in sliderData
 
-
-                //- +introSliderItem()
-
-                //- +introSliderItem()
-
-                //- +introSliderItem()
+                    +introSliderItem(item.url, item.sup, item.title)
 

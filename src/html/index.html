@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Main page</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <header class="header white">
+      <div class="container header__container">
+        <div class="header__navbar">
+          <div class="header__logo logo"><a class="logo__main" href="#">Venrex</a>
+            <h1 class="logo__descr">Venrex Investment<br/>Management</h1>
+          </div>
+          <div class="header__line"></div>
+          <div class="header__nav">
+            <nav class="header__menu menu">
+              <ul class="menu__list">
+                <li class="menu__item"><a class="menu__link" href="#">Portfolio</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Blog</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Contacts</a></li>
+              </ul>
+            </nav>
+            <div class="header__lang lang">
+              <div class="lang__selected">
+                <div class="lang__icon"><img src="./images/header/english.svg" alt="Eng"/></div><span class="lang__value">Eng</span>
+                <svg class="lang__shevron" width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5.94975 5.94975M9.58579 1L4.63604 5.94975" stroke="white" stroke-width="2"></path>
+                </svg>
+              </div>
+              <ul class="lang__dropdown">
+                <li class="lang__item" data-lang="Eng">
+                  <div class="lang__icon"><img src="./images/header/english.svg" alt="Eng"/></div><span class="lang__value">English</span>
+                </li>
+                <li class="lang__item" data-lang="Rus">
+                  <div class="lang__icon"><img src="./images/header/russian.svg" alt="Rus"/></div><span class="lang__value">Russian</span>
+                </li>
+                <li class="lang__item" data-lang="Chi">
+                  <div class="lang__icon"><img src="./images/header/chinese.svg" alt="Chi"/></div><span class="lang__value">Chinese</span>
+                </li>
+                <li class="lang__item" data-lang="Es">
+                  <div class="lang__icon"><img src="./images/header/spanish.svg" alt="Es"/></div><span class="lang__value">Spain</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="header__panel">
+          <div class="header__auth auth">
+            <button class="auth__login"><span>Login</span>
+              <svg width="22" height="25" viewBox="0 0 22 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.901 10.901C8.72277 10.901 6.94059 9.11881 6.94059 6.94059V4.9604C6.94059 2.78218 8.72277 1 10.901 1C13.0792 1 14.8614 2.78218 14.8614 4.9604V6.94059C14.8614 9.11881 13.0792 10.901 10.901 10.901Z" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
+                <path d="M7.13861 13.8713C7.33663 13.8713 7.53465 13.9703 7.73267 14.1683C8.42574 15.1584 9.61386 15.8515 11 15.8515C12.3861 15.8515 13.4752 15.1584 14.2673 14.1683C14.3663 13.9703 14.5644 13.8713 14.8614 13.8713C18.2277 13.8713 21 16.6436 21 20.0099V22.7822C21 23.3762 20.505 23.7723 20.0099 23.7723H1.9901C1.39604 23.7723 1 23.2772 1 22.7822V20.0099C1 16.6436 3.77228 13.8713 7.13861 13.8713Z" stroke="white" stroke-width="2" stroke-miterlimit="10"></path>
+              </svg>
+            </button><a class="auth__signup" href="#"><span>Sign Up</span>
+              <svg class="icon__arrow" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.814346 9.48124C0.871929 9.53882 0.939246 9.58644 1.02001 9.6175C1.09944 9.64805 1.17653 9.65665 1.24535 9.65665L17.2862 9.65665L10.2256 16.7173C10.1117 16.8312 10.0392 16.9814 10.0392 17.1483C10.0392 17.3152 10.1117 17.4654 10.2256 17.5793C10.3395 17.6932 10.4897 17.7656 10.6566 17.7656C10.8235 17.7656 10.9737 17.6932 11.0876 17.5793L19.1857 9.48124C19.2995 9.36737 19.372 9.21711 19.372 9.05024C19.372 8.88336 19.2995 8.7331 19.1857 8.61924L11.0876 0.521183C10.9737 0.407316 10.8235 0.334825 10.6566 0.334825C10.4897 0.334825 10.3395 0.407316 10.2256 0.521183C10.1117 0.635049 10.0392 0.785303 10.0392 0.952181C10.0392 1.11906 10.1117 1.26931 10.2256 1.38318L17.2862 8.44382L1.24535 8.44382C0.904566 8.44382 0.638932 8.70946 0.638932 9.05024C0.638932 9.11906 0.647528 9.19614 0.678079 9.27557C0.709142 9.35634 0.756764 9.42365 0.814346 9.48124Z" fill="white" stroke="white" stroke-width="0.6"></path>
+              </svg></a>
+          </div>
+          <div class="header__burger"><span></span></div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="intro">
+        <div class="intro__panel">
+          <div class="container">
+            <div class="intro__next"><span>Next</span>
+              <button class="intro__btn"></button>
+            </div>
+            <div class="intro__pagination pagination">
+              <button class="pagination__item active" data-index="0">01</button>
+              <button class="pagination__item" data-index="1">02</button>
+              <button class="pagination__item" data-index="2">03</button>
+              <div class="pagination__pointer"></div>
+            </div>
+          </div>
+          <div class="intro__bottom">
+            <div class="container">
+              <div class="intro__inner"><a class="intro__scroll" href="#"><span>Scroll Down<br></span><span>to Learn More<br></span><span class="icon svg-image-arrow-white-down-45"></span></a></div>
+            </div>
+            <div class="intro__signup"><a class="intro__link" href="#"></a>
+              <div class="intro__bg"></div>
+              <div class="intro__descr">
+                <p class="intro__sup">Take it easy</p>
+                <p class="intro__text">Create account</p>
+              </div><span class="icon svg-image-intro-arrow-up-45-white"></span>
+            </div>
+          </div>
+        </div>
+        <div class="intro__slider">
+          <div class="intro__wrapper">
+            <div class="intro__item">
+              <div class="intro__content">
+                <div class="intro__image">
+                  <div class="intro__overlay"></div>
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/intro/intro-bg1.webp, images/intro/intro-bg1@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/intro/intro-bg1.png" srcset="images/intro/intro-bg1.png, images/intro/intro-bg1@2x.png 2x" alt=""/>
+                  </picture>
+                </div>
+                <div class="intro__about">
+                  <div class="container">
+                    <p class="intro__suptitle">Begin your investment</p>
+                    <h2 class="intro__title">Investment<br>in Most Ambitious<br>Projects</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="intro__item">
+              <div class="intro__content">
+                <div class="intro__image">
+                  <div class="intro__overlay"></div>
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/intro/intro-bg2.webp, images/intro/intro-bg2@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/intro/intro-bg2.png" srcset="images/intro/intro-bg2.png, images/intro/intro-bg2@2x.png 2x" alt=""/>
+                  </picture>
+                </div>
+                <div class="intro__about">
+                  <div class="container">
+                    <p class="intro__suptitle">Begin your investment</p>
+                    <h2 class="intro__title">Investment<br>in Most Ambitious<br>Projects</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="intro__item">
+              <div class="intro__content">
+                <div class="intro__image">
+                  <div class="intro__overlay"></div>
+                  <picture class="picture object-fit-cover">
+                    <source class="object-fit-cover" srcset="images/intro/intro-bg3.webp, images/intro/intro-bg3@2x.webp 2x" type="image/webp"/><img class="picture__img object-fit-cover" src="images/intro/intro-bg3.png" srcset="images/intro/intro-bg3.png, images/intro/intro-bg3@2x.png 2x" alt=""/>
+                  </picture>
+                </div>
+                <div class="intro__about">
+                  <div class="container">
+                    <p class="intro__suptitle">Begin your investment</p>
+                    <h2 class="intro__title">Investment<br>in Most Ambitious<br>Projects</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">Footer</div>
+    </footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

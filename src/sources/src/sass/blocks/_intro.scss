@@ -275,7 +275,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: transparent;
+  // background-color: transparent;
 
   &:nth-child(1) {
     z-index: 1;
@@ -293,7 +293,7 @@
   &:not(:first-child) {
     left: 100%;
 
-    .intro__image {
+    .intro__content {
       transform: translateX(-100%);
     }
   }

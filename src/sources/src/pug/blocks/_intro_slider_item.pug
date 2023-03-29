@@ -10,5 +10,6 @@ mixin introSliderItem(imgUrl, suptitle, title)
 
             .intro__about
                 .container
-                    p.intro__suptitle suptitle
-                    h2.intro__title title
+                    p.intro__suptitle= suptitle
+                    h2.intro__title. 
+                        !{title}
