@@ -77,6 +77,9 @@ function introInit() {
 
   introSignupHandler();
   introPaginationByNumber(pagItems);
+  nextBtn.addEventListener("click", () => {
+    introPaginationByNext(pagItems);
+  });
 }
 
 function introSignupHandler() {
