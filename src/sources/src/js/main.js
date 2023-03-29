@@ -67,6 +67,14 @@ function introInit() {
   const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
   const nextBtn = document.querySelector(".intro__btn");
 
+  const firstPaginationItem = document.querySelector(".pagination").children[0];
+
+  // initial styles for first '.pagination__item'
+  gsap.set(firstPaginationItem, {
+    scale: 1.42,
+    opacity: 1,
+  });
+
   introSignupHandler();
   introPaginationByNumber(pagItems);
   nextBtn.addEventListener("click", () => introPaginationByNext(pagItems));
@@ -74,39 +82,70 @@ function introInit() {
 
 function introSignupHandler() {
   const introSingnup = document.querySelector(".intro__signup");
-  const introBG = document.querySelector(".intro__bg");
   const startGradient =
     "linear-gradient(277.24deg, #071b64 33.49%, #265792 104.72%)";
   const endGradient =
     "linear-gradient(277.66deg, #071B64 -57.44%, #3368A5 105.08%)";
+  const introBG = document.querySelector(".intro__bg");
+
   const introArrow = introSingnup.querySelector(
     ".intro__signup .svg-image-intro-arrow-up-45-white"
   );
   const duration = 0.2;
 
-  // timeline for intro__signup arrow
-
-  const introTL = gsap.timeline();
-
-  introTL
-    .to(introArrow, duration, { rotate: 45 })
-    .fromTo(
-      introBG,
-      duration,
-      { background: startGradient },
-      { background: endGradient },
-      0
-    );
+  const props = {
+    introArrow,
+    introBG,
+    startGradient,
+    endGradient,
+    duration,
+  };
 
   // intro__signup handlers
 
   introSingnup.addEventListener("mouseenter", () => {
-    introTL.play();
+    introSignupPlay({ ...props, direction: "forward" });
   });
 
   introSingnup.addEventListener("mouseleave", () => {
-    introTL.reverse();
+    introSignupPlay({ ...props, direction: "backward" });
   });
+}
+
+function introSignupPlay(props) {
+  const {
+    introArrow,
+    introBG,
+    startGradient,
+    endGradient,
+    duration,
+    direction,
+  } = props;
+  // timeline for intro__signup arrow
+
+  const introTL = gsap.timeline();
+
+  if (direction === "forward") {
+    return introTL
+      .to(introArrow, duration, { rotate: 45 })
+      .fromTo(
+        introBG,
+        duration,
+        { background: startGradient },
+        { background: endGradient },
+        0
+      );
+  } else {
+    return introTL
+      .to(introArrow, duration, { rotate: 0 })
+      .fromTo(
+        introBG,
+        duration,
+        { background: endGradient },
+        { background: startGradient },
+        0
+      );
+  }
 }
 
 // move pagination__pointer by pagination
@@ -117,12 +156,16 @@ function introPaginationByNumber(pagItems) {
       const currBtn = e.target;
       const isActive = currBtn.classList.contains("active");
       if (!isActive) {
+        const unsetActiveItem = pagItems.filter((item) =>
+          item.classList.contains("active")
+        );
         pagItems.forEach((item) => item.classList.remove("active"));
         currBtn.classList.add("active");
 
         // check index of active item
         const index = pagItems.indexOf(currBtn);
-        setNewPosition(index);
+
+        paginationAnimation(index, unsetActiveItem, currBtn);
       }
     })
   );
@@ -133,13 +176,18 @@ function introPaginationByNext(pagItems) {
   const activeIndex = pagItems.findIndex((item) =>
     item.classList.contains("active")
   );
+  const unsetActiveItem = pagItems[activeIndex];
+  const nextActiveItem =
+    activeIndex === pagItems.length - 1
+      ? pagItems[0]
+      : pagItems[activeIndex + 1];
 
   // if last item is active
   if (activeIndex === pagItems.length - 1) {
-    setNewPosition(0);
+    paginationAnimation(0, unsetActiveItem, nextActiveItem);
     setActiveItem(pagItems, 0);
   } else {
-    setNewPosition(activeIndex + 1);
+    paginationAnimation(activeIndex + 1, unsetActiveItem, nextActiveItem);
     setActiveItem(pagItems, activeIndex + 1);
   }
 }
@@ -150,7 +198,7 @@ function setActiveItem(items, idx) {
 }
 
 // set new pagination__pointer position
-function setNewPosition(idx) {
+function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
   const pointer = document.querySelector(".pagination__pointer");
   const nextBtn = document.querySelector(".intro__btn");
   const pagItems = Array.from(document.querySelectorAll(".pagination__item"));
@@ -162,10 +210,10 @@ function setNewPosition(idx) {
       newPosition = "0";
       break;
     case 1:
-      newPosition = "45.5px";
+      newPosition = "47px";
       break;
     case 2:
-      newPosition = "92.5px";
+      newPosition = "94px";
       break;
 
     default:
@@ -179,5 +227,23 @@ function setNewPosition(idx) {
       ease: Power3.easeOut,
       x: newPosition,
     })
+    .to(
+      unsetActiveItem,
+      {
+        duration: 0.3,
+        scale: 1,
+        opacity: 0.5,
+      },
+      "-=0.8"
+    )
+    .to(
+      setActiveItem,
+      {
+        duration: 0.2,
+        scale: 1.42,
+        opacity: 1,
+      },
+      "-=0.2"
+    )
     .set([nextBtn, ...pagItems], { disabled: false });
 }

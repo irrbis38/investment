@@ -866,6 +866,16 @@ body {
   }
 }
 .pagination__item {
+  width: 16px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: transparent;
   border: none;
   -webkit-appearance: none;
@@ -878,21 +888,15 @@ body {
   line-height: 15px;
   letter-spacing: -.01em;
   color: var(--white-color);
-  transition: var(--transition);
-  opacity: .5
-}
-.pagination__item.active {
-  font-size: 17px;
-  line-height: 21px;
-  opacity: 1
+  transition: var(--transition)
 }
 .pagination__pointer {
   position: absolute;
-  left: -15px;
+  left: -14px;
   top: -12px;
   z-index: -1;
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: #042185
 }
