@@ -259,14 +259,47 @@
 
 .intro__slider {
   z-index: 1;
+  overflow: hidden;
 }
 
 .intro__wrapper {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
 .intro__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: transparent;
+
+  &:nth-child(1) {
+    z-index: 1;
+    // background-color: #777;
+  }
+
+  &:nth-child(2) {
+    z-index: 2;
+  }
+
+  &:nth-child(3) {
+    z-index: 3;
+  }
+
+  &:not(:first-child) {
+    left: 100%;
+
+    .intro__image {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.intro__content {
   width: 100%;
   height: 100%;
 }
@@ -296,7 +329,7 @@
   opacity: 0.27;
 }
 
-.intro__content {
+.intro__about {
   position: absolute;
   left: 0;
   bottom: 238px;

@@ -1,0 +1,14 @@
+mixin introSliderItem(imgUrl, suptitle, title)
+
+    .intro__item
+
+        .intro__content
+
+            .intro__image
+                .intro__overlay
+                +picture(imgUrl, 'png', 'x2')
+
+            .intro__about
+                .container
+                    p.intro__suptitle suptitle
+                    h2.intro__title title

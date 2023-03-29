@@ -5,6 +5,22 @@ block header
     +header('white')
 block page
 
+    -
+        var obj = [ {
+            url: 'intro/intro-bg1',
+            sup: 'Begin your investment',
+            title: 'Investment#[br]in Most Ambitious#[br]Projects'
+            },: {
+                url: 'intro/intro-bg2',
+                sup: 'Begin your investment',
+                title: 'Investment#[br]in Most Ambitious#[br]Projects'
+            }, {
+                url: 'intro/intro-bg3',
+                sup: 'Begin your investment',
+                title: 'Investment#[br]in Most Ambitious#[br]Projects'
+            },
+        ]
+
     section.intro
 
         .intro__panel
@@ -54,19 +70,11 @@ block page
 
             .intro__wrapper
 
-                .intro__item
 
-                    .intro__image
 
-                        .intro__overlay
+                //- +introSliderItem()
 
-                        +picture('intro/intro-bg1', 'png', 'x2')
+                //- +introSliderItem()
 
-                    .intro__content
+                //- +introSliderItem()
 
-                        .container
-
-                            p.intro__suptitle Begin your investment
-
-                            h2.intro__title.
-                                Investment#[br]in Most Ambitious#[br]Projects

@@ -78,6 +78,7 @@ function introInit() {
   introSignupHandler();
   introPaginationByNumber(pagItems);
   nextBtn.addEventListener("click", () => introPaginationByNext(pagItems));
+  introSlider(nextBtn);
 }
 
 function introSignupHandler() {
@@ -246,4 +247,32 @@ function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
       "-=0.2"
     )
     .set([nextBtn, ...pagItems], { disabled: false });
+}
+
+// intro slider
+
+function introSlider(nextBtn) {
+  const introSliderItems = Array.from(
+    document.querySelectorAll(".intro__item")
+  );
+  const lastItem = introSliderItems[2];
+  const lastImg = lastItem.querySelector(".intro__image");
+  console.log(lastItem);
+  nextBtn.addEventListener("click", () => {
+    const TL = gsap.timeline();
+    TL.to(lastItem, {
+      x: "-100%",
+      duration: 1.5,
+      ease: Power4.easeOut,
+    }).to(
+      lastImg,
+      {
+        x: "0",
+        duration: 1.5,
+        ease: Power4.easeOut,
+        // ease: Power4.easeIn,
+      },
+      0
+    );
+  });
 }
