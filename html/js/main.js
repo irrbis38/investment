@@ -76,9 +76,9 @@ function introInit() {
   });
 
   introSignupHandler();
-  introPaginationByNumber(pagItems);
+  introAnimationByNumber(pagItems);
   nextBtn.addEventListener("click", () => {
-    introPaginationByNext(pagItems);
+    introAnimationByNext(pagItems);
   });
 }
 
@@ -150,9 +150,9 @@ function introSignupPlay(props) {
   }
 }
 
-// move pagination__pointer by pagination
+// animation slides and pagination by pagination
 
-function introPaginationByNumber(pagItems) {
+function introAnimationByNumber(pagItems) {
   pagItems.forEach((item) =>
     item.addEventListener("click", (e) => {
       const nextActiveButton = e.target;
@@ -181,24 +181,30 @@ function introPaginationByNumber(pagItems) {
   );
 }
 
-// move pagination__pointer by 'Next' button
-function introPaginationByNext(pagItems) {
-  const activeIndex = pagItems.findIndex((item) =>
+// animation slides and pagination by 'Next' button
+function introAnimationByNext(pagItems) {
+  const prevActiveIndex = pagItems.findIndex((item) =>
     item.classList.contains("active")
   );
-  const unsetActiveItem = pagItems[activeIndex];
-  const nextActiveItem =
-    activeIndex === pagItems.length - 1
+  const prevActiveNumber = pagItems[prevActiveIndex];
+  const nextActiveNumber =
+    prevActiveIndex === pagItems.length - 1
       ? pagItems[0]
-      : pagItems[activeIndex + 1];
+      : pagItems[prevActiveIndex + 1];
 
   // if last item is active
-  if (activeIndex === pagItems.length - 1) {
-    paginationAnimation(0, unsetActiveItem, nextActiveItem);
+  if (prevActiveIndex === pagItems.length - 1) {
+    paginationAnimation(0, prevActiveNumber, nextActiveNumber);
     setActiveItem(pagItems, 0);
+    introSliderBackward(prevActiveIndex, 0);
   } else {
-    paginationAnimation(activeIndex + 1, unsetActiveItem, nextActiveItem);
-    setActiveItem(pagItems, activeIndex + 1);
+    paginationAnimation(
+      prevActiveIndex + 1,
+      prevActiveNumber,
+      nextActiveNumber
+    );
+    setActiveItem(pagItems, prevActiveIndex + 1);
+    introSliderForward(prevActiveIndex, prevActiveIndex + 1);
   }
 }
 
@@ -263,20 +269,70 @@ function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
 function introSliderForward(prevIndex, nextIndex) {
   const { slides, contentItems } = createSlidesArray(prevIndex, nextIndex);
 
+  const { prevSup, prevTitle, prevImg, nextSup, nextTitle, nextImg } =
+    defineAnimatedElements(prevIndex, nextIndex);
+
   return gsap
-    .timeline()
+    .timeline({
+      defaults: {
+        duration: 1.5,
+      },
+    })
     .to(slides, {
       x: "-100%",
-      duration: 1.5,
       ease: Power4.easeOut,
     })
     .to(
       contentItems,
       {
         x: "0",
-        duration: 1.5,
         ease: Power4.easeOut,
       },
+      0
+    )
+    .to(
+      prevSup,
+      {
+        x: "50px",
+      },
+      0
+    )
+    .to(
+      prevTitle,
+      {
+        x: "80px",
+      },
+      0
+    )
+    .to(
+      prevImg,
+      {
+        scale: "1.2",
+      },
+      0
+    )
+    .fromTo(
+      nextSup,
+      {
+        x: "50px",
+      },
+      { x: "0" },
+      0
+    )
+    .fromTo(
+      nextTitle,
+      {
+        x: "80px",
+      },
+      { x: "0" },
+      0
+    )
+    .fromTo(
+      nextImg,
+      {
+        scale: "1.2",
+      },
+      { scale: "1" },
       0
     );
 }
@@ -320,4 +376,30 @@ function createSlidesArray(prevIndex, nextIndex) {
   }
 
   return { slides, contentItems };
+}
+
+// define animated elements (titles, subtitles and images)
+function defineAnimatedElements(prevIdx, nextIdx) {
+  const slides = Array.from(document.querySelectorAll(".intro__item"));
+  const prevSlide = slides[prevIdx];
+  const nextSlide = slides[nextIdx];
+
+  const prevSup = prevSlide.querySelector(".intro__suptitle");
+  const prevTitle = prevSlide.querySelector(".intro__title");
+  const prevImg = prevSlide.querySelector("img");
+
+  const nextSup = nextSlide.querySelector(".intro__suptitle");
+  const nextTitle = nextSlide.querySelector(".intro__title");
+  const nextImg = nextSlide.querySelector("img");
+
+  const items = {
+    prevSup,
+    prevTitle,
+    prevImg,
+    nextSup,
+    nextTitle,
+    nextImg,
+  };
+
+  return items;
 }
