@@ -170,9 +170,9 @@ function introAnimationByNumber(pagItems) {
 
         // slider animation depend direction
         if (prevBtnIndex < nextBtnIndex) {
-          introSliderAnimation(prevBtnIndex, nextBtnIndex, "forward");
+          introSliderAnimation(prevBtnIndex, nextBtnIndex, "forward", false);
         } else if (prevBtnIndex > nextBtnIndex) {
-          introSliderAnimation(prevBtnIndex, nextBtnIndex, "backward");
+          introSliderAnimation(prevBtnIndex, nextBtnIndex, "backward", false);
         }
         // pagination animation
         paginationAnimation(nextBtnIndex, prevActiveButton, nextActiveButton);
@@ -196,7 +196,7 @@ function introAnimationByNext(pagItems) {
   if (prevActiveIndex === pagItems.length - 1) {
     paginationAnimation(0, prevActiveNumber, nextActiveNumber);
     setActiveItem(pagItems, 0);
-    introSliderAnimation(prevActiveIndex, 0, "backward");
+    introSliderAnimation(prevActiveIndex, 0, "backward", true);
   } else {
     paginationAnimation(
       prevActiveIndex + 1,
@@ -204,7 +204,12 @@ function introAnimationByNext(pagItems) {
       nextActiveNumber
     );
     setActiveItem(pagItems, prevActiveIndex + 1);
-    introSliderAnimation(prevActiveIndex, prevActiveIndex + 1, "forward");
+    introSliderAnimation(
+      prevActiveIndex,
+      prevActiveIndex + 1,
+      "forward",
+      false
+    );
   }
 }
 
@@ -266,11 +271,18 @@ function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
 
 // intro slider
 
-function introSliderAnimation(prevIndex, nextIndex, direction) {
+function introSliderAnimation(
+  prevIndex,
+  nextIndex,
+  direction,
+  isForegroundShow
+) {
   const { slides, contentItems } = createSlidesArray(prevIndex, nextIndex);
 
   const { prevSup, prevTitle, prevImg, nextSup, nextTitle, nextImg } =
     defineAnimatedElements(prevIndex, nextIndex);
+
+  const foreground = document.querySelector(".intro__foreground");
 
   let slidesTo = "-100%";
   let contentItemsTo = "0";
@@ -283,20 +295,50 @@ function introSliderAnimation(prevIndex, nextIndex, direction) {
     contentItemsTo = "-100%";
   }
 
-  return gsap
-    .timeline({
-      defaults: {
-        duration: 1.3,
-      },
-    })
-    .to(slides, { x: slidesTo, ease: Power4.easeOut })
-    .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
-    .to(prevSup, { x: "30px" }, 0)
-    .to(prevTitle, { x: "50px" }, 0)
-    .to(prevImg, { scale: "1.2" }, 0)
-    .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
-    .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
-    .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
+  // blue foreground show only slider translate from last item to first
+  // only click by nextBtn
+  if (!isForegroundShow) {
+    return gsap
+      .timeline({
+        defaults: {
+          duration: 1,
+        },
+      })
+      .to(slides, { x: slidesTo, ease: Power4.easeOut })
+      .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
+      .to(prevSup, { x: "30px" }, 0)
+      .to(prevTitle, { x: "50px" }, 0)
+      .to(prevImg, { scale: "1.2" }, 0)
+      .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
+      .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
+      .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
+  } else {
+    return (
+      gsap
+        .timeline({
+          defaults: {
+            duration: 1,
+          },
+        })
+        .to(slides, { x: slidesTo, ease: Power4.easeOut })
+        .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
+        .to(prevSup, { x: "30px" }, 0)
+        .to(prevTitle, { x: "50px" }, 0)
+        .to(prevImg, { scale: "1.2" }, 0)
+        .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
+        .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
+        .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0)
+        // .to(foreground, { width: "100%", duration: 0.7, ease: Power4.easeOut }, 0)
+        .to(foreground, { x: "0", duration: 0.7, ease: Power4.easeOut }, 0)
+        .to(
+          foreground,
+          { x: "100vw", duration: 0.5, ease: Power2.easeOut },
+          "-=0.4"
+        )
+        // .to(foreground, { width: "0", duration: 0 })
+        .to(foreground, { x: "-100vw", duration: 0 }, "+=0.5")
+    );
+  }
 }
 
 // create set of slides for move
