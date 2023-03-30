@@ -264,7 +264,7 @@ function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
         scale: 1.42,
         opacity: 1,
       },
-      "-=0.2"
+      "-=0.4"
     )
     .set([nextBtn, ...pagItems], { disabled: false });
 }

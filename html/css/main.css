@@ -952,7 +952,7 @@ body {
   -webkit-transform-origin: top left;
   transform-origin: top left
 }
-.intro__scroll:hover span:nth-child(3) {
+.intro__scroll span:nth-child(3):hover {
   -webkit-transform: scale(1.9);
   transform: scale(1.9)
 }
