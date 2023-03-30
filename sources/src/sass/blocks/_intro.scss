@@ -262,6 +262,12 @@
   overflow: hidden;
 }
 
+.intro__foreground {
+  height: 100%;
+  width: 0;
+  background-color: #040a27;
+}
+
 .intro__wrapper {
   position: relative;
   width: 100%;
@@ -275,11 +281,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  // background-color: transparent;
 
   &:nth-child(1) {
     z-index: 1;
-    // background-color: #777;
   }
 
   &:nth-child(2) {

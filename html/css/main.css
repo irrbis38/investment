@@ -1052,6 +1052,11 @@ body {
   z-index: 1;
   overflow: hidden
 }
+.intro__foreground {
+  height: 100%;
+  width: 0;
+  background-color: #040a27
+}
 .intro__wrapper {
   position: relative;
   width: 100%;

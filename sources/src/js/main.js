@@ -170,9 +170,9 @@ function introAnimationByNumber(pagItems) {
 
         // slider animation depend direction
         if (prevBtnIndex < nextBtnIndex) {
-          introSliderForward(prevBtnIndex, nextBtnIndex);
+          introSliderAnimation(prevBtnIndex, nextBtnIndex, "forward");
         } else if (prevBtnIndex > nextBtnIndex) {
-          introSliderBackward(prevBtnIndex, nextBtnIndex);
+          introSliderAnimation(prevBtnIndex, nextBtnIndex, "backward");
         }
         // pagination animation
         paginationAnimation(nextBtnIndex, prevActiveButton, nextActiveButton);
@@ -196,7 +196,7 @@ function introAnimationByNext(pagItems) {
   if (prevActiveIndex === pagItems.length - 1) {
     paginationAnimation(0, prevActiveNumber, nextActiveNumber);
     setActiveItem(pagItems, 0);
-    introSliderBackward(prevActiveIndex, 0);
+    introSliderAnimation(prevActiveIndex, 0, "backward");
   } else {
     paginationAnimation(
       prevActiveIndex + 1,
@@ -204,7 +204,7 @@ function introAnimationByNext(pagItems) {
       nextActiveNumber
     );
     setActiveItem(pagItems, prevActiveIndex + 1);
-    introSliderForward(prevActiveIndex, prevActiveIndex + 1);
+    introSliderAnimation(prevActiveIndex, prevActiveIndex + 1, "forward");
   }
 }
 
@@ -266,11 +266,22 @@ function paginationAnimation(idx, unsetActiveItem, setActiveItem) {
 
 // intro slider
 
-function introSliderForward(prevIndex, nextIndex) {
+function introSliderAnimation(prevIndex, nextIndex, direction) {
   const { slides, contentItems } = createSlidesArray(prevIndex, nextIndex);
 
   const { prevSup, prevTitle, prevImg, nextSup, nextTitle, nextImg } =
     defineAnimatedElements(prevIndex, nextIndex);
+
+  let slidesTo = "-100%";
+  let contentItemsTo = "0";
+
+  if (direction === "forward") {
+    slidesTo = "-100%";
+    contentItemsTo = "0";
+  } else if (direction === "backward") {
+    slidesTo = "0";
+    contentItemsTo = "-100%";
+  }
 
   return gsap
     .timeline({
@@ -278,30 +289,8 @@ function introSliderForward(prevIndex, nextIndex) {
         duration: 1.3,
       },
     })
-    .to(slides, { x: "-100%", ease: Power4.easeOut })
-    .to(contentItems, { x: "0", ease: Power4.easeOut }, 0)
-    .to(prevSup, { x: "30px" }, 0)
-    .to(prevTitle, { x: "50px" }, 0)
-    .to(prevImg, { scale: "1.2" }, 0)
-    .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
-    .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
-    .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
-}
-
-function introSliderBackward(prevIndex, nextIndex) {
-  const { slides, contentItems } = createSlidesArray(prevIndex, nextIndex);
-
-  const { prevSup, prevTitle, prevImg, nextSup, nextTitle, nextImg } =
-    defineAnimatedElements(prevIndex, nextIndex);
-
-  return gsap
-    .timeline({
-      defaults: {
-        duration: 1.3,
-      },
-    })
-    .to(slides, { x: "0", ease: Power4.easeOut })
-    .to(contentItems, { x: "-100%", ease: Power4.easeOut }, 0)
+    .to(slides, { x: slidesTo, ease: Power4.easeOut })
+    .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
     .to(prevSup, { x: "30px" }, 0)
     .to(prevTitle, { x: "50px" }, 0)
     .to(prevImg, { scale: "1.2" }, 0)
