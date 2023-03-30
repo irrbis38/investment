@@ -160,7 +160,7 @@
     transform-origin: top left;
   }
 
-  span:nth-child(3):hover {
+  &:hover span:nth-child(3) {
     transform: scale(1.9);
   }
 }
