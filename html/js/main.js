@@ -275,87 +275,39 @@ function introSliderForward(prevIndex, nextIndex) {
   return gsap
     .timeline({
       defaults: {
-        duration: 1.5,
+        duration: 1.3,
       },
     })
-    .to(slides, {
-      x: "-100%",
-      ease: Power4.easeOut,
-    })
-    .to(
-      contentItems,
-      {
-        x: "0",
-        ease: Power4.easeOut,
-      },
-      0
-    )
-    .to(
-      prevSup,
-      {
-        x: "50px",
-      },
-      0
-    )
-    .to(
-      prevTitle,
-      {
-        x: "80px",
-      },
-      0
-    )
-    .to(
-      prevImg,
-      {
-        scale: "1.2",
-      },
-      0
-    )
-    .fromTo(
-      nextSup,
-      {
-        x: "50px",
-      },
-      { x: "0" },
-      0
-    )
-    .fromTo(
-      nextTitle,
-      {
-        x: "80px",
-      },
-      { x: "0" },
-      0
-    )
-    .fromTo(
-      nextImg,
-      {
-        scale: "1.2",
-      },
-      { scale: "1" },
-      0
-    );
+    .to(slides, { x: "-100%", ease: Power4.easeOut })
+    .to(contentItems, { x: "0", ease: Power4.easeOut }, 0)
+    .to(prevSup, { x: "30px" }, 0)
+    .to(prevTitle, { x: "50px" }, 0)
+    .to(prevImg, { scale: "1.2" }, 0)
+    .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
+    .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
+    .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
 }
 
 function introSliderBackward(prevIndex, nextIndex) {
   const { slides, contentItems } = createSlidesArray(prevIndex, nextIndex);
 
+  const { prevSup, prevTitle, prevImg, nextSup, nextTitle, nextImg } =
+    defineAnimatedElements(prevIndex, nextIndex);
+
   return gsap
-    .timeline()
-    .to(slides, {
-      x: "0",
-      duration: 1.5,
-      ease: Power4.easeOut,
-    })
-    .to(
-      contentItems,
-      {
-        x: "-100%",
-        duration: 1.5,
-        ease: Power4.easeOut,
+    .timeline({
+      defaults: {
+        duration: 1.3,
       },
-      0
-    );
+    })
+    .to(slides, { x: "0", ease: Power4.easeOut })
+    .to(contentItems, { x: "-100%", ease: Power4.easeOut }, 0)
+    .to(prevSup, { x: "30px" }, 0)
+    .to(prevTitle, { x: "50px" }, 0)
+    .to(prevImg, { scale: "1.2" }, 0)
+    .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
+    .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
+    .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
 }
 
 // create set of slides for move
