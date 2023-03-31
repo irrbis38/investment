@@ -295,49 +295,33 @@ function introSliderAnimation(
     contentItemsTo = "-100%";
   }
 
+  let duration = isForegroundShow ? 0.8 : 1;
+
+  const TL = gsap
+    .timeline({
+      defaults: {
+        duration: duration,
+      },
+    })
+    .to(slides, { x: slidesTo, ease: Power4.easeOut })
+    .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
+    .to(prevSup, { x: "30px" }, 0)
+    .to(prevTitle, { x: "50px" }, 0)
+    .to(prevImg, { scale: "1.2" }, 0)
+    .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
+    .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
+    .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
+
   // blue foreground show only slider translate from last item to first
   // only click by nextBtn
-  if (!isForegroundShow) {
-    return gsap
-      .timeline({
-        defaults: {
-          duration: 1,
-        },
-      })
-      .to(slides, { x: slidesTo, ease: Power4.easeOut })
-      .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
-      .to(prevSup, { x: "30px" }, 0)
-      .to(prevTitle, { x: "50px" }, 0)
-      .to(prevImg, { scale: "1.2" }, 0)
-      .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
-      .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
-      .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0);
-  } else {
-    return (
-      gsap
-        .timeline({
-          defaults: {
-            duration: 1,
-          },
-        })
-        .to(slides, { x: slidesTo, ease: Power4.easeOut })
-        .to(contentItems, { x: contentItemsTo, ease: Power4.easeOut }, 0)
-        .to(prevSup, { x: "30px" }, 0)
-        .to(prevTitle, { x: "50px" }, 0)
-        .to(prevImg, { scale: "1.2" }, 0)
-        .fromTo(nextSup, { x: "30px" }, { x: "0" }, 0)
-        .fromTo(nextTitle, { x: "50px" }, { x: "0" }, 0)
-        .fromTo(nextImg, { scale: "1.2" }, { scale: "1" }, 0)
-        // .to(foreground, { width: "100%", duration: 0.7, ease: Power4.easeOut }, 0)
-        .to(foreground, { x: "0", duration: 0.7, ease: Power4.easeOut }, 0)
-        .to(
-          foreground,
-          { x: "100vw", duration: 0.5, ease: Power2.easeOut },
-          "-=0.4"
-        )
-        // .to(foreground, { width: "0", duration: 0 })
-        .to(foreground, { x: "-100vw", duration: 0 }, "+=0.5")
-    );
+  if (isForegroundShow) {
+    TL.to(foreground, { x: "0", duration: 0.4, ease: Power4.easeOut }, 0)
+      .to(
+        foreground,
+        { x: "100vw", duration: 0.4, ease: Power2.easeOut },
+        "-=0.4"
+      )
+      .to(foreground, { x: "-100vw", duration: 0 }, "+=0.5");
   }
 }
 
@@ -347,12 +331,17 @@ function createSlidesArray(prevIndex, nextIndex) {
   const allContentItems = Array.from(
     document.querySelectorAll(".intro__content")
   );
-
+  // slides to be moved
   let slides = [];
+  // contentItems to be moved
   let contentItems = [];
+
+  // forward direction
   if (nextIndex > prevIndex) {
     slides = [...allSliderItems.slice(prevIndex + 1, nextIndex + 1)];
     contentItems = [...allContentItems.slice(prevIndex + 1, nextIndex + 1)];
+
+    // backward direction
   } else {
     slides = [...allSliderItems.slice(nextIndex + 1, prevIndex + 1)];
     contentItems = [...allContentItems.slice(nextIndex + 1, prevIndex + 1)];
@@ -367,10 +356,12 @@ function defineAnimatedElements(prevIdx, nextIdx) {
   const prevSlide = slides[prevIdx];
   const nextSlide = slides[nextIdx];
 
+  // elements in previous slide to be move
   const prevSup = prevSlide.querySelector(".intro__suptitle");
   const prevTitle = prevSlide.querySelector(".intro__title");
   const prevImg = prevSlide.querySelector("img");
 
+  // elements in next slide to be move
   const nextSup = nextSlide.querySelector(".intro__suptitle");
   const nextTitle = nextSlide.querySelector(".intro__title");
   const nextImg = nextSlide.querySelector("img");
