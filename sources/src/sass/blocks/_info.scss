@@ -1,0 +1,31 @@
+.info {
+  padding-top: 101px;
+  background-color: var(--white-color);
+}
+
+.info__title {
+  margin-bottom: 94px;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.info__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 45.08% 44.21%;
+  gap: 0 10.71%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 462px;
+    background-color: var(--blue-color);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

@@ -318,7 +318,7 @@ function introSliderAnimation(
     TL.to(foreground, { x: "0", duration: 0.4, ease: Power4.easeOut }, 0)
       .to(
         foreground,
-        { x: "100vw", duration: 0.4, ease: Power2.easeOut },
+        { x: "100vw", duration: 0.7, ease: Power4.easeOut },
         "-=0.4"
       )
       .to(foreground, { x: "-100vw", duration: 0 }, "+=0.5");

@@ -59,9 +59,7 @@ block page
                     .intro__bg
 
                     .intro__descr
-
                         p.intro__sup Take it easy
-
                         p.intro__text Create account
 
                     +icon('intro-arrow-up-45-white')
@@ -76,3 +74,39 @@ block page
                     +introSliderItem(item.url, item.sup, item.title)
 
             .intro__foreground
+
+    section.info
+
+        .container
+
+            h2.info__title Who we are
+
+            .info__container 
+
+                .info__description
+                    p.info__important.
+                        To invest is to allocate money with the expectation of a positive benefit return in the future
+                    p.info__text.
+                        The return may consist of a gain or a loss realized from the sale of a property or an investment
+
+                .info__statiscitc
+
+                    .info__item
+                        p.info__name invested
+                        p.info__value $95m
+                        .info__icon
+                            +picture('info-icon1')
+
+                    .info__item
+                        p.info__name investments
+                        p.info__value 120+
+                        .info__icon
+                            +picture('info-icon1')
+
+                    .info__item
+                        p.info__name years company
+                        p.info__value 10Y
+                        .info__icon
+                            +picture('info-icon1')
+
+

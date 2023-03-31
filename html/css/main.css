@@ -177,12 +177,15 @@ template {
   src: url(../fonts/Compose-Bold.ttf) format("ttf"),url(../fonts/Compose-Bold.woff) format("woff"),url(../../fonts/Compose-Bold.woff2) format("woff2")
 }
 .svg-image-arrow-white-down-45,
+.svg-image-info-icon1,
+.svg-image-info-icon2,
+.svg-image-info-icon3,
 .svg-image-intro-arrow-up-45-white {
   background: url(../images/sprites/main.svg) no-repeat
 }
 .svg-image-arrow-white-down-45 {
   background-position: 100% 0;
-  background-size: 260% auto;
+  background-size: 380% auto;
   width: 25px
 }
 .svg-image-arrow-white-down-45:before {
@@ -196,9 +199,57 @@ template {
   width: 25px;
   height: 24px
 }
+.svg-image-info-icon1 {
+  background-position: 0 100%;
+  background-size: 339.2857142857% auto;
+  width: 28px
+}
+.svg-image-info-icon1:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 100%
+}
+.svg-image-info-icon1-dims {
+  width: 28px;
+  height: 28px
+}
+.svg-image-info-icon2 {
+  background-position: 40.5797101449% 93.023255814%;
+  background-size: 365.3846153846% auto;
+  width: 26px
+}
+.svg-image-info-icon2:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 96.1538461538%
+}
+.svg-image-info-icon2-dims {
+  width: 26px;
+  height: 25px
+}
+.svg-image-info-icon3 {
+  background-position: 61.5384615385% 0;
+  background-size: 316.6666666667% auto;
+  width: 30px
+}
+.svg-image-info-icon3:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 100%
+}
+.svg-image-info-icon3-dims {
+  width: 30px;
+  height: 30px
+}
 .svg-image-intro-arrow-up-45-white {
   background-position: 0 0;
-  background-size: 162.5% auto;
+  background-size: 237.5% auto;
   width: 40px
 }
 .svg-image-intro-arrow-up-45-white:before {
@@ -1184,6 +1235,35 @@ body {
   .intro__title {
     font-size: 50px
   }
+}
+.info {
+  padding-top: 101px;
+  background-color: var(--white-color)
+}
+.info__title {
+  margin-bottom: 94px;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 80%;
+  letter-spacing: -.02em;
+  text-align: center
+}
+.info__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 45.08% 44.21%;
+  gap: 0 10.71%
+}
+.info__container::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 462px;
+  background-color: var(--blue-color);
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%)
 }
 footer {
   padding: 20px
