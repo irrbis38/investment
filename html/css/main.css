@@ -913,7 +913,7 @@ body {
 }
 @media (max-width:768px) {
   .pagination {
-    margin: 0 auto 35px
+    margin: 0 auto 40px
   }
 }
 .pagination__item {
@@ -1043,11 +1043,11 @@ body {
 @media (max-width:768px) {
   .intro__signup {
     width: 100%;
-    min-height: 98px;
+    min-height: 104px;
     padding: 0 34px 0 29px
   }
   .intro__signup span {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     width: 22px;
     height: 22px
   }
@@ -1095,7 +1095,7 @@ body {
 }
 @media (max-width:768px) {
   .intro__text {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     font-size: 26px;
     line-height: 32px
   }
@@ -1228,6 +1228,7 @@ body {
 }
 @media (max-width:768px) {
   .intro__title {
+    margin-bottom: -1px;
     font-size: 60px
   }
 }
@@ -1240,6 +1241,21 @@ body {
   padding-top: 99px;
   background-color: var(--white-color)
 }
+@media (max-width:1280px) {
+  .info {
+    padding-top: 79px
+  }
+}
+@media (max-width:1024px) {
+  .info {
+    padding-top: 59px
+  }
+}
+@media (max-width:576px) {
+  .info {
+    padding-top: 42px
+  }
+}
 .info__title {
   margin-bottom: 94px;
   padding-right: 53px;
@@ -1248,6 +1264,25 @@ body {
   line-height: 80%;
   letter-spacing: -.02em;
   text-align: center
+}
+@media (max-width:1280px) {
+  .info__title {
+    margin-bottom: 74px;
+    font-size: 108px
+  }
+}
+@media (max-width:1024px) {
+  .info__title {
+    margin-bottom: 54px;
+    font-size: 83px
+  }
+}
+@media (max-width:576px) {
+  .info__title {
+    margin-bottom: 34px;
+    padding-right: 0;
+    font-size: 59px
+  }
 }
 .info__container {
   position: relative;
@@ -1266,12 +1301,44 @@ body {
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%)
 }
+@media (max-width:768px) {
+  .info__container {
+    grid-template-columns: 1fr;
+    gap: 0
+  }
+}
+.info__container::after {
+  display: none
+}
+@media (max-width:768px) {
+  .info__description {
+    margin-bottom: 50px
+  }
+}
 .info__important {
   margin-bottom: 51px;
   font-weight: 400;
   font-size: 58px;
   line-height: 100%;
   letter-spacing: -.01em
+}
+@media (max-width:1280px) {
+  .info__important {
+    margin-bottom: 41px;
+    font-size: 50px
+  }
+}
+@media (max-width:1024px) {
+  .info__important {
+    margin-bottom: 31px;
+    font-size: 42px
+  }
+}
+@media (max-width:576px) {
+  .info__important {
+    margin-bottom: 24px;
+    font-size: 34px
+  }
 }
 .info__text {
   max-width: 437px;
@@ -1281,6 +1348,25 @@ body {
   line-height: 100%;
   color: #8187a2
 }
+@media (max-width:1280px) {
+  .info__text {
+    font-size: 22px
+  }
+}
+@media (max-width:1024px) {
+  .info__text {
+    max-width: 260px;
+    margin-left: 10px;
+    font-size: 20px
+  }
+}
+@media (max-width:576px) {
+  .info__text {
+    max-width: 220px;
+    margin-left: 4px;
+    font-size: 17px
+  }
+}
 .info__item {
   display: grid;
   grid-template-columns: 75.12% 24.88%;
@@ -1289,8 +1375,23 @@ body {
 .info__item:not(:last-child) {
   margin-bottom: 41px
 }
+@media (max-width:768px) {
+  .info__item:not(:last-child) {
+    margin-bottom: 32px
+  }
+}
+@media (max-width:768px) {
+  .info__item {
+    grid-template-columns: 78% 22%
+  }
+}
 .info__item:first-child .info__name {
   padding-bottom: 27px
+}
+@media (max-width:768px) {
+  .info__item:first-child .info__name {
+    padding-bottom: 10px
+  }
 }
 .info__item:nth-child(2) .info__name {
   padding-bottom: 10px
@@ -1312,6 +1413,16 @@ body {
   letter-spacing: -.02em;
   border-bottom: 1px solid var(--blue-color)
 }
+@media (max-width:768px) {
+  .info__name {
+    padding-bottom: 12px
+  }
+}
+@media (max-width:576px) {
+  .info__name {
+    font-size: 19px
+  }
+}
 .info__value {
   grid-area: value;
   margin-top: 32px;
@@ -1320,9 +1431,34 @@ body {
   line-height: 80%;
   letter-spacing: -.02em
 }
+@media (max-width:1280px) {
+  .info__value {
+    font-size: 73px
+  }
+}
+@media (max-width:1024px) {
+  .info__value {
+    font-size: 66px
+  }
+}
+@media (max-width:768px) {
+  .info__value {
+    margin-top: 29px
+  }
+}
+@media (max-width:576px) {
+  .info__value {
+    font-size: 60px
+  }
+}
 .info__icon {
   grid-area: icon;
   margin-top: 11px
+}
+@media (max-width:576px) {
+  .info__icon {
+    margin-top: 17px
+  }
 }
 .info__pic {
   width: 67px;
@@ -1341,6 +1477,12 @@ body {
 }
 .info__pic span {
   display: inline-block
+}
+@media (max-width:1024px) {
+  .info__pic {
+    width: 58px;
+    height: 58px
+  }
 }
 footer {
   padding: 20px
