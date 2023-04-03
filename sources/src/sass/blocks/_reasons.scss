@@ -1,0 +1,38 @@
+.reasons {
+  padding-top: 150px;
+}
+
+.reasons__title {
+  max-width: 1500px;
+  margin: 0 auto 37px;
+  padding: 0 63px;
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+
+  @include r(1399px) {
+    padding: 0 40px;
+  }
+
+  @include md {
+    font-size: 100px;
+  }
+
+  @include sm {
+    margin: 0 auto 37px 0;
+    max-width: 460px;
+  }
+
+  @include xs {
+    max-width: 350px;
+    padding: 0 28px;
+    font-size: 80px;
+  }
+
+  @include xxs {
+    max-width: 314px;
+    font-weight: 600;
+    font-size: 60px;
+  }
+}
