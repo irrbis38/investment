@@ -1756,6 +1756,10 @@ body {
   bottom: 0;
   z-index: 10
 }
+.info__club-wrapper:hover .info__create span {
+  -webkit-transform: scale(1.54) rotate(45deg);
+  transform: scale(1.54) rotate(45deg)
+}
 .info__suptitle {
   margin-bottom: 162px;
   font-weight: 500;
@@ -1861,7 +1865,8 @@ body {
 .info__create span {
   display: inline-block;
   width: 26px;
-  height: 26px
+  height: 26px;
+  transition: var(--transition)
 }
 @media (max-width:1280px) {
   .info__create span {

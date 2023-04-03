@@ -493,6 +493,10 @@
     bottom: 0;
     z-index: 10;
   }
+
+  &:hover .info__create span {
+    transform: scale(1.54) rotate(45deg);
+  }
 }
 
 .info__suptitle {
@@ -584,6 +588,7 @@
     display: inline-block;
     width: 26px;
     height: 26px;
+    transition: var(--transition);
 
     @include md {
       width: 22px;
