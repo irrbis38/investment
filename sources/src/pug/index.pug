@@ -42,11 +42,9 @@ block page
                     .pagination__pointer
 
             .intro__bottom
-
                 .container
 
                     .intro__inner
-
                         a.intro__scroll(href="#")
                             span Scroll Down#[br]
                             span to Learn More#[br]
@@ -65,12 +63,9 @@ block page
                     +icon('intro-arrow-up-45-white')
 
         .intro__slider
-
-
             .intro__wrapper
 
                 each item in sliderData
-
                     +introSliderItem(item.url, item.sup, item.title)
 
             .intro__foreground
@@ -118,21 +113,19 @@ block page
             a(href="#")
 
         .info__box
-
             .info__project
 
                 .info__bg
                     +picture('info/info-bg', 'png', 'x2')
 
                 .info__content
-
-                    .container 
-                        p Investment Club
-                        h3 Start ambition project
+                    p Investment Club
+                    h3 Start ambition project
 
             .info__club
 
-                .container
+                .info__club-wrapper
+
                     a(href="#")
 
                     p.info__suptitle Take it easy
@@ -144,5 +137,4 @@ block page
                         +icon('intro-arrow-up-45-white')
 
             .info__phrase
-                .container
-                    span The return may consist of a gain or a loss
+                span The return may consist of a gain or a loss

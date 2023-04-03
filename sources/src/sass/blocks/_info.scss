@@ -259,6 +259,7 @@
     a {
       transform: scale(1.16);
       background-color: var(--blue-color);
+      border-color: var(--blue-color);
     }
 
     span {
@@ -323,16 +324,32 @@
   max-width: 1500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "project club"
+    "phrase club";
   margin: 0 auto;
 }
 
 .info__project,
-.info__club {
+.info__club-wrapper {
   min-height: 594px;
+
+  @include md {
+    min-height: 480px;
+  }
+
+  @include xs {
+    min-height: 365px;
+  }
+
+  @include xxs {
+    min-height: 251px;
+  }
 }
 
 .info__project {
   position: relative;
+  grid-area: project;
 }
 
 .info__bg {
@@ -355,15 +372,31 @@
   position: relative;
   z-index: 2;
   height: 100%;
-  padding: 48px 0 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 0 95px 63px;
   color: var(--white-color);
 
-  .container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+  @include r(1399px) {
+    padding: 48px 0 95px 40px;
+  }
+
+  @include md {
+    padding: 40px 0 72px 40px;
+  }
+
+  @include xs {
+    padding: 33px 0 49px 28px;
+  }
+
+  @include xxs {
+    padding: 25px 0 51px 28px;
+  }
+
+  @include r(350px) {
+    padding: 25px 0 51px 20px;
   }
 
   p {
@@ -372,6 +405,10 @@
     font-size: 15px;
     line-height: 100%;
     letter-spacing: -0.01em;
+
+    @include xs {
+      font-size: 12px;
+    }
   }
 
   h3 {
@@ -380,19 +417,62 @@
     font-size: 80px;
     line-height: 80%;
     letter-spacing: -0.02em;
+
+    @include md {
+      font-size: 65px;
+    }
+
+    @include xs {
+      font-size: 40px;
+    }
+
+    @include xxs {
+      font-size: 34px;
+    }
+
+    @include r(350px) {
+      font-size: 28px;
+    }
   }
 }
 
 .info__club {
+  grid-area: club;
+  padding-top: 150px;
+
+  @include md {
+    padding-top: 138px;
+  }
+
+  @include xs {
+    padding-top: 126px;
+  }
+
+  @include xxs {
+    padding-top: 109px;
+  }
+}
+
+.info__club-wrapper {
   position: relative;
-  padding-top: 142px;
-  padding-left: 94px;
+  padding: 142px 63px 55px 94px;
   color: var(--white-color);
-  transform: translateY(150px);
   background: linear-gradient(132.12deg, #071b64 18.48%, #265792 107.2%);
 
-  .container {
-    padding-left: 0;
+  @include r(1399px) {
+    padding: 142px 40px 55px 94px;
+  }
+
+  @include md {
+    padding: 102px 40px 48px 72px;
+  }
+
+  @include xs {
+    padding: 62px 28px 48px 50px;
+  }
+
+  @include xxs {
+    padding: 24px 28px 43px 25px;
   }
 
   a {
@@ -411,6 +491,18 @@
   font-size: 12px;
   line-height: 15px;
   letter-spacing: -0.01em;
+
+  @include md {
+    margin-bottom: 125px;
+  }
+
+  @include xs {
+    margin-bottom: 88px;
+  }
+
+  @include xxs {
+    margin-bottom: 64px;
+  }
 }
 
 .info__join {
@@ -420,38 +512,93 @@
   font-size: 60px;
   line-height: 80%;
   letter-spacing: -0.02em;
+
+  @include md {
+    margin-bottom: 39px;
+    font-size: 48px;
+  }
+
+  @include xs {
+    margin-bottom: 26px;
+    font-size: 36px;
+  }
+
+  @include xxs {
+    margin-bottom: 15px;
+    font-size: 22px;
+  }
 }
 
 .info__create {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 34px;
   padding-right: 5px;
   border-top: 1px solid var(--white-color);
+
+  @include md {
+    padding-top: 30px;
+  }
+
+  @include xs {
+    padding-top: 26px;
+  }
+
+  @include xxs {
+    padding-top: 21px;
+  }
 
   p {
     font-weight: 700;
     font-size: 30px;
     line-height: 38px;
     letter-spacing: -0.01em;
+
+    @include md {
+      font-size: 26px;
+    }
+
+    @include xs {
+      font-size: 22px;
+    }
+
+    @include xxs {
+      width: min-content;
+      font-size: 16px;
+      line-height: 14px;
+    }
   }
 
   span {
     display: inline-block;
     width: 26px;
     height: 26px;
+
+    @include md {
+      width: 22px;
+      height: 22px;
+    }
+
+    @include xs {
+      width: 19px;
+      height: 19px;
+    }
+
+    @include xxs {
+      width: 15px;
+      height: 15px;
+    }
   }
 }
 
 .info__phrase {
+  grid-area: phrase;
   min-height: 150px;
-
-  .container {
-    height: 100%;
-
-    display: flex;
-    align-items: flex-end;
-  }
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 63px;
 
   span {
     max-width: 135px;
@@ -460,5 +607,34 @@
     font-size: 21px;
     line-height: 100%;
     color: #373f5e;
+  }
+
+  @include r(1399px) {
+    padding-left: 40px;
+  }
+
+  @include md {
+    span {
+      font-size: 18px;
+    }
+  }
+
+  @include xs {
+    min-height: 109px;
+    padding-left: 28px;
+
+    span {
+      font-size: 15px;
+    }
+  }
+
+  @include xxs {
+    span {
+      position: relative;
+      top: 4px;
+      max-width: 95px;
+      margin-left: 3px;
+      font-size: 12px;
+    }
   }
 }
