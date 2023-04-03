@@ -255,10 +255,22 @@
   text-decoration: none;
   border-radius: 50%;
 
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #042185;
+    transition: var(--transition);
+  }
+
   &:hover {
-    a {
+    &::after {
       transform: scale(1.16);
-      background-color: var(--blue-color);
+      background-color: #042185;
       border-color: var(--blue-color);
     }
 
@@ -269,12 +281,13 @@
 
   span {
     position: relative;
-    z-index: 5;
+    z-index: 2;
     width: min-content;
     font-weight: 600;
     font-size: 26px;
     line-height: 80%;
     letter-spacing: -0.02em;
+    text-align: center;
     transition: var(--transition);
   }
 
@@ -282,12 +295,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    border: 2px solid #042185;
-    transition: var(--transition);
+    z-index: 3;
+    width: 100%;
+    height: 100%;
   }
 
   @include md {
@@ -638,3 +648,13 @@
     }
   }
 }
+
+// .info__club-wrapper {
+//   background: linear-gradient(277.24deg, #071B64 33.49%, #265792 104.72%);
+//   background: linear-gradient(277.66deg, #071B64 -57.44%, #3368A5 105.08%);
+
+//   //////////////////////////
+//   ///
+//   background: linear-gradient(132.12deg, #071B64 18.48%, #265792 107.2%);
+//   background: linear-gradient(132.12deg, #071B64 18.48%, #265792 107.2%);
+// }
