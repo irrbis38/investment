@@ -2557,47 +2557,192 @@ body {
     font-size: 12px
   }
 }
-.reasons {
-  padding-top: 150px
+.resons {
+  position: relative;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding-top: 84px;
+  padding-left: 63px
 }
-.reasons__title {
+@media only screen and (max-width:1399px) {
+  .resons {
+    padding-lefet: 40px
+  }
+}
+@media (max-width:768px) {
+  .resons {
+    padding-left: 28px
+  }
+}
+.resons__bg {
+  position: absolute;
+  top: 380px;
+  right: 499px;
+  z-index: -1;
+  width: 151px;
+  height: 90px;
+  border-radius: 50%;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  background-color: rgba(4,33,133,.07);
+  box-shadow: 0 0 500px 300px rgba(4,33,133,.07)
+}
+.resons__title {
   max-width: 1500px;
   margin: 0 auto 37px;
-  padding: 0 63px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 140px;
   line-height: 80%;
   letter-spacing: -.02em
 }
-@media only screen and (max-width:1399px) {
-  .reasons__title {
-    padding: 0 40px
-  }
-}
 @media (max-width:1280px) {
-  .reasons__title {
+  .resons__title {
     font-size: 100px
   }
 }
 @media (max-width:1024px) {
-  .reasons__title {
+  .resons__title {
     margin: 0 auto 37px 0;
     max-width: 460px
   }
 }
 @media (max-width:768px) {
-  .reasons__title {
+  .resons__title {
     max-width: 350px;
-    padding: 0 28px;
     font-size: 80px
   }
 }
 @media (max-width:576px) {
-  .reasons__title {
+  .resons__title {
     max-width: 314px;
-    font-weight: 600;
     font-size: 60px
   }
+}
+.resons__slider {
+  overflow: hidden
+}
+.resons__slide {
+  width: 408px;
+  min-height: 400px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 38px 45px 54px 51px;
+  background-color: var(--white-color)
+}
+.resons__descr,
+.resons__pictogram {
+  position: relative;
+  z-index: 1
+}
+.resons__descr {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2
+}
+.resons__pictogram {
+  z-index: 2;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1
+}
+.resons__heading {
+  max-width: 258px;
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 100%;
+  letter-spacing: -.02em
+}
+.resons__text {
+  max-width: 210px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -.01em;
+  color: #a1a8c1
+}
+.resons__icon {
+  width: 125px;
+  height: 125px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(127.65deg,#00114f -9.03%,#2769a7 107.68%)
+}
+.resons__info,
+.resons__value {
+  width: 100%;
+  color: var(--white-color);
+  text-align: center
+}
+.resons__value {
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 80%;
+  letter-spacing: -.06em
+}
+.resons__info {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: -.01em
+}
+.resons__slide.active {
+  padding-top: 67px;
+  padding-bottom: 28px
+}
+.resons__slide.active .resons__descr {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1
+}
+.resons__slide.active .resons__pictogram {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2
+}
+.resons__slide.active .resons__heading {
+  max-width: 252px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 100%;
+  letter-spacing: -.01em
+}
+.resons__slide.active .resons__icon {
+  width: 202px;
+  height: 202px;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 footer {
   padding: 20px

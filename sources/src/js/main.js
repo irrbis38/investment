@@ -80,6 +80,8 @@ function introInit() {
   nextBtn.addEventListener("click", () => {
     introAnimationByNext(pagItems);
   });
+
+  resonsSliderInit();
 }
 
 function introSignupHandler() {
@@ -376,4 +378,31 @@ function defineAnimatedElements(prevIdx, nextIdx) {
   };
 
   return items;
+}
+
+function resonsSliderInit() {
+  const resonsSlider = document.querySelector(".resons__slider");
+
+  const swiper = new Swiper(".resons__slider", {
+    // Optional parameters
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 38,
+
+    // If we need pagination
+    // pagination: {
+    //   el: '.swiper-pagination',
+    // },
+
+    // // Navigation arrows
+    // navigation: {
+    //   nextEl: '.swiper-button-next',
+    //   prevEl: '.swiper-button-prev',
+    // },
+
+    // // And if we need scrollbar
+    // scrollbar: {
+    //   el: '.swiper-scrollbar',
+    // },
+  });
 }
