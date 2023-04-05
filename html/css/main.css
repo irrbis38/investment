@@ -2620,8 +2620,64 @@ body {
     font-size: 60px
   }
 }
+.resons__container {
+  position: relative
+}
 .resons__slider {
   overflow: hidden
+}
+.resons__drag {
+  position: absolute;
+  bottom: 0;
+  left: 816px;
+  z-index: 10;
+  width: 114px;
+  height: 114px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #dfe2ef;
+  border-radius: 50%;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  pointer-events: none
+}
+.resons__drag span {
+  position: relative;
+  padding: 0 14px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 100%;
+  letter-spacing: -.02em
+}
+.resons__drag span::after,
+.resons__drag span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #00114f
+}
+.resons__drag span:after {
+  left: 0;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+  transform: rotate(45deg) translateY(-50%);
+  border-top: none;
+  border-right: none
+}
+.resons__drag span::before {
+  right: 0;
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+  transform: rotate(-45deg) translateY(-50%);
+  border-top: none;
+  border-left: none
 }
 .resons__slide {
   width: 408px;
@@ -2709,21 +2765,24 @@ body {
   line-height: 100%;
   letter-spacing: -.01em
 }
-.resons__slide.active {
+.resons__slide.resons__slide--first {
   padding-top: 67px;
-  padding-bottom: 28px
+  padding-bottom: 28px;
+  padding-right: 53px
 }
-.resons__slide.active .resons__descr {
+.resons__slide.resons__slide--first .resons__descr {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1
 }
-.resons__slide.active .resons__pictogram {
+.resons__slide.resons__slide--first .resons__pictogram {
   -webkit-order: 2;
   -ms-flex-order: 2;
-  order: 2
+  order: 2;
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px)
 }
-.resons__slide.active .resons__heading {
+.resons__slide.resons__slide--first .resons__heading {
   max-width: 252px;
   margin-bottom: 25px;
   font-weight: 600;
@@ -2731,7 +2790,7 @@ body {
   line-height: 100%;
   letter-spacing: -.01em
 }
-.resons__slide.active .resons__icon {
+.resons__slide.resons__slide--first .resons__icon {
   width: 202px;
   height: 202px;
   -webkit-flex-direction: column;
@@ -2742,7 +2801,8 @@ body {
   justify-content: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center
+  align-items: center;
+  gap: 15px 0
 }
 footer {
   padding: 20px
