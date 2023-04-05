@@ -388,6 +388,7 @@ function resonsSliderInit() {
     loop: false,
     slidesPerView: "auto",
     spaceBetween: 38,
+    grabCursor: true,
 
     // If we need pagination
     // pagination: {

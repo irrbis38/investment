@@ -27,9 +27,11 @@
   transform-origin: top right;
   transform: rotate(-40deg);
   // background: radial-gradient(rgba(4, 33, 133, 0.07), rgba(4, 33, 133, 0));
+  ///////////////////////////
   // background-color: #f00;
-  background-color: rgba(4, 33, 133, 0.07);
   // box-shadow: 0 0 500px 300px #f00;
+  ///////////////////////////////
+  background-color: rgba(4, 33, 133, 0.07);
   box-shadow: 0 0 500px 300px rgba(4, 33, 133, 0.07);
 }
 
@@ -46,7 +48,7 @@
   }
 
   @include sm {
-    margin: 0 auto 37px 0;
+    margin: 0 auto 26px 0;
     max-width: 460px;
   }
 
@@ -84,6 +86,14 @@
   transform: translateY(55%);
   pointer-events: none;
 
+  @include md {
+    left: 655px;
+  }
+
+  @include sm {
+    display: none;
+  }
+
   span {
     position: relative;
     padding: 0 20px;
@@ -120,12 +130,23 @@
 
 .resons__slide {
   width: 408px;
-  min-height: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 38px 45px 54px 51px;
   background-color: var(--white-color);
+
+  @include md {
+    width: 327px;
+    height: 318px;
+  }
+
+  @include xs {
+    padding: 24px 71px 30px 26px;
+    width: 245px;
+    height: 235px;
+  }
 }
 
 .resons__descr,
@@ -143,6 +164,10 @@
   display: flex;
   justify-content: flex-end;
   order: 1;
+
+  @include xs {
+    justify-content: flex-start;
+  }
 }
 
 .resons__heading {
@@ -152,6 +177,15 @@
   font-size: 34px;
   line-height: 100%;
   letter-spacing: -0.02em;
+
+  @include md {
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+
+  @include xs {
+    font-size: 18px;
+  }
 }
 
 .resons__text {
@@ -161,6 +195,16 @@
   line-height: 100%;
   letter-spacing: -0.01em;
   color: #a1a8c1;
+
+  @include md {
+    max-width: 180px;
+    font-size: 12px;
+  }
+
+  @include xs {
+    max-width: 150px;
+    font-size: 10px;
+  }
 }
 
 .resons__icon {
@@ -171,6 +215,26 @@
   align-items: center;
   border-radius: 50%;
   background: linear-gradient(127.65deg, #00114f -9.03%, #2769a7 107.68%);
+
+  @include md {
+    width: 94px;
+    height: 94px;
+  }
+
+  @include xs {
+    width: 63px;
+    height: 63px;
+  }
+
+  img {
+    @include md {
+      transform: scale(0.75);
+    }
+
+    @include xs {
+      transform: scale(0.5);
+    }
+  }
 }
 
 .resons__value,
@@ -185,6 +249,14 @@
   font-size: 80px;
   line-height: 80%;
   letter-spacing: -0.06em;
+
+  @include md {
+    font-size: 65px;
+  }
+
+  @include xs {
+    font-size: 50px;
+  }
 }
 
 .resons__info {
@@ -192,12 +264,28 @@
   font-size: 13px;
   line-height: 100%;
   letter-spacing: -0.01em;
+
+  @include md {
+    font-size: 11px;
+  }
+
+  @include xs {
+    font-size: 8px;
+  }
 }
 
+// first resons slide
+
 .resons__slide.resons__slide--first {
-  padding-top: 67px;
-  padding-bottom: 28px;
-  padding-right: 53px;
+  padding: 67px 53px 28px 51px;
+
+  @include md {
+    padding: 45px 37px 22px 37px;
+  }
+
+  @include xs {
+    padding: 20px 21px 12px 24px;
+  }
 
   .resons__descr {
     order: 1;
@@ -206,6 +294,7 @@
   .resons__pictogram {
     order: 2;
     transform: translateY(-5px);
+    justify-content: flex-end;
   }
 
   .resons__heading {
@@ -215,6 +304,18 @@
     font-size: 25px;
     line-height: 100%;
     letter-spacing: -0.01em;
+
+    @include md {
+      max-width: 215px;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    @include xs {
+      max-width: 165px;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
   }
 
   .resons__icon {
@@ -224,5 +325,16 @@
     justify-content: center;
     align-items: center;
     gap: 15px 0;
+
+    @include md {
+      width: 164px;
+      height: 164px;
+    }
+
+    @include xs {
+      width: 126px;
+      height: 126px;
+      gap: 10px 0;
+    }
   }
 }
