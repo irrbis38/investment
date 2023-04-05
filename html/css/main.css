@@ -2644,13 +2644,13 @@ body {
   align-items: center;
   background-color: #dfe2ef;
   border-radius: 50%;
-  -webkit-transform: translateY(50%);
-  transform: translateY(50%);
+  -webkit-transform: translateY(55%);
+  transform: translateY(55%);
   pointer-events: none
 }
 .resons__drag span {
   position: relative;
-  padding: 0 14px;
+  padding: 0 20px;
   font-weight: 400;
   font-size: 17px;
   line-height: 100%;
