@@ -381,14 +381,16 @@ function defineAnimatedElements(prevIdx, nextIdx) {
 }
 
 function resonsSliderInit() {
-  const resonsSlider = document.querySelector(".resons__slider");
-
   const swiper = new Swiper(".resons__slider", {
     // Optional parameters
     loop: false,
     slidesPerView: "auto",
     spaceBetween: 38,
     grabCursor: true,
+    scrollbar: {
+      el: ".resons__scrollbar",
+      draggable: true,
+    },
 
     // If we need pagination
     // pagination: {

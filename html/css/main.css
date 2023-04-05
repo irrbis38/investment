@@ -2621,7 +2621,8 @@ body {
   }
 }
 .resons__container {
-  position: relative
+  position: relative;
+  margin-bottom: 72px
 }
 .resons__slider {
   overflow: hidden
@@ -2938,6 +2939,14 @@ body {
     height: 126px;
     gap: 10px 0
   }
+}
+.resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -72px;
+  background-color: transparent
+}
+.swiper-scrollbar-drag {
+  background: var(--blue-color);
+  border-radius: 20px
 }
 footer {
   padding: 20px

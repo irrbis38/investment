@@ -65,6 +65,8 @@
 
 .resons__container {
   position: relative;
+  // margin needs for slider scrollbar
+  margin-bottom: 72px;
 }
 
 .resons__slider {
@@ -337,4 +339,14 @@
       gap: 10px 0;
     }
   }
+}
+
+.resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: -72px;
+  background-color: transparent;
+}
+
+.swiper-scrollbar-drag {
+  background: var(--blue-color);
+  border-radius: 20px;
 }
