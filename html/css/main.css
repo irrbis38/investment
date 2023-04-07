@@ -2391,7 +2391,6 @@ body {
   }
 }
 .info__club-wrapper {
-  position: relative;
   padding: 142px 63px 55px 94px;
   color: var(--white-color);
   background: linear-gradient(132.12deg,#071b64 18.48%,#265792 107.2%)
@@ -2415,18 +2414,6 @@ body {
   .info__club-wrapper {
     padding: 24px 28px 43px 25px
   }
-}
-.info__club-wrapper a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10
-}
-.info__club-wrapper:hover .info__create span {
-  -webkit-transform: scale(1.54) rotate(45deg);
-  transform: scale(1.54) rotate(45deg)
 }
 .info__suptitle {
   margin-bottom: 162px;
@@ -2477,6 +2464,7 @@ body {
   }
 }
 .info__create {
+  position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2488,7 +2476,8 @@ body {
   align-items: center;
   padding-top: 34px;
   padding-right: 5px;
-  border-top: 1px solid var(--white-color)
+  border-top: 1px solid var(--white-color);
+  cursor: pointer
 }
 @media (max-width:1280px) {
   .info__create {
@@ -2553,6 +2542,18 @@ body {
     width: 15px;
     height: 15px
   }
+}
+.info__create a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10
+}
+.info__create:hover span {
+  -webkit-transform: scale(1.54) rotate(45deg);
+  transform: scale(1.54) rotate(45deg)
 }
 .info__phrase {
   grid-area: phrase;
@@ -2997,6 +2998,21 @@ body {
   position: relative;
   padding: 150px 0 70px
 }
+@media (max-width:1024px) {
+  .statistics {
+    padding: 140px 0 70px
+  }
+}
+@media (max-width:768px) {
+  .statistics {
+    padding: 100px 0 50px
+  }
+}
+@media (max-width:768px) {
+  .statistics {
+    padding: 79px 0 23px
+  }
+}
 .stastatistics__bg {
   position: absolute;
   top: 0;
@@ -3022,10 +3038,35 @@ body {
   gap: 72px 160px;
   padding-left: 38px
 }
+@media (max-width:1024px) {
+  .statistics__container {
+    gap: 60px 150px
+  }
+}
+@media (max-width:768px) {
+  .statistics__container {
+    padding-left: 0;
+    gap: 40px 60px
+  }
+}
+@media (max-width:576px) {
+  .statistics__container {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "text" "portfolio";
+    gap: 0
+  }
+}
 .statistics__title {
+  grid-area: title;
   padding-bottom: 38px;
-  border-bottom: 1px solid var(--white-color);
-  grid-area: title
+  border-bottom: 1px solid var(--white-color)
+}
+@media (max-width:576px) {
+  .statistics__title {
+    margin-bottom: 31px;
+    padding-bottom: 0;
+    border-bottom: none
+  }
 }
 .statistics__title h2 {
   max-width: 630px;
@@ -3035,9 +3076,32 @@ body {
   letter-spacing: -.015em;
   color: var(--white-color)
 }
+@media (max-width:1024px) {
+  .statistics__title h2 {
+    font-size: 60px
+  }
+}
+@media (max-width:768px) {
+  .statistics__title h2 {
+    max-width: 490px;
+    font-size: 46px
+  }
+}
+@media (max-width:576px) {
+  .statistics__title h2 {
+    max-width: 220px;
+    font-size: 34px;
+    line-height: 90%
+  }
+}
 .statistics__portfolio {
   grid-area: portfolio;
   padding-left: 5px
+}
+@media (max-width:576px) {
+  .statistics__portfolio {
+    border-top: 1px solid var(--white-color)
+  }
 }
 .statistics__link {
   width: -webkit-max-content;
@@ -3058,11 +3122,40 @@ body {
   text-decoration: none;
   color: var(--white-color)
 }
+@media (max-width:768px) {
+  .statistics__link {
+    gap: 0 45px
+  }
+}
+@media (max-width:576px) {
+  .statistics__link {
+    position: relative;
+    width: 100%;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: 26px;
+    font-size: 22px;
+    line-height: 28px
+  }
+  .statistics__link span:first-child {
+    position: relative;
+    right: 21px;
+    letter-spacing: -.005em
+  }
+}
 .statistics__link span:last-child {
   display: block;
   width: 26px;
   height: 26px;
   transition: var(--transition)
+}
+@media (max-width:576px) {
+  .statistics__link span:last-child {
+    position: absolute;
+    top: 50%;
+    right: 4px
+  }
 }
 .statistics__link:hover span:last-child {
   -webkit-transform: scale(1.54) rotate(45deg);
@@ -3075,6 +3168,13 @@ body {
   font-size: 17px;
   line-height: 100%;
   color: #a8adc1
+}
+@media (max-width:576px) {
+  .statistics__text {
+    max-width: 210px;
+    margin-bottom: 60px;
+    padding-left: 22px
+  }
 }
 footer {
   padding: 20px

@@ -511,7 +511,7 @@
 }
 
 .info__club-wrapper {
-  position: relative;
+  // position: relative;
   padding: 142px 63px 55px 94px;
   color: var(--white-color);
   background: linear-gradient(132.12deg, #071b64 18.48%, #265792 107.2%);
@@ -530,19 +530,6 @@
 
   @include xxs {
     padding: 24px 28px 43px 25px;
-  }
-
-  a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-  }
-
-  &:hover .info__create span {
-    transform: scale(1.54) rotate(45deg);
   }
 }
 
@@ -591,12 +578,14 @@
 }
 
 .info__create {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 34px;
   padding-right: 5px;
   border-top: 1px solid var(--white-color);
+  cursor: pointer;
 
   @include md {
     padding-top: 30px;
@@ -651,6 +640,19 @@
       width: 15px;
       height: 15px;
     }
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  &:hover span {
+    transform: scale(1.54) rotate(45deg);
   }
 }
 
