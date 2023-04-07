@@ -2,15 +2,15 @@
   position: relative;
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 84px;
-  padding-left: 63px;
+  padding: 84px 0 54px 63px;
 
   @include r(1399px) {
-    padding-lefet: 40px;
+    padding-left: 40px;
   }
 
   @include xs {
     padding-left: 28px;
+    padding: 84px 0 57px 28px;
   }
 }
 

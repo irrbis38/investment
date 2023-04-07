@@ -202,3 +202,22 @@ block page
                                 img(src="./images/resons/resons-4.svg" alt="Capital group portfolio")
 
             .swiper-scrollbar.resons__scrollbar
+
+    section.statistics
+
+        .stastatistics__bg
+            +picture('statistics/statistics-bg', 'png', 'x2')
+
+        .container
+
+            .statistics__container
+
+                .statistics__title
+                    h2 We already invested into 2,023 startups
+
+                .statistics__portfolio
+                    a.statistics__link(href="#")
+                        span Our portfolio
+                        +icon('intro-arrow-up-45-white')
+
+                p.statistics__text The return may consist of a gain or a loss

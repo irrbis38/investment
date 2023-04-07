@@ -2606,17 +2606,17 @@ body {
   position: relative;
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 84px;
-  padding-left: 63px
+  padding: 84px 0 54px 63px
 }
 @media only screen and (max-width:1399px) {
   .resons {
-    padding-lefet: 40px
+    padding-left: 40px
   }
 }
 @media (max-width:768px) {
   .resons {
-    padding-left: 28px
+    padding-left: 28px;
+    padding: 84px 0 57px 28px
   }
 }
 .resons__bg {
@@ -2992,6 +2992,89 @@ body {
 .swiper-scrollbar-drag {
   background: var(--blue-color);
   border-radius: 20px
+}
+.statistics {
+  position: relative;
+  padding: 150px 0 70px
+}
+.stastatistics__bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: -1;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%
+}
+.stastatistics__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.statistics__container {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas: "title title" "portfolio text";
+  gap: 72px 160px;
+  padding-left: 38px
+}
+.statistics__title {
+  padding-bottom: 38px;
+  border-bottom: 1px solid var(--white-color);
+  grid-area: title
+}
+.statistics__title h2 {
+  max-width: 630px;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 100%;
+  letter-spacing: -.015em;
+  color: var(--white-color)
+}
+.statistics__portfolio {
+  grid-area: portfolio;
+  padding-left: 5px
+}
+.statistics__link {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  grid-area: link;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 0 60px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  color: var(--white-color)
+}
+.statistics__link span:last-child {
+  display: block;
+  width: 26px;
+  height: 26px;
+  transition: var(--transition)
+}
+.statistics__link:hover span:last-child {
+  -webkit-transform: scale(1.54) rotate(45deg);
+  transform: scale(1.54) rotate(45deg)
+}
+.statistics__text {
+  grid-area: text;
+  max-width: 190px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 100%;
+  color: #a8adc1
 }
 footer {
   padding: 20px
