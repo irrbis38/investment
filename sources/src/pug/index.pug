@@ -6,7 +6,7 @@ block header
 block page
 
     -
-        const sliderData = [ {
+        const introSliderData = [ {
             url: 'intro/intro-bg1',
             sup: 'Begin your investment',
             title: 'Investment<br>in Most Ambitious<br>Projects'
@@ -20,6 +20,14 @@ block page
                 title: 'With a good<br>perspective,<br>on your own history'
             },
         ]
+
+        const infoCenterSliderData = [
+            'infoCenter/ic-1',
+            'infoCenter/ic-2',
+            'infoCenter/ic-3',
+            'infoCenter/ic-1',
+            'infoCenter/ic-2'
+        ];
 
     section.intro
 
@@ -65,7 +73,7 @@ block page
         .intro__slider
             .intro__wrapper
 
-                each item in sliderData
+                each item in introSliderData
                     +introSliderItem(item.url, item.sup, item.title)
 
             .intro__foreground
@@ -221,3 +229,22 @@ block page
                         +icon('intro-arrow-up-45-white')
 
                 p.statistics__text The return may consist of a gain or a loss
+
+    section.ic
+        .ic__container 
+
+            .ic__descr
+                p.ic__suptitle Investment Club
+                h2.ic__title Info Center
+
+            .ic__slider-container
+                .ic__slider.swiper
+                    .ic__wrapper.swiper-wrapper
+
+                        each item of infoCenterSliderData
+                            +infoCenterSliderItem(item)
+
+            .ic__nav
+                .info__more.ic__more
+                    span Show more
+                    a(href="#")

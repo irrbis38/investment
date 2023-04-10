@@ -6,13 +6,13 @@
 
 .svg-image-arrow-white-down-45 {
 	@extend %svg-common;
-	background-position: 100% 0;
-	background-size: math.div(95, 25)*100% auto;
+	background-position: 98.80952380952381% 51.02040816326531%;
+	background-size: math.div(109, 25)*100% auto;
 	width: 25px;
 
 }
 @mixin svg-pos-image-arrow-white-down-45 {
-	background-position: 100% 0;
+	background-position: 98.80952380952381% 51.02040816326531%;
 }
 @mixin svg-image-arrow-white-down-45-hover {
 	.svg-image-arrow-white-down-45 {
@@ -33,15 +33,44 @@
 	height: 24px;
 }
 
+.svg-image-ic-arrow {
+	@extend %svg-common;
+	background-position: 0 0;
+	background-size: math.div(109, 43)*100% auto;
+	width: 43px;
+
+}
+@mixin svg-pos-image-ic-arrow {
+	background-position: 0 0;
+}
+@mixin svg-image-ic-arrow-hover {
+	.svg-image-ic-arrow {
+		@include svg-pos-image-ic-arrow-hover
+	}
+}
+
+.svg-image-ic-arrow:before {
+	content:"";
+	display:block;
+	font-size:0;
+	line-height:0;
+	padding-top: math.div(43, 43)*100%;
+}
+
+.svg-image-ic-arrow-dims {
+	width: 43px;
+	height: 43px;
+}
+
 .svg-image-info-icon1 {
 	@extend %svg-common;
-	background-position: 0 100%;
-	background-size: math.div(95, 28)*100% auto;
+	background-position: 37.03703703703704% 95.55555555555556%;
+	background-size: math.div(109, 28)*100% auto;
 	width: 28px;
 
 }
 @mixin svg-pos-image-info-icon1 {
-	background-position: 0 100%;
+	background-position: 37.03703703703704% 95.55555555555556%;
 }
 @mixin svg-image-info-icon1-hover {
 	.svg-image-info-icon1 {
@@ -64,13 +93,13 @@
 
 .svg-image-info-icon2 {
 	@extend %svg-common;
-	background-position: 40.57971014492754% 93.02325581395348%;
-	background-size: math.div(95, 26)*100% auto;
+	background-position: 100% 0;
+	background-size: math.div(109, 26)*100% auto;
 	width: 26px;
 
 }
 @mixin svg-pos-image-info-icon2 {
-	background-position: 40.57971014492754% 93.02325581395348%;
+	background-position: 100% 0;
 }
 @mixin svg-image-info-icon2-hover {
 	.svg-image-info-icon2 {
@@ -93,13 +122,13 @@
 
 .svg-image-info-icon3 {
 	@extend %svg-common;
-	background-position: 61.53846153846154% 0;
-	background-size: math.div(95, 30)*100% auto;
+	background-position: 0 100%;
+	background-size: math.div(109, 30)*100% auto;
 	width: 30px;
 
 }
 @mixin svg-pos-image-info-icon3 {
-	background-position: 61.53846153846154% 0;
+	background-position: 0 100%;
 }
 @mixin svg-image-info-icon3-hover {
 	.svg-image-info-icon3 {
@@ -122,13 +151,13 @@
 
 .svg-image-intro-arrow-up-45-white {
 	@extend %svg-common;
-	background-position: 0 0;
-	background-size: math.div(95, 40)*100% auto;
+	background-position: 62.31884057971015% 0;
+	background-size: math.div(109, 40)*100% auto;
 	width: 40px;
 
 }
 @mixin svg-pos-image-intro-arrow-up-45-white {
-	background-position: 0 0;
+	background-position: 62.31884057971015% 0;
 }
 @mixin svg-image-intro-arrow-up-45-white-hover {
 	.svg-image-intro-arrow-up-45-white {

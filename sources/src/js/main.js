@@ -82,6 +82,7 @@ function introInit() {
   });
 
   resonsSliderInit();
+  infoCenterSliderInit();
 }
 
 function introSignupHandler() {
@@ -407,5 +408,14 @@ function resonsSliderInit() {
     // scrollbar: {
     //   el: '.swiper-scrollbar',
     // },
+  });
+}
+
+function infoCenterSliderInit() {
+  const swiper = new Swiper(".ic__slider", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 59,
+    grabCursor: true,
   });
 }

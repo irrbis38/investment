@@ -800,6 +800,7 @@ template {
   src: url(../fonts/Compose-Bold.ttf) format("ttf"),url(../fonts/Compose-Bold.woff) format("woff"),url(../../fonts/Compose-Bold.woff2) format("woff2")
 }
 .svg-image-arrow-white-down-45,
+.svg-image-ic-arrow,
 .svg-image-info-icon1,
 .svg-image-info-icon2,
 .svg-image-info-icon3,
@@ -807,8 +808,8 @@ template {
   background: url(../images/sprites/main.svg) no-repeat
 }
 .svg-image-arrow-white-down-45 {
-  background-position: 100% 0;
-  background-size: 380% auto;
+  background-position: 98.8095238095% 51.0204081633%;
+  background-size: 436% auto;
   width: 25px
 }
 .svg-image-arrow-white-down-45:before {
@@ -822,9 +823,25 @@ template {
   width: 25px;
   height: 24px
 }
+.svg-image-ic-arrow {
+  background-position: 0 0;
+  background-size: 253.488372093% auto;
+  width: 43px
+}
+.svg-image-ic-arrow:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 100%
+}
+.svg-image-ic-arrow-dims {
+  width: 43px;
+  height: 43px
+}
 .svg-image-info-icon1 {
-  background-position: 0 100%;
-  background-size: 339.2857142857% auto;
+  background-position: 37.037037037% 95.5555555556%;
+  background-size: 389.2857142857% auto;
   width: 28px
 }
 .svg-image-info-icon1:before {
@@ -839,8 +856,8 @@ template {
   height: 28px
 }
 .svg-image-info-icon2 {
-  background-position: 40.5797101449% 93.023255814%;
-  background-size: 365.3846153846% auto;
+  background-position: 100% 0;
+  background-size: 419.2307692308% auto;
   width: 26px
 }
 .svg-image-info-icon2:before {
@@ -855,8 +872,8 @@ template {
   height: 25px
 }
 .svg-image-info-icon3 {
-  background-position: 61.5384615385% 0;
-  background-size: 316.6666666667% auto;
+  background-position: 0 100%;
+  background-size: 363.3333333333% auto;
   width: 30px
 }
 .svg-image-info-icon3:before {
@@ -871,8 +888,8 @@ template {
   height: 30px
 }
 .svg-image-intro-arrow-up-45-white {
-  background-position: 0 0;
-  background-size: 237.5% auto;
+  background-position: 62.3188405797% 0;
+  background-size: 272.5% auto;
   width: 40px
 }
 .svg-image-intro-arrow-up-45-white:before {
@@ -3175,6 +3192,106 @@ body {
     margin-bottom: 60px;
     padding-left: 22px
   }
+}
+.ic {
+  padding: 168px 0 37px
+}
+.ic__container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 30% 67.87%;
+  grid-template-areas: "title slider" "nav nav";
+  gap: 18px 2.23%
+}
+.ic__descr {
+  grid-area: title
+}
+.ic__slider-container {
+  grid-area: slider
+}
+.ic__nav {
+  grid-area: nav
+}
+.ic__descr {
+  padding-left: 55px
+}
+.ic__suptitle {
+  max-width: 81px;
+  margin-top: 5px;
+  margin-bottom: 46px;
+  padding-left: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 117.3%;
+  letter-spacing: -.01em;
+  color: #737c9d
+}
+.ic__title {
+  max-width: 400px;
+  font-weight: 600;
+  font-size: 110px;
+  line-height: 80%;
+  letter-spacing: -.02em
+}
+.ic__slider {
+  overflow: hidden
+}
+.ic__slide {
+  width: 418px
+}
+.ic__picture {
+  height: 299px;
+  margin-bottom: 40px
+}
+.ic__picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.ic__detail {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 35px;
+  padding-bottom: 32px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #d5d6d9
+}
+.ic__detail p {
+  max-width: 235px;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 100%;
+  letter-spacing: -.02em
+}
+.ic__detail .svg-image-ic-arrow {
+  transition: var(--transition)
+}
+.ic__detail:hover .svg-image-ic-arrow {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+.ic__subtitle {
+  max-width: 314px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  letter-spacing: -.02em;
+  color: #737c9d
+}
+.ic__more {
+  position: relative;
+  left: 38px
 }
 footer {
   padding: 20px
