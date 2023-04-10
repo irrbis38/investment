@@ -2725,7 +2725,7 @@ body {
 .resons__drag span {
   position: relative;
   padding: 0 20px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 17px;
   line-height: 100%;
   letter-spacing: -.02em
@@ -3194,7 +3194,7 @@ body {
   }
 }
 .ic {
-  padding: 168px 0 37px
+  padding: 168px 0 0
 }
 .ic__container {
   max-width: 1500px;
@@ -3233,6 +3233,15 @@ body {
   font-size: 110px;
   line-height: 80%;
   letter-spacing: -.02em
+}
+.ic__slider-container {
+  position: relative
+}
+.resons__drag.ic__drag {
+  left: unset;
+  bottom: unset;
+  top: 28px;
+  right: 83px
 }
 .ic__slider {
   overflow: hidden
@@ -3291,7 +3300,11 @@ body {
 }
 .ic__more {
   position: relative;
-  left: 38px
+  left: 38px;
+  margin-bottom: 37px
+}
+.ic__line {
+  border-bottom: 1px solid var(--blue-color)
 }
 footer {
   padding: 20px

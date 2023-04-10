@@ -1,7 +1,7 @@
 // info center styles
 
 .ic {
-  padding: 168px 0 37px;
+  padding: 168px 0 0;
 }
 
 .ic__container {
@@ -49,6 +49,17 @@
   font-size: 110px;
   line-height: 80%;
   letter-spacing: -0.02em;
+}
+
+.ic__slider-container {
+  position: relative;
+}
+
+.resons__drag.ic__drag {
+  left: unset;
+  bottom: unset;
+  top: 28px;
+  right: 83px;
 }
 
 .ic__slider {
@@ -112,4 +123,9 @@
 .ic__more {
   position: relative;
   left: 38px;
+  margin-bottom: 37px;
+}
+
+.ic__line {
+  border-bottom: 1px solid var(--blue-color);
 }
