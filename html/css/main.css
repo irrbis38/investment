@@ -2768,6 +2768,19 @@ body {
   padding: 38px 45px 54px 51px;
   background-color: var(--white-color)
 }
+.resons__slide:last-child {
+  margin-right: 63px
+}
+@media only screen and (max-width:1399px) {
+  .resons__slide:last-child {
+    margin-right: 40px
+  }
+}
+@media (max-width:768px) {
+  .resons__slide:last-child {
+    margin-right: 28px
+  }
+}
 @media (max-width:1280px) {
   .resons__slide {
     width: 327px;
@@ -3005,7 +3018,18 @@ body {
 }
 .resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
   bottom: -72px;
-  background-color: transparent
+  background-color: transparent;
+  width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%) - 63px)
+}
+@media only screen and (max-width:1399px) {
+  .resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
+    width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%) - 40px)
+  }
+}
+@media (max-width:768px) {
+  .resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
+    width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%) - 28px)
+  }
 }
 .resons__container .swiper-scrollbar-drag {
   background: var(--blue-color);

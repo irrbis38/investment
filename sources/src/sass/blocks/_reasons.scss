@@ -136,6 +136,18 @@
   padding: 38px 45px 54px 51px;
   background-color: var(--white-color);
 
+  &:last-child {
+    margin-right: 63px;
+
+    @include r(1399px) {
+      margin-right: 40px;
+    }
+
+    @include xs {
+      margin-right: 28px;
+    }
+  }
+
   @include md {
     width: 327px;
     height: 318px;
@@ -342,6 +354,15 @@
   .swiper-scrollbar.swiper-scrollbar-horizontal {
     bottom: -72px;
     background-color: transparent;
+    width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%) - 63px);
+
+    @include r(1399px) {
+      width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%) - 40px);
+    }
+
+    @include xs {
+      width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%) - 28px);
+    }
   }
 
   .swiper-scrollbar-drag {
