@@ -391,6 +391,7 @@ function resonsSliderInit() {
     scrollbar: {
       el: ".resons__scrollbar",
       draggable: true,
+      dragSize: "auto",
     },
 
     // If we need pagination
@@ -415,7 +416,23 @@ function infoCenterSliderInit() {
   const swiper = new Swiper(".ic__slider", {
     loop: false,
     slidesPerView: "auto",
-    spaceBetween: 59,
+    spaceBetween: 36,
     grabCursor: true,
+    scrollbar: {
+      el: ".ic__scrollbar",
+      draggable: true,
+      dragSize: "auto",
+    },
+    breakpoints: {
+      577: {
+        spaceBetween: 43,
+      },
+      769: {
+        spaceBetween: 51,
+      },
+      993: {
+        spaceBetween: 59,
+      },
+    },
   });
 }

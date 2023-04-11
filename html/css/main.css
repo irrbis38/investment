@@ -3007,9 +3007,13 @@ body {
   bottom: -72px;
   background-color: transparent
 }
-.swiper-scrollbar-drag {
+.resons__container .swiper-scrollbar-drag {
   background: var(--blue-color);
-  border-radius: 20px
+  border-radius: 20px;
+  cursor: grab
+}
+.resons__container .swiper-scrollbar-drag:active {
+  cursor: grabbing
 }
 .statistics {
   position: relative;
@@ -3222,7 +3226,7 @@ body {
 }
 @media (max-width:768px) {
   .ic__container {
-    gap: 32px 83px
+    gap: 27px 83px
   }
 }
 .ic__descr {
@@ -3249,6 +3253,7 @@ body {
 }
 @media (max-width:768px) {
   .ic__slider-container {
+    margin-bottom: 25px;
     padding-left: 28px
   }
 }
@@ -3285,7 +3290,8 @@ body {
 }
 @media (max-width:768px) {
   .ic__suptitle {
-    margin-bottom: 3px
+    margin-bottom: 10px;
+    padding-left: 5px
   }
 }
 .ic__title {
@@ -3320,10 +3326,18 @@ body {
   position: relative
 }
 .resons__drag.ic__drag {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   left: unset;
   bottom: unset;
   top: 28px;
   right: 83px
+}
+@media (max-width:768px) {
+  .resons__drag.ic__drag {
+    display: none
+  }
 }
 .ic__slider {
   overflow: hidden
@@ -3480,6 +3494,31 @@ body {
     font-size: 10px
   }
 }
+.ic__scrollbar {
+  display: none
+}
+@media (max-width:768px) {
+  .ic__scrollbar {
+    display: block
+  }
+}
+.ic__slider-container .swiper-scrollbar.swiper-scrollbar-horizontal {
+  width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%) - 56px);
+  padding: 0 28px;
+  left: 0;
+  bottom: -30px;
+  background-color: transparent;
+  cursor: pointer
+}
+.ic__slider-container .swiper-scrollbar-drag {
+  background: var(--blue-color);
+  opacity: .4;
+  border-radius: 20px;
+  cursor: grab
+}
+.ic__slider-container .swiper-scrollbar-drag:active {
+  cursor: grabbing
+}
 .ic__more {
   position: relative;
   left: 38px;
@@ -3488,6 +3527,11 @@ body {
 @media (max-width:1280px) {
   .ic__more {
     left: 0
+  }
+}
+@media (max-width:768px) {
+  .ic__more {
+    margin-bottom: 57px
   }
 }
 .ic__line {

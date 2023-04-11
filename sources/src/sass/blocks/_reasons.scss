@@ -338,12 +338,19 @@
   }
 }
 
-.resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
-  bottom: -72px;
-  background-color: transparent;
-}
+.resons__container {
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    bottom: -72px;
+    background-color: transparent;
+  }
 
-.swiper-scrollbar-drag {
-  background: var(--blue-color);
-  border-radius: 20px;
+  .swiper-scrollbar-drag {
+    background: var(--blue-color);
+    border-radius: 20px;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 }

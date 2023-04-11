@@ -31,7 +31,7 @@
   }
 
   @include xs {
-    gap: 32px 83px;
+    gap: 27px 83px;
   }
 }
 
@@ -56,6 +56,7 @@
   }
 
   @include xs {
+    margin-bottom: 25px;
     padding-left: 28px;
   }
 }
@@ -86,7 +87,8 @@
   }
 
   @include xs {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
+    padding-left: 5px;
   }
 }
 
@@ -120,10 +122,15 @@
 }
 
 .resons__drag.ic__drag {
+  display: flex;
   left: unset;
   bottom: unset;
   top: 28px;
   right: 83px;
+
+  @include xs {
+    display: none;
+  }
 }
 
 .ic__slider {
@@ -267,6 +274,37 @@
   }
 }
 
+.ic__scrollbar {
+  display: none;
+
+  @include xs {
+    display: block;
+  }
+}
+
+.ic__slider-container {
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    // width: 100%;
+    width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%) - 56px);
+    padding: 0 28px;
+    left: 0;
+    bottom: -30px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--blue-color);
+    opacity: 0.4;
+    border-radius: 20px;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
 .ic__more {
   position: relative;
   left: 38px;
@@ -274,6 +312,10 @@
 
   @include md {
     left: 0;
+  }
+
+  @include xs {
+    margin-bottom: 57px;
   }
 }
 
