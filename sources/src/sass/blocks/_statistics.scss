@@ -1,6 +1,6 @@
 .statistics {
   position: relative;
-  padding: 150px 0 70px;
+  padding: 155px 0 70px;
 
   @include sm {
     padding: 140px 0 70px;
@@ -63,7 +63,7 @@
 
 .statistics__title {
   grid-area: title;
-  padding-bottom: 38px;
+  padding-bottom: 34px;
   border-bottom: 1px solid var(--white-color);
 
   @include xxs {

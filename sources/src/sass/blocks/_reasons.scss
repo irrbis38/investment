@@ -63,7 +63,7 @@
 .resons__container {
   position: relative;
   // margin needs for slider scrollbar
-  margin-bottom: 72px;
+  margin-bottom: 75px;
 }
 
 .resons__slider {
@@ -352,7 +352,7 @@
 
 .resons__container {
   .swiper-scrollbar.swiper-scrollbar-horizontal {
-    bottom: -72px;
+    bottom: -75px;
     background-color: transparent;
     width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset, 1%) - 63px);
 

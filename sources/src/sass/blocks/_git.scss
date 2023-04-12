@@ -1,5 +1,5 @@
 .git {
-  padding: 51px 0 80px;
+  padding: 56px 0 78px;
 
   @include xxs {
     padding: 20px 0 78px;
@@ -8,7 +8,7 @@
 
 .git__title {
   max-width: 39.6%;
-  margin-bottom: 48px;
+  margin-bottom: 43px;
   font-weight: 400;
   font-size: 60px;
   line-height: 80%;
@@ -30,7 +30,7 @@
 }
 
 .git__nav {
-  margin: 0 auto 61px 27.72%;
+  margin: 0 auto 53px 27.72%;
 
   @include sm {
     width: max-content;
@@ -44,7 +44,7 @@
 }
 
 .git__suplink {
-  margin-bottom: 15px;
+  margin-bottom: 22px;
   padding-left: 2px;
   font-weight: 400;
   font-size: 18px;
@@ -60,8 +60,7 @@
 .git__link {
   width: 100%;
   display: flex;
-  // justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   font-weight: 600;
   font-size: 100px;
   line-height: 80%;

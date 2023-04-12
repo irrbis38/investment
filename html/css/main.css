@@ -1186,6 +1186,8 @@ body {
   bottom: -3px;
   left: 0;
   width: 100%;
+  height: 1px;
+  background-color: var(--white-color);
   visibility: hidden;
   opacity: 0;
   transition: var(--transition)
@@ -2702,7 +2704,7 @@ body {
 }
 .resons__container {
   position: relative;
-  margin-bottom: 72px
+  margin-bottom: 75px
 }
 .resons__slider {
   overflow: hidden
@@ -3034,7 +3036,7 @@ body {
   }
 }
 .resons__container .swiper-scrollbar.swiper-scrollbar-horizontal {
-  bottom: -72px;
+  bottom: -75px;
   background-color: transparent;
   width: calc(100% - 2 * var(--swiper-scrollbar-sides-offset,1%) - 63px)
 }
@@ -3058,7 +3060,7 @@ body {
 }
 .statistics {
   position: relative;
-  padding: 150px 0 70px
+  padding: 155px 0 70px
 }
 @media (max-width:1024px) {
   .statistics {
@@ -3120,7 +3122,7 @@ body {
 }
 .statistics__title {
   grid-area: title;
-  padding-bottom: 38px;
+  padding-bottom: 34px;
   border-bottom: 1px solid var(--white-color)
 }
 @media (max-width:576px) {
@@ -3314,7 +3316,7 @@ body {
 .ic__suptitle {
   max-width: 81px;
   margin-top: 5px;
-  margin-bottom: 46px;
+  margin-bottom: 54px;
   padding-left: 10px;
   font-weight: 400;
   font-size: 15px;
@@ -3579,7 +3581,7 @@ body {
   border-bottom: 1px solid var(--blue-color)
 }
 .git {
-  padding: 51px 0 80px
+  padding: 56px 0 78px
 }
 @media (max-width:576px) {
   .git {
@@ -3588,7 +3590,7 @@ body {
 }
 .git__title {
   max-width: 39.6%;
-  margin-bottom: 48px;
+  margin-bottom: 43px;
   font-weight: 400;
   font-size: 60px;
   line-height: 80%;
@@ -3612,7 +3614,7 @@ body {
   }
 }
 .git__nav {
-  margin: 0 auto 61px 27.72%
+  margin: 0 auto 53px 27.72%
 }
 @media (max-width:1024px) {
   .git__nav {
@@ -3629,7 +3631,7 @@ body {
   }
 }
 .git__suplink {
-  margin-bottom: 15px;
+  margin-bottom: 22px;
   padding-left: 2px;
   font-weight: 400;
   font-size: 18px;
@@ -3647,9 +3649,9 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-weight: 600;
   font-size: 100px;
   line-height: 80%;
@@ -3709,8 +3711,108 @@ body {
     display: none
   }
 }
-footer {
-  padding: 20px;
-  background-color: var(--blue-color)
+.footer {
+  padding: 98px 0 80px;
+  background: linear-gradient(250.43deg,#00114f 37.63%,#1470c5 110.07%);
+  color: var(--white-color)
+}
+.footer__container {
+  position: relative;
+  display: grid;
+  grid-template-areas: "logo menu address" "copyright rules email";
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  gap: 71px 10.2%
+}
+.footer__container::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 250px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--white-color)
+}
+.footer__logo {
+  grid-area: logo;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.footer__logo .logo__main {
+  top: 0;
+  width: 114px;
+  margin-right: 18px;
+  color: var(--white-color)
+}
+.footer__logo .logo__descr {
+  width: 87px;
+  margin-right: 0
+}
+.footer__nav {
+  grid-area: menu;
+  margin-right: 25px
+}
+.footer__nav .menu__list {
+  gap: 0 59px
+}
+.footer__nav .menu__link {
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--white-color)
+}
+.footer__address {
+  grid-area: address;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -.01em
+}
+.footer__copyright {
+  grid-area: copyright;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -.01em;
+  opacity: .5
+}
+.footer__rules {
+  grid-area: rules;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 25px
+}
+.footer__rule {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  color: var(--white-color);
+  opacity: .5;
+  transition: var(--transition)
+}
+.footer__rule:hover {
+  opacity: 1
+}
+.footer__privacy {
+  margin-right: 60px
+}
+.footer__terms {
+  margin-right: 49px
+}
+.footer__email {
+  position: relative;
+  top: -13px;
+  grid-area: email;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -.01em
 }
 /*# sourceMappingURL=maps/main.css.map */

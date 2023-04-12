@@ -1,4 +1,114 @@
-footer {
-  padding: 20px;
-  background-color: var(--blue-color);
+.footer {
+  padding: 98px 0 80px;
+  background: linear-gradient(250.43deg, #00114f 37.63%, #1470c5 110.07%);
+  color: var(--white-color);
+}
+
+.footer__container {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "logo menu address"
+    "copyright rules email";
+  justify-content: flex-start;
+  gap: 71px 10.2%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 250px;
+    width: 1px;
+    height: 100%;
+    background-color: var(--white-color);
+  }
+}
+
+.footer__logo {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+
+  .logo__main {
+    top: 0;
+    width: 114px;
+    margin-right: 18px;
+    color: var(--white-color);
+  }
+
+  .logo__descr {
+    width: 87px;
+    margin-right: 0;
+  }
+}
+
+.footer__nav {
+  grid-area: menu;
+  margin-right: 25px;
+
+  .menu__list {
+    gap: 0 59px;
+  }
+
+  .menu__link {
+    font-size: 26px;
+    line-height: 32px;
+    color: var(--white-color);
+  }
+}
+
+.footer__address {
+  grid-area: address;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+}
+
+.footer__copyright {
+  grid-area: copyright;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  opacity: 0.5;
+}
+
+.footer__rules {
+  grid-area: rules;
+  display: flex;
+  margin-right: 25px;
+}
+
+.footer__rule {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--white-color);
+  opacity: 0.5;
+  transition: var(--transition);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.footer__privacy {
+  margin-right: 60px;
+}
+
+.footer__terms {
+  margin-right: 49px;
+}
+
+.footer__email {
+  position: relative;
+  top: -13px;
+  grid-area: email;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
 }
