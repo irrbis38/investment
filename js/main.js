@@ -82,6 +82,7 @@ function introInit() {
   });
 
   resonsSliderInit();
+  infoCenterSliderInit();
 }
 
 function introSignupHandler() {
@@ -390,6 +391,7 @@ function resonsSliderInit() {
     scrollbar: {
       el: ".resons__scrollbar",
       draggable: true,
+      dragSize: "auto",
     },
 
     // If we need pagination
@@ -407,5 +409,30 @@ function resonsSliderInit() {
     // scrollbar: {
     //   el: '.swiper-scrollbar',
     // },
+  });
+}
+
+function infoCenterSliderInit() {
+  const swiper = new Swiper(".ic__slider", {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 36,
+    grabCursor: true,
+    scrollbar: {
+      el: ".ic__scrollbar",
+      draggable: true,
+      dragSize: "auto",
+    },
+    breakpoints: {
+      577: {
+        spaceBetween: 43,
+      },
+      769: {
+        spaceBetween: 51,
+      },
+      993: {
+        spaceBetween: 59,
+      },
+    },
   });
 }
