@@ -800,6 +800,7 @@ template {
   src: url(../fonts/Compose-Bold.ttf) format("ttf"),url(../fonts/Compose-Bold.woff) format("woff"),url(../../fonts/Compose-Bold.woff2) format("woff2")
 }
 .svg-image-arrow-white-down-45,
+.svg-image-git-arrow,
 .svg-image-ic-arrow,
 .svg-image-info-icon1,
 .svg-image-info-icon2,
@@ -808,8 +809,8 @@ template {
   background: url(../images/sprites/main.svg) no-repeat
 }
 .svg-image-arrow-white-down-45 {
-  background-position: 98.8095238095% 51.0204081633%;
-  background-size: 436% auto;
+  background-position: 96.9387755102% 77.9411764706%;
+  background-size: 492% auto;
   width: 25px
 }
 .svg-image-arrow-white-down-45:before {
@@ -823,9 +824,25 @@ template {
   width: 25px;
   height: 24px
 }
-.svg-image-ic-arrow {
+.svg-image-git-arrow {
   background-position: 0 0;
-  background-size: 253.488372093% auto;
+  background-size: 236.5384615385% auto;
+  width: 52px
+}
+.svg-image-git-arrow:before {
+  content: "";
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 100%
+}
+.svg-image-git-arrow-dims {
+  width: 52px;
+  height: 52px
+}
+.svg-image-ic-arrow {
+  background-position: 65% 0;
+  background-size: 286.0465116279% auto;
   width: 43px
 }
 .svg-image-ic-arrow:before {
@@ -840,8 +857,8 @@ template {
   height: 43px
 }
 .svg-image-info-icon1 {
-  background-position: 37.037037037% 95.5555555556%;
-  background-size: 389.2857142857% auto;
+  background-position: 100% 0;
+  background-size: 439.2857142857% auto;
   width: 28px
 }
 .svg-image-info-icon1:before {
@@ -856,8 +873,8 @@ template {
   height: 28px
 }
 .svg-image-info-icon2 {
-  background-position: 100% 0;
-  background-size: 419.2307692308% auto;
+  background-position: 97.9381443299% 41.7910447761%;
+  background-size: 473.0769230769% auto;
   width: 26px
 }
 .svg-image-info-icon2:before {
@@ -872,8 +889,8 @@ template {
   height: 25px
 }
 .svg-image-info-icon3 {
-  background-position: 0 100%;
-  background-size: 363.3333333333% auto;
+  background-position: 43.0107526882% 83.8709677419%;
+  background-size: 410% auto;
   width: 30px
 }
 .svg-image-info-icon3:before {
@@ -888,8 +905,8 @@ template {
   height: 30px
 }
 .svg-image-intro-arrow-up-45-white {
-  background-position: 62.3188405797% 0;
-  background-size: 272.5% auto;
+  background-position: 0 100%;
+  background-size: 307.5% auto;
   width: 40px
 }
 .svg-image-intro-arrow-up-45-white:before {
@@ -3561,7 +3578,139 @@ body {
 .ic__line {
   border-bottom: 1px solid var(--blue-color)
 }
+.git {
+  padding: 51px 0 80px
+}
+@media (max-width:576px) {
+  .git {
+    padding: 20px 0 78px
+  }
+}
+.git__title {
+  max-width: 39.6%;
+  margin-bottom: 48px;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 80%;
+  letter-spacing: -.02em
+}
+@media (max-width:1280px) {
+  .git__title {
+    font-size: 52px
+  }
+}
+@media (max-width:768px) {
+  .git__title {
+    font-size: 42px
+  }
+}
+@media (max-width:576px) {
+  .git__title {
+    max-width: 100%;
+    font-size: 34px;
+    line-height: 92%
+  }
+}
+.git__nav {
+  margin: 0 auto 61px 27.72%
+}
+@media (max-width:1024px) {
+  .git__nav {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto 61px
+  }
+}
+@media (max-width:768px) {
+  .git__nav {
+    margin-bottom: 0;
+    padding-left: 2px
+  }
+}
+.git__suplink {
+  margin-bottom: 15px;
+  padding-left: 2px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 80%;
+  letter-spacing: -.02em;
+  color: #6c738a
+}
+@media (max-width:768px) {
+  .git__suplink {
+    margin-bottom: 10px
+  }
+}
+.git__link {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 80%;
+  letter-spacing: -.02em;
+  color: inherit;
+  text-decoration: none;
+  gap: 0 25px
+}
+.git__link span:last-child {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  transition: var(--transition);
+  -webkit-transform-origin: top left;
+  transform-origin: top left
+}
+.git__link:hover span:last-child {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4)
+}
+@media (max-width:1280px) {
+  .git__link {
+    font-size: 80px
+  }
+  .git__link span:last-child {
+    width: 40px;
+    height: 40px
+  }
+}
+@media (max-width:768px) {
+  .git__link {
+    font-size: 60px
+  }
+  .git__link span:last-child {
+    width: 32px;
+    height: 32px
+  }
+}
+@media (max-width:576px) {
+  .git__link {
+    font-size: 40px;
+    gap: 0 15px
+  }
+  .git__link span:last-child {
+    width: 23px;
+    height: 23px
+  }
+}
+.git__text {
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: -.02em;
+  color: #878787
+}
+@media (max-width:768px) {
+  .git__text {
+    display: none
+  }
+}
 footer {
-  padding: 20px
+  padding: 20px;
+  background-color: var(--blue-color)
 }
 /*# sourceMappingURL=maps/main.css.map */
