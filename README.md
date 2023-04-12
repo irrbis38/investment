@@ -6,6 +6,5 @@ SCSS
 Javascript 
 GSAP
 
-[DEMO](https://irrbis38.github.io/venrex/)
+![screenshot](https://user-images.githubusercontent.com/66014974/231437573-f4c10225-f942-412a-b6e7-831696ea44d4.jpg)
 
-![screenshot](https://user-images.githubusercontent.com/66014974/229340915-61306236-6d7f-4fde-a2d7-d5eb2df5bc3a.png)
