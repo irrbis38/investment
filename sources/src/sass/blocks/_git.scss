@@ -1,0 +1,60 @@
+.git {
+  padding: 51px 0 80px;
+}
+
+.git__title {
+  max-width: 39.6%;
+  margin-bottom: 48px;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+}
+
+.git__nav {
+  margin: 0 auto 61px 27.72%;
+}
+
+.git__suplink {
+  margin-bottom: 15px;
+  padding-left: 2px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+  color: #6c738a;
+}
+
+.git__link {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 80%;
+  letter-spacing: -0.02em;
+  color: inherit;
+  text-decoration: none;
+
+  span:first-child {
+    margin-right: 25px;
+  }
+
+  span:last-child {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    transition: var(--transition);
+    transform-origin: top left;
+  }
+
+  &:hover span:last-child {
+    transform: scale(1.4);
+  }
+}
+
+.git__text {
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #878787;
+}
