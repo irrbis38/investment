@@ -3720,10 +3720,11 @@ body {
   position: relative;
   display: grid;
   grid-template-areas: "logo menu address" "copyright rules email";
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  gap: 71px 10.2%
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 71px 0;
+  padding-right: 54px
 }
 .footer__container::after {
   content: "";
@@ -3736,6 +3737,7 @@ body {
 }
 .footer__logo {
   grid-area: logo;
+  min-width: 220px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -3755,18 +3757,21 @@ body {
 }
 .footer__nav {
   grid-area: menu;
+  min-width: 615px;
   margin-right: 25px
 }
 .footer__nav .menu__list {
-  gap: 0 59px
+  gap: 0 56px
 }
 .footer__nav .menu__link {
   font-size: 26px;
+  font-weight: 600;
   line-height: 32px;
   color: var(--white-color)
 }
 .footer__address {
   grid-area: address;
+  min-width: 185px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
