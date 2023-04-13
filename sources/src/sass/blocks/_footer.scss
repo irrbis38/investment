@@ -2,6 +2,18 @@
   padding: 98px 0 80px;
   background: linear-gradient(250.43deg, #00114f 37.63%, #1470c5 110.07%);
   color: var(--white-color);
+
+  @include md {
+    padding: 78px 0 67px;
+  }
+
+  @include xs {
+    padding: 58px 0 54px;
+  }
+
+  @include xxs {
+    padding: 36px 0 40px;
+  }
 }
 
 .footer__container {
@@ -15,6 +27,37 @@
   gap: 71px 0;
   padding-right: 54px;
 
+  @include md {
+    gap: 50px 0;
+  }
+
+  @include sm {
+    grid-template-areas:
+      "logo logo"
+      "menu menu"
+      "copyright rules";
+    padding-right: 0;
+  }
+
+  @include xxs {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "rules"
+      "copyright";
+    padding-right: 0;
+    padding: 0 3px;
+  }
+
+  @include xs {
+    gap: 38px 0;
+  }
+
+  @include xxs {
+    gap: 14px 0;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -23,6 +66,10 @@
     width: 1px;
     height: 100%;
     background-color: var(--white-color);
+
+    @include sm {
+      display: none;
+    }
   }
 }
 
@@ -32,26 +79,87 @@
   display: flex;
   align-items: center;
 
+  @include sm {
+    position: relative;
+    padding-bottom: 27px;
+    border-bottom: 1px solid var(--white-color);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 150px;
+      width: 1px;
+      height: 109%;
+      background-color: var(--white-color);
+    }
+  }
+
   .logo__main {
     top: 0;
     width: 114px;
     margin-right: 18px;
     color: var(--white-color);
+
+    @include sm {
+      margin-right: 59px;
+    }
   }
 
   .logo__descr {
     width: 87px;
     margin-right: 0;
+
+    @include xxs {
+      position: relative;
+      top: 3px;
+      width: unset;
+      min-width: 95px;
+      font-size: 11px;
+      line-height: 100%;
+    }
   }
 }
 
 .footer__nav {
   grid-area: menu;
-  min-width: 615px;
+  // min-width: 615px;
   margin-right: 25px;
+
+  @include md {
+    margin-right: 0;
+  }
 
   .menu__list {
     gap: 0 56px;
+
+    @include md {
+      gap: 0 40px;
+    }
+
+    @include sm {
+      justify-content: flex-start;
+    }
+
+    @include xxs {
+      display: block;
+      min-width: auto;
+      padding-left: 31px;
+    }
+  }
+
+  .menu__item {
+    @include xxs {
+      width: max-content;
+
+      &::after {
+        bottom: 5px;
+      }
+
+      &:hover::after {
+        transform: translateY(2px);
+      }
+    }
   }
 
   .menu__link {
@@ -59,6 +167,21 @@
     font-weight: 600;
     line-height: 32px;
     color: var(--white-color);
+
+    @include md {
+      font-size: 24px;
+      line-height: 34px;
+    }
+
+    @include xs {
+      font-size: 22px;
+      line-height: 36px;
+    }
+
+    @include xxs {
+      font-size: 20px;
+      line-height: 38px;
+    }
   }
 }
 
@@ -69,6 +192,10 @@
   font-size: 16px;
   line-height: 20px;
   letter-spacing: -0.01em;
+
+  @include md {
+    display: none;
+  }
 }
 
 .footer__copyright {
@@ -78,12 +205,27 @@
   line-height: 16px;
   letter-spacing: -0.01em;
   opacity: 0.5;
+
+  @include xxs {
+    padding-left: 31px;
+  }
 }
 
 .footer__rules {
   grid-area: rules;
   display: flex;
   margin-right: 25px;
+
+  @include sm {
+    margin-right: 0;
+    justify-content: flex-end;
+  }
+
+  @include xxs {
+    display: block;
+    margin-bottom: 12px;
+    padding-left: 31px;
+  }
 }
 
 .footer__rule {
@@ -98,6 +240,14 @@
 
   &:hover {
     opacity: 1;
+  }
+
+  @include xxs {
+    display: block;
+    width: max-content;
+    opacity: 1;
+    font-size: 13px;
+    line-height: 22px;
   }
 }
 
@@ -117,4 +267,8 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.01em;
+
+  @include md {
+    display: none;
+  }
 }
