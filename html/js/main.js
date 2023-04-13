@@ -63,14 +63,15 @@ function changeLang() {
 }
 
 function toggleMobileMenu() {
-  const burgerButton = document.querySelector(".header__burger");
-  const authButton = document.querySelector(".auth");
-  const logo = document.querySelector(".header__logo");
+  const headerClasses = [".header__burger", ".auth", ".header__logo"];
+  const headerElements = headerClasses.map((item) =>
+    document.querySelector(item)
+  );
+
+  const burgerButton = headerElements[0];
 
   burgerButton.addEventListener("click", () => {
-    burgerButton.classList.toggle("active");
-    authButton.classList.toggle("active");
-    logo.classList.toggle("active");
+    headerElements.forEach((el) => el.classList.toggle("active"));
   });
 }
 
