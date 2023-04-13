@@ -206,6 +206,12 @@
   letter-spacing: -0.01em;
   opacity: 0.5;
 
+  span {
+    position: relative;
+    top: 5px;
+    font-size: 20px;
+  }
+
   @include xxs {
     padding-left: 31px;
   }

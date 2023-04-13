@@ -121,6 +121,22 @@
 
   @include md {
     display: block;
+
+    &.active {
+      .logo__main {
+        color: var(--blue-color) !important;
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      .logo__descr {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
   }
 }
 
@@ -132,6 +148,21 @@
   font-size: 35px;
   line-height: 44px;
   text-decoration: none;
+  transition: var(--transition);
+
+  &::after {
+    content: "Investment Management";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: -0.01em;
+    color: var(--blue-color);
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .logo__descr {
@@ -139,6 +170,7 @@
   font-size: 10px;
   line-height: 100%;
   letter-spacing: -0.01em;
+  transition: var(--transition);
 }
 
 .header__line {
@@ -352,8 +384,19 @@
       top: 50%;
       right: 0;
       transform: translateY(-50%);
+      transition: var(--transition);
       width: 1px;
       height: 59px;
+    }
+
+    &.active {
+      &::after {
+        background-color: var(--blue-color) !important;
+      }
+
+      path {
+        stroke: var(--blue-color);
+      }
     }
   }
 }
@@ -406,6 +449,10 @@
 
     &:hover {
       background-color: transparent;
+    }
+
+    path {
+      transition: var(--transition);
     }
   }
 }
@@ -465,7 +512,7 @@
   span,
   &::before,
   &::after {
-    width: 100%;
+    min-width: 100%;
     height: 3px;
     border-radius: 20px;
     background-color: var(--white-color);
@@ -473,6 +520,7 @@
 
   span {
     display: block;
+    transition: var(--transition);
   }
 
   &::before {
@@ -480,6 +528,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: var(--transition);
   }
 
   &::after {
@@ -487,6 +536,28 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 54.84%;
+    min-width: 54.84%;
+    transition: var(--transition);
+  }
+}
+
+.header__burger.active {
+  &::after {
+    bottom: 10px;
+    min-width: 104.92%;
+    transform: rotate(-45deg);
+    background-color: var(--blue-color) !important;
+  }
+
+  &::before {
+    top: 10px;
+    min-width: 104.92%;
+    transform: rotate(45deg);
+    background-color: var(--blue-color) !important;
+  }
+
+  span {
+    opacity: 0;
+    visibility: hidden;
   }
 }

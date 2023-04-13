@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 function headerInit() {
   langMenuHandler();
   changeLang();
+  toggleMobileMenu();
 }
 
 function langMenuHandler() {
@@ -58,6 +59,18 @@ function changeLang() {
         langSelectedContent.textContent = currItemContent;
       }
     });
+  });
+}
+
+function toggleMobileMenu() {
+  const burgerButton = document.querySelector(".header__burger");
+  const authButton = document.querySelector(".auth");
+  const logo = document.querySelector(".header__logo");
+
+  burgerButton.addEventListener("click", () => {
+    burgerButton.classList.toggle("active");
+    authButton.classList.toggle("active");
+    logo.classList.toggle("active");
   });
 }
 
