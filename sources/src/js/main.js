@@ -63,7 +63,14 @@ function changeLang() {
 }
 
 function toggleMobileMenu() {
-  const headerClasses = [".header__burger", ".auth", ".header__logo"];
+  const headerClasses = [
+    ".header",
+    ".header__burger",
+    ".auth",
+    ".header__logo",
+    ".header__panel",
+    ".header__nav",
+  ];
   const headerElements = headerClasses.map((item) =>
     document.querySelector(item)
   );
@@ -71,8 +78,23 @@ function toggleMobileMenu() {
   const burgerButton = headerElements[0];
 
   burgerButton.addEventListener("click", () => {
+    if (!burgerButton.classList.contains("active")) {
+      createHeaderTimeline("-28px");
+    } else {
+      createHeaderTimeline("0");
+    }
+
     headerElements.forEach((el) => el.classList.toggle("active"));
+    document.body.classList.toggle("lock");
   });
+}
+
+function createHeaderTimeline(value) {
+  return gsap
+    .timeline({ duration: 0.1, ease: Power3.easeOut })
+    .to([".header__logo", ".header__panel"], {
+      y: value,
+    });
 }
 
 // intro logic
