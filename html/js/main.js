@@ -157,6 +157,7 @@ function introInit() {
 
   resonsSliderInit();
   infoCenterSliderInit();
+  mainPageAnimation();
 }
 
 function introSignupHandler() {
@@ -508,5 +509,24 @@ function infoCenterSliderInit() {
         spaceBetween: 59,
       },
     },
+  });
+}
+
+function mainPageAnimation() {
+  // const TL = gsap.timeline();
+
+  [".intro"].forEach((selector) => pinElement(selector));
+}
+
+function pinElement(selector) {
+  return ScrollTrigger.create({
+    trigger: "body",
+    start: "top top",
+    endTrigger: "body",
+    end: "bottom -=100",
+    pin: selector,
+    pinSpacing: false,
+    scrub: true,
+    markers: true,
   });
 }

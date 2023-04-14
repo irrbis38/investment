@@ -1,7 +1,10 @@
 // info center styles
 
 .ic {
+  position: relative;
+  z-index: 12;
   padding: 168px 0 0;
+  background-color: #fff;
 
   @include sm {
     padding-top: 100px;

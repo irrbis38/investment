@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+  z-index: 14;
   padding: 98px 0 80px;
   background: linear-gradient(250.43deg, #00114f 37.63%, #1470c5 110.07%);
   color: var(--white-color);
@@ -23,7 +25,6 @@
     "logo menu address"
     "copyright rules email";
   justify-content: space-between;
-  // gap: 71px 10.2%;
   gap: 71px 0;
   padding-right: 54px;
 

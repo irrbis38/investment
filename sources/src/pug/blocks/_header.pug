@@ -1,11 +1,11 @@
 //- color may have 'white' or 'dark' value
 //- set 'white' if main elements and fonts color is 'white'
 //- set 'dark' if main elements and fonts color is '#00114f'
-mixin header(color)
+mixin header(page, color)
 
     - let svgColor = color === 'white' ? 'white' : '#00114f';
 
-    header.header(class=color)
+    header.header(class=[page, color])
 
         .container.header__container
 

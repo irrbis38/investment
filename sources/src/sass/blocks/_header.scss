@@ -80,11 +80,15 @@
 // header general styles
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 41px;
   left: 0;
   width: 100%;
   z-index: 1000;
+
+  &.main {
+    z-index: 10;
+  }
 }
 
 .header__container {
@@ -251,10 +255,12 @@
     min-width: 380px;
   }
 
-  @include md {
-    min-width: auto;
-    display: block;
-    margin-bottom: 116px;
+  .header__nav & {
+    @include md {
+      min-width: auto;
+      display: block;
+      margin-bottom: 116px;
+    }
   }
 }
 
@@ -297,12 +303,14 @@
   letter-spacing: -0.01em;
   text-decoration: none;
 
-  @include md {
-    font-weight: 600;
-    font-size: 53px;
-    line-height: 66px;
-    letter-spacing: -0.01em;
-    color: var(--blue-color) !important;
+  .header__nav & {
+    @include md {
+      font-weight: 600;
+      font-size: 53px;
+      line-height: 66px;
+      letter-spacing: -0.01em;
+      color: var(--blue-color) !important;
+    }
   }
 }
 

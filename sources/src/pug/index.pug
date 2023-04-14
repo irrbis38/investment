@@ -2,7 +2,7 @@ extends base/_layout
 block head
     title Main page
 block header
-    +header('white')
+    //- +header('white')
 block page
 
     -
@@ -28,6 +28,8 @@ block page
             'infoCenter/ic-1',
             'infoCenter/ic-2'
         ];
+
+    +header('main', 'white')
 
     section.intro
 

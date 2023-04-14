@@ -1,5 +1,8 @@
 .git {
+  position: relative;
+  z-index: 14;
   padding: 56px 0 78px;
+  background-color: #fff;
 
   @include xxs {
     padding: 20px 0 78px;

@@ -1,8 +1,10 @@
 .resons {
   position: relative;
+  z-index: 12;
   max-width: 1500px;
   margin: 0 auto;
   padding: 84px 0 54px 63px;
+  background-color: #fff;
 
   @include r(1399px) {
     padding-left: 40px;
