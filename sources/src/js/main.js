@@ -62,7 +62,9 @@ function changeLang() {
   });
 }
 
-function toggleMobileMenu() {
+// get all header elements that toggle active className
+function getHeaderElements() {
+  // set all classes of header elements, that toggle class '.active' by burger button
   const headerClasses = [
     ".header",
     ".header__burger",
@@ -71,30 +73,66 @@ function toggleMobileMenu() {
     ".header__panel",
     ".header__nav",
   ];
-  const headerElements = headerClasses.map((item) =>
-    document.querySelector(item)
-  );
+  // get all header elemtns by class name
+  return headerClasses.map((item) => document.querySelector(item));
+}
 
-  const burgerButton = headerElements[0];
+function toggleMobileMenu() {
+  const headerElements = getHeaderElements();
 
+  const burgerButton = document.querySelector(".header__burger");
+
+  // set listener for burger button
   burgerButton.addEventListener("click", () => {
     if (!burgerButton.classList.contains("active")) {
       createHeaderTimeline("-28px");
     } else {
       createHeaderTimeline("0");
     }
-
     headerElements.forEach((el) => el.classList.toggle("active"));
     document.body.classList.toggle("lock");
   });
 }
 
+// animation for show / hide mobile menu
 function createHeaderTimeline(value) {
   return gsap
     .timeline({ duration: 0.1, ease: Power3.easeOut })
     .to([".header__logo", ".header__panel"], {
       y: value,
     });
+}
+
+// hide mobile menu by risize if window.innnerWidht > 1280px
+const mqMD = window.matchMedia("(min-width: 1281px)");
+
+mqMD.addEventListener("change", () => {
+  // if mobile menu is active and window resize
+  // close mobile menu if windown.innerWidth more than 1280px
+  if (window.innerWidth > 1280) {
+    // fix '.header__nav' transition
+    removeHeaderNavTransition();
+
+    // move down logo and '.header__panel'
+    createHeaderTimeline("0");
+
+    // unfix body
+    document.body.classList.remove("lock");
+
+    // remove class 'active' for all header elements
+    const headerElements = getHeaderElements();
+    headerElements.forEach((el) => el.classList.remove("active"));
+  } else {
+    // fix '.header__nav' transition
+    removeHeaderNavTransition();
+  }
+});
+
+function removeHeaderNavTransition() {
+  return gsap
+    .timeline()
+    .set(".header__nav", { display: "none" })
+    .set(".header__nav", { clearProps: "all" }, "+=0.4");
 }
 
 // intro logic
