@@ -2854,18 +2854,20 @@ body {
 .resons {
   position: relative;
   z-index: 12;
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 84px 0 54px 63px;
   background-color: #fff
 }
+.resons__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 84px 0 54px 63px
+}
 @media only screen and (max-width:1399px) {
-  .resons {
+  .resons__inner {
     padding-left: 40px
   }
 }
 @media (max-width:768px) {
-  .resons {
+  .resons__inner {
     padding-left: 28px;
     padding: 84px 0 57px 28px
   }
