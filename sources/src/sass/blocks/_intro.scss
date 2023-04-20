@@ -144,12 +144,33 @@
 }
 
 .intro__inner {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: flex-end;
   padding-top: 20px;
   padding-bottom: 5px;
-  border-top: 1px solid var(--white-color);
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   width: 100%;
+  //   height: 1px;
+  //   background-color: var(--white-color);
+  // }
+}
+
+.intro__line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: var(--white-color);
 }
 
 .intro__scroll {
@@ -388,6 +409,7 @@
   line-height: 80%;
   letter-spacing: -0.01em;
   color: var(--white-color);
+  will-change: transform;
 
   @include md {
     font-size: 80px;

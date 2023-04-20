@@ -530,3 +530,66 @@ function pinElement(selector) {
     // markers: true,
   });
 }
+
+// initial animation
+
+window.addEventListener("load", () => {
+  const intro = document.querySelector(".intro");
+  if (intro) {
+    initialAnimation();
+  }
+});
+
+function initialAnimation() {
+  const TL = gsap.timeline();
+
+  TL.to(".overlay__blue", {
+    autoAlpha: 0,
+    duration: 1.2,
+  })
+    .from(
+      ".intro__title",
+      {
+        yPercent: 20,
+        duration: 1,
+        ease: Power1.easeNone,
+      },
+      0
+    )
+    .from(
+      ".intro__line",
+      {
+        width: "40%",
+        duration: 1,
+        ease: Power1.easeOut,
+      },
+      0
+    )
+    .from(
+      ".intro__signup",
+      {
+        yPercent: 90,
+        duration: 1,
+        ease: Power1.easeOut,
+      },
+      0
+    )
+    .from(
+      ".intro__image img",
+      {
+        scale: 1.3,
+        duration: 1.2,
+        ease: Power3.easeOut,
+      },
+      0
+    )
+    .from(
+      ".intro__btn",
+      {
+        scale: 0.5,
+        duration: 1.2,
+        ease: Power3.easeOut,
+      },
+      0
+    );
+}
