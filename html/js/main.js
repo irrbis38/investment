@@ -515,7 +515,7 @@ function infoCenterSliderInit() {
 function mainPageAnimation() {
   // const TL = gsap.timeline();
 
-  [".intro"].forEach((selector) => pinElement(selector));
+  [".intro__container"].forEach((selector) => pinElement(selector));
 }
 
 function pinElement(selector) {
@@ -527,6 +527,6 @@ function pinElement(selector) {
     pin: selector,
     pinSpacing: false,
     scrub: true,
-    markers: true,
+    // markers: true,
   });
 }

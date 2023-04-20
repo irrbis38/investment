@@ -33,46 +33,48 @@ block page
 
     section.intro
 
-        .intro__panel
+        .intro__container
 
-            .container
+            .intro__panel
 
-                .intro__next
-                    span Next
-                    button.intro__btn
-
-                .intro__pagination.pagination
-
-                    button.pagination__item.active(data-index='0') 01
-
-                    button.pagination__item(data-index='1') 02
-
-                    button.pagination__item(data-index='2') 03
-
-                    .pagination__pointer
-
-            .intro__bottom
                 .container
 
-                    .intro__inner
-                        a.intro__scroll(href="#")
-                            span Scroll Down#[br]
-                            span to Learn More#[br]
-                            +icon('arrow-white-down-45')
+                    .intro__next
+                        span Next
+                        button.intro__btn
 
-                .intro__signup
+                    .intro__pagination.pagination
 
-                    a.intro__link(href="#")
+                        button.pagination__item.active(data-index='0') 01
 
-                    .intro__bg
+                        button.pagination__item(data-index='1') 02
 
-                    .intro__descr
-                        p.intro__sup Take it easy
-                        p.intro__text Create account
+                        button.pagination__item(data-index='2') 03
 
-                    +icon('intro-arrow-up-45-white')
+                        .pagination__pointer
 
-        .intro__slider
+                .intro__bottom
+                    .container
+
+                        .intro__inner
+                            a.intro__scroll(href="#")
+                                span Scroll Down#[br]
+                                span to Learn More#[br]
+                                +icon('arrow-white-down-45')
+
+                    .intro__signup
+
+                        a.intro__link(href="#")
+
+                        .intro__bg
+
+                        .intro__descr
+                            p.intro__sup Take it easy
+                            p.intro__text Create account
+
+                        +icon('intro-arrow-up-45-white')
+
+            .intro__slider
             .intro__wrapper
 
                 each item in introSliderData
