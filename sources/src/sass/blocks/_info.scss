@@ -1,8 +1,9 @@
 .info {
   position: relative;
   z-index: 11;
-  background-color: #fff;
+  // background-color: #fff;
   padding-top: 99px;
+  overflow: hidden;
 
   @include md {
     padding-top: 79px;
@@ -245,52 +246,54 @@
   }
 }
 
-.info__background {
-  position: absolute;
-  top: -276px;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
+// .info__background {
+//   position: absolute;
+//   // top: -276px;
+//   top: 50vh;
+//   left: 0;
+//   // z-index: -1;
+//   z-index: 12;
+//   width: 100%;
+//   height: 400px;
+//   display: flex;
+//   justify-content: center;
 
-  span {
-    font-weight: 500;
-    line-height: 80%;
-    letter-spacing: -0.01em;
-    background: linear-gradient(90.11deg, #f3f3f8 -2.12%, #ffffff 53.59%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+//   span {
+//     font-weight: 500;
+//     line-height: 80%;
+//     letter-spacing: -0.01em;
+//     background: linear-gradient(90.11deg, #f3f3f8 -2.12%, #ffffff 53.59%);
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+//     background-clip: text;
+//     text-fill-color: transparent;
 
-    // fluid font-size
-    font-size: calc((100vw - 320px) / (1500 - 320) * (500 - 100) + 80px);
+//     // fluid font-size
+//     font-size: calc((100vw - 320px) / (1500 - 320) * (500 - 100) + 80px);
 
-    @include xs {
-      display: none;
-    }
-  }
-}
+//     @include xs {
+//       display: none;
+//     }
+//   }
+// }
 
-.info__blur {
-  position: absolute;
-  top: 50%;
-  right: 33%;
-  z-index: -2;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  transform-origin: top right;
-  transform: rotate(-40deg);
-  ///////////////////////////
-  // background-color: #f00;
-  // box-shadow: 0 0 500px 300px #f00;
-  ///////////////////////////////
-  background-color: rgba(4, 33, 133, 0.07);
-  box-shadow: 0 0 800px 500px rgba(4, 33, 133, 0.07);
-}
+// .info__blur {
+//   position: absolute;
+//   top: 50%;
+//   right: 33%;
+//   z-index: -2;
+//   width: 0;
+//   height: 0;
+//   border-radius: 50%;
+//   transform-origin: top right;
+//   transform: rotate(-40deg);
+//   ///////////////////////////
+//   // background-color: #f00;
+//   // box-shadow: 0 0 500px 300px #f00;
+//   ///////////////////////////////
+//   background-color: rgba(4, 33, 133, 0.07);
+//   box-shadow: 0 0 800px 500px rgba(4, 33, 133, 0.07);
+// }
 
 .info__more {
   position: relative;

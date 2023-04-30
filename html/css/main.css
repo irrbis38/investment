@@ -1695,6 +1695,56 @@ body {
   -ms-flex-positive: 1;
   flex-grow: 1
 }
+.sections__wrapper {
+  position: relative;
+  z-index: 12;
+  background-color: #fff
+}
+.info__background {
+  position: absolute;
+  top: 80vh;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 400px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
+.info__background span {
+  font-weight: 500;
+  line-height: 80%;
+  letter-spacing: -.01em;
+  background: linear-gradient(90.11deg,#f3f3f8 -2.12%,#fff 53.59%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-size: calc((100vw - 320px)/ 1180 * 400 + 80px)
+}
+@media (max-width:768px) {
+  .info__background span {
+    display: none
+  }
+}
+.info__blur {
+  position: absolute;
+  top: 50%;
+  right: 33%;
+  z-index: -2;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  background-color: rgba(4,33,133,.07);
+  box-shadow: 0 0 800px 500px rgba(4,33,133,.07)
+}
 .intro {
   overflow: hidden
 }
@@ -2132,8 +2182,8 @@ body {
 .info {
   position: relative;
   z-index: 11;
-  background-color: #fff;
-  padding-top: 99px
+  padding-top: 99px;
+  overflow: hidden
 }
 @media (max-width:1280px) {
   .info {
@@ -2379,51 +2429,6 @@ body {
     width: 58px;
     height: 58px
   }
-}
-.info__background {
-  position: absolute;
-  top: -276px;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 400px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center
-}
-.info__background span {
-  font-weight: 500;
-  line-height: 80%;
-  letter-spacing: -.01em;
-  background: linear-gradient(90.11deg,#f3f3f8 -2.12%,#fff 53.59%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  font-size: calc((100vw - 320px)/ 1180 * 400 + 80px)
-}
-@media (max-width:768px) {
-  .info__background span {
-    display: none
-  }
-}
-.info__blur {
-  position: absolute;
-  top: 50%;
-  right: 33%;
-  z-index: -2;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-transform: rotate(-40deg);
-  transform: rotate(-40deg);
-  background-color: rgba(4,33,133,.07);
-  box-shadow: 0 0 800px 500px rgba(4,33,133,.07)
 }
 .info__more {
   position: relative;
@@ -2877,8 +2882,7 @@ body {
 }
 .resons {
   position: relative;
-  z-index: 12;
-  background-color: #fff
+  z-index: 12
 }
 .resons__inner {
   max-width: 1500px;
@@ -3302,7 +3306,8 @@ body {
   position: relative;
   z-index: 12;
   padding: 155px 0 70px;
-  background-color: #fff
+  background: var(--blue-color) url(../images/statistics/statistics-bg@2x.png) center/cover no-repeat;
+  background-attachment: fixed
 }
 @media (max-width:1024px) {
   .statistics {
@@ -3487,8 +3492,7 @@ body {
 .ic {
   position: relative;
   z-index: 12;
-  padding: 168px 0 0;
-  background-color: #fff
+  padding: 168px 0 0
 }
 @media (max-width:1024px) {
   .ic {
@@ -3830,8 +3834,7 @@ body {
 .git {
   position: relative;
   z-index: 14;
-  padding: 56px 0 78px;
-  background-color: #fff
+  padding: 56px 0 78px
 }
 @media (max-width:576px) {
   .git {

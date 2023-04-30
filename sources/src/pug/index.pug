@@ -85,187 +85,194 @@ block page
 
             .intro__foreground
 
-    section.info
+    .sections__wrapper
 
-        .container
-
-            h2.info__title Who we are
-
-            .info__container 
-
-                .info__description
-                    p.info__important.
-                        To invest is to allocate money with the expectation of a positive benefit return in the future
-                    p.info__text.
-                        The return may consist#[br] of a gain or a loss realized from the sale of a property or an investment
-
-                .info__statiscitc
-
-                    .info__item
-                        p.info__name invested
-                        p.info__value $95m
-                        .info__icon
-                            .info__pic
-                                +icon('info-icon1')
-
-                    .info__item
-                        p.info__name investments
-                        p.info__value 120+
-                        .info__icon
-                            .info__pic
-                                +icon('info-icon2')
-
-                    .info__item
-                        p.info__name years company
-                        p.info__value 10Y
-                        .info__icon
-                            .info__pic
-                                +icon('info-icon3')
-
-        .info__more
-            span Learn more
-            a(href="#")
-
-
-        .info__box
-
-            .info__background 
+        .info__background
+            .info__background-wrapper
                 span venrex
                 .info__blur
 
-            .info__project
+        section.info
 
-                .info__bg
-                    +picture('info/info-bg', 'png', 'x2')
+            .container.info__inner
 
-                .info__content
-                    p Investment Club
-                    h3 Start ambition project
+                h2.info__title Who we are
 
-            .info__club
+                .info__container 
 
-                .info__club-wrapper
+                    .info__description
+                        p.info__important.
+                            To invest is to allocate money with the expectation of a positive benefit return in the future
+                        p.info__text.
+                            The return may consist#[br] of a gain or a loss realized from the sale of a property or an investment
 
+                    .info__statiscitc
 
-                    p.info__suptitle Take it easy
+                        .info__item
+                            p.info__name invested
+                            p.info__value $95m
+                            .info__icon
+                                .info__pic
+                                    +icon('info-icon1')
 
-                    h3.info__join Join our investment club
+                        .info__item
+                            p.info__name investments
+                            p.info__value 120+
+                            .info__icon
+                                .info__pic
+                                    +icon('info-icon2')
 
-                    .info__create
-                        p Create account
-                        +icon('intro-arrow-up-45-white')
-                        a(href="#")
+                        .info__item
+                            p.info__name years company
+                            p.info__value 10Y
+                            .info__icon
+                                .info__pic
+                                    +icon('info-icon3')
 
-            .info__phrase
-                span The return may consist of a gain or a loss
-
-    section.resons
-
-        .resons__inner
-
-            //- TODO: remove '.resons__bg'
-            .resons__bg
-
-            h3.resons__title Resons to invest
-
-            .resons__container
-
-                .resons__drag
-                    span Drag
-
-                .resons__slider.swiper
-
-                    .resons__wrapper.swiper-wrapper
-
-                        .resons__slide.resons__slide--first.swiper-slide
-
-                            .resons__descr
-                                h3.resons__heading Easy profit with invest
-                                p.resons__text Allocate money with the expectation 
-
-                            .resons__pictogram
-                                .resons__icon
-                                    p.resons__value 25%
-                                    p.resons__info Yearly precentage
-
-                        .resons__slide.swiper-slide
-
-                            .resons__descr
-                                h3.resons__heading Capital group portfolio
-                                p.resons__text Allocate money with the expectation 
-
-                            .resons__pictogram
-                                .resons__icon
-                                    img(src="./images/resons/resons-2.svg" alt="Capital group portfolio")
-
-                        .resons__slide.swiper-slide
-
-                            .resons__descr
-                                h3.resons__heading Easy investment monitoring
-                                p.resons__text Allocate money with the expectation 
-
-                            .resons__pictogram
-                                .resons__icon
-                                    img(src="./images/resons/resons-3.svg" alt="Capital group portfolio")
-
-                        .resons__slide.swiper-slide
-
-                            .resons__descr
-                                h3.resons__heading Easy profit with invest
-                                p.resons__text Allocate money with the expectation 
-
-                            .resons__pictogram
-                                .resons__icon
-                                    img(src="./images/resons/resons-4.svg" alt="Capital group portfolio")
-
-                .swiper-scrollbar.resons__scrollbar
-
-    section.statistics
-
-        .stastatistics__bg
-            +picture('statistics/statistics-bg', 'png', 'x2')
-
-        .container
-
-            .statistics__container
-
-                .statistics__title
-                    h2 We already invested into 2,023 startups
-
-                .statistics__portfolio
-                    a.statistics__link(href="#")
-                        span Our portfolio
-                        +icon('intro-arrow-up-45-white')
-
-                p.statistics__text The return may consist of a gain or a loss
-
-    section.ic
-        .ic__container 
-
-            .ic__descr
-                p.ic__suptitle Investment Club
-                h2.ic__title Info Center
-
-            .ic__slider-container
-
-                .resons__drag.ic__drag
-                    span Drag
-
-                .ic__slider.swiper
-                    .ic__wrapper.swiper-wrapper
-
-                        each item of infoCenterSliderData
-                            +infoCenterSliderItem(item)
-
-                .swiper-scrollbar.ic__scrollbar
+            .info__more
+                span Learn more
+                a(href="#").more__link
 
 
-            .ic__nav
-                .info__more.ic__more
-                    span Show more
-                    a(href="#")
+            .info__box
 
-        .container
-            .ic__line
+                //- .info__background 
+                //-     span venrex
+                //-     .info__blur
 
-    include ./blocks/_git
+                .info__project
+
+                    .info__bg
+                        +picture('info/info-bg', 'png', 'x2')
+
+                    .info__content
+                        p Investment Club
+                        h3 Start ambition project
+
+                .info__club
+
+                    .info__club-wrapper
+
+
+                        p.info__suptitle Take it easy
+
+                        h3.info__join Join our investment club
+
+                        .info__create
+                            p Create account
+                            +icon('intro-arrow-up-45-white')
+                            a(href="#")
+
+                .info__phrase
+                    span The return may consist of a gain or a loss
+
+        section.resons
+
+            .resons__inner
+
+                //- TODO: remove '.resons__bg'
+                .resons__bg
+
+                h3.resons__title Resons to invest
+
+                .resons__container
+
+                    .resons__drag
+                        span Drag
+
+                    .resons__slider.swiper
+
+                        .resons__wrapper.swiper-wrapper
+
+                            .resons__slide.resons__slide--first.swiper-slide
+
+                                .resons__descr
+                                    h3.resons__heading Easy profit with invest
+                                    p.resons__text Allocate money with the expectation 
+
+                                .resons__pictogram
+                                    .resons__icon
+                                        p.resons__value 25%
+                                        p.resons__info Yearly precentage
+
+                            .resons__slide.swiper-slide
+
+                                .resons__descr
+                                    h3.resons__heading Capital group portfolio
+                                    p.resons__text Allocate money with the expectation 
+
+                                .resons__pictogram
+                                    .resons__icon
+                                        img(src="./images/resons/resons-2.svg" alt="Capital group portfolio")
+
+                            .resons__slide.swiper-slide
+
+                                .resons__descr
+                                    h3.resons__heading Easy investment monitoring
+                                    p.resons__text Allocate money with the expectation 
+
+                                .resons__pictogram
+                                    .resons__icon
+                                        img(src="./images/resons/resons-3.svg" alt="Capital group portfolio")
+
+                            .resons__slide.swiper-slide
+
+                                .resons__descr
+                                    h3.resons__heading Easy profit with invest
+                                    p.resons__text Allocate money with the expectation 
+
+                                .resons__pictogram
+                                    .resons__icon
+                                        img(src="./images/resons/resons-4.svg" alt="Capital group portfolio")
+
+                    .swiper-scrollbar.resons__scrollbar
+
+        section.statistics
+
+            //- .stastatistics__bg
+            //-     +picture('statistics/statistics-bg', 'png', 'x2')
+
+            .container
+
+                .statistics__container
+
+                    .statistics__title
+                        h2 We already invested into 2,023 startups
+
+                    .statistics__portfolio
+                        a.statistics__link(href="#")
+                            span Our portfolio
+                            +icon('intro-arrow-up-45-white')
+
+                    p.statistics__text The return may consist of a gain or a loss
+
+        section.ic
+            .ic__container 
+
+                .ic__descr
+                    p.ic__suptitle Investment Club
+                    h2.ic__title Info Center
+
+                .ic__slider-container
+
+                    .resons__drag.ic__drag
+                        span Drag
+
+                    .ic__slider.swiper
+                        .ic__wrapper.swiper-wrapper
+
+                            each item of infoCenterSliderData
+                                +infoCenterSliderItem(item)
+
+                    .swiper-scrollbar.ic__scrollbar
+
+
+                .ic__nav
+                    .info__more.ic__more
+                        span Show more
+                        a(href="#").ic__link
+
+            .container
+                .ic__line
+
+        include ./blocks/_git

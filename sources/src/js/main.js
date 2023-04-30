@@ -513,22 +513,76 @@ function infoCenterSliderInit() {
 }
 
 function mainPageAnimation() {
-  // const TL = gsap.timeline();
+  const intro_container = document.querySelector(".intro__container");
+  const info_inner = document.querySelector(".info__inner");
+  const info_background = document.querySelector(".info__background");
 
-  [".intro__container"].forEach((selector) => pinElement(selector));
+  pinIntroContainer(intro_container);
+  transformInfoInner(info_inner);
+  pinInfoBackground(info_background);
 }
 
-function pinElement(selector) {
+function pinIntroContainer(intro_container) {
   return ScrollTrigger.create({
     trigger: "body",
     start: "top top",
     endTrigger: "body",
     end: "bottom -=100",
-    pin: selector,
+    pin: intro_container,
     pinSpacing: false,
     scrub: true,
     // markers: true,
   });
+}
+
+function transformInfoInner(info_inner) {
+  return gsap.from(info_inner, {
+    y: -150,
+    scrollTrigger: {
+      trigger: ".info",
+      start: "top bottom",
+      end: "top center",
+      scrub: true,
+      // markers: true,
+    },
+  });
+}
+
+function pinInfoBackground(info_background) {
+  const TL = gsap.timeline();
+  TL.to(info_background, {
+    y: 300,
+    scrollTrigger: {
+      trigger: ".more__link",
+      start: "center bottom",
+      end: "top top+=8%",
+      scrub: true,
+      // markers: true,
+    },
+  })
+    .to(info_background, {
+      scrollTrigger: {
+        trigger: ".more__link",
+        start: "top top+=8%",
+        endTrigger: ".ic__link",
+        end: "top center",
+        pinType: "transform",
+        pin: info_background,
+        scrub: true,
+        // markers: true,
+      },
+    })
+
+    .to(".info__background-wrapper", {
+      y: "300",
+      scrollTrigger: {
+        trigger: ".ic__link",
+        start: "top center",
+        endTrigger: ".footer",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
 }
 
 // initial animation
