@@ -584,7 +584,7 @@ function initialAnimation() {
       0
     )
     .from(
-      ".intro__btn",
+      ".intro__next",
       {
         scale: 0.5,
         duration: 1.2,
