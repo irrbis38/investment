@@ -513,21 +513,108 @@ function infoCenterSliderInit() {
 }
 
 function mainPageAnimation() {
-  // const TL = gsap.timeline();
+  const intro_container = document.querySelector(".intro__container");
+  const info_inner = document.querySelector(".info__inner");
+  const info_background = document.querySelector(".info__background");
+  const info_club = document.querySelector(".info__club");
+  const resons_slides = Array.from(document.querySelectorAll(".resons__slide"));
 
-  [".intro__container"].forEach((selector) => pinElement(selector));
+  pinIntroContainer(intro_container);
+  parallaxInfoInner(info_inner);
+  pinInfoBackground(info_background);
+  parallaxInfoClub(info_club);
+  translateResonsSlides(resons_slides);
 }
 
-function pinElement(selector) {
+function pinIntroContainer(intro_container) {
   return ScrollTrigger.create({
     trigger: "body",
     start: "top top",
     endTrigger: "body",
     end: "bottom -=100",
-    pin: selector,
+    pin: intro_container,
     pinSpacing: false,
     scrub: true,
     // markers: true,
+  });
+}
+
+function parallaxInfoInner(info_inner) {
+  return gsap.from(info_inner, {
+    y: -150,
+    scrollTrigger: {
+      trigger: ".info",
+      start: "top bottom",
+      end: "top center",
+      scrub: true,
+      // markers: true,
+    },
+  });
+}
+
+function pinInfoBackground(info_background) {
+  const TL = gsap.timeline();
+  TL.to(info_background, {
+    y: 300,
+    scrollTrigger: {
+      trigger: ".more__link",
+      start: "center bottom",
+      end: "top top+=8%",
+      scrub: true,
+      // markers: true,
+    },
+  })
+    .to(info_background, {
+      scrollTrigger: {
+        trigger: ".more__link",
+        start: "top top+=8%",
+        endTrigger: ".ic__link",
+        end: "top center",
+        pin: info_background,
+        scrub: true,
+        // markers: true,
+      },
+    })
+
+    .to(".info__background-wrapper", {
+      y: "300",
+      scrollTrigger: {
+        trigger: ".ic__link",
+        start: "top center",
+        endTrigger: ".footer",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+}
+
+function parallaxInfoClub(info_club) {
+  return gsap.to(info_club, {
+    y: -200,
+    scrollTrigger: {
+      trigger: info_club,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      // markers: true,
+    },
+  });
+}
+
+function translateResonsSlides(resons_slides) {
+  let transformValue = 0;
+  resons_slides.forEach((slide) => {
+    transformValue += 8;
+    return gsap.from(slide, {
+      autoAlpha: 0,
+      yPercent: transformValue,
+      scrollTrigger: {
+        trigger: slide,
+        start: "top bottom",
+        end: "top center",
+        scrub: true,
+      },
+    });
   });
 }
 
@@ -584,7 +671,7 @@ function initialAnimation() {
       0
     )
     .from(
-      ".intro__btn",
+      ".intro__next",
       {
         scale: 0.5,
         duration: 1.2,
