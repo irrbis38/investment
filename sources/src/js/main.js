@@ -570,7 +570,6 @@ function pinInfoBackground(info_background) {
         start: "top top+=8%",
         endTrigger: ".ic__link",
         end: "top center",
-        pinType: "transform",
         pin: info_background,
         scrub: true,
         // markers: true,
