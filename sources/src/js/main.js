@@ -516,10 +516,12 @@ function mainPageAnimation() {
   const intro_container = document.querySelector(".intro__container");
   const info_inner = document.querySelector(".info__inner");
   const info_background = document.querySelector(".info__background");
+  const info_club = document.querySelector(".info__club");
 
   pinIntroContainer(intro_container);
-  transformInfoInner(info_inner);
+  parallaxInfoInner(info_inner);
   pinInfoBackground(info_background);
+  parallaxInfoClub(info_club);
 }
 
 function pinIntroContainer(intro_container) {
@@ -535,7 +537,7 @@ function pinIntroContainer(intro_container) {
   });
 }
 
-function transformInfoInner(info_inner) {
+function parallaxInfoInner(info_inner) {
   return gsap.from(info_inner, {
     y: -150,
     scrollTrigger: {
@@ -583,6 +585,19 @@ function pinInfoBackground(info_background) {
         scrub: true,
       },
     });
+}
+
+function parallaxInfoClub(info_club) {
+  return gsap.to(info_club, {
+    y: -200,
+    scrollTrigger: {
+      trigger: info_club,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      // markers: true,
+    },
+  });
 }
 
 // initial animation

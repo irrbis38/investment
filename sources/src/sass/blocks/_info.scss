@@ -413,6 +413,9 @@
 .info__project {
   position: relative;
   grid-area: project;
+  background: rgb(202, 211, 220) url("./../images/info/info-bg@2x.png") center /
+    cover no-repeat;
+  background-attachment: fixed;
 }
 
 .info__bg {

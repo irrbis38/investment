@@ -2548,7 +2548,9 @@ body {
 }
 .info__project {
   position: relative;
-  grid-area: project
+  grid-area: project;
+  background: #cad3dc url(../images/info/info-bg@2x.png) center/cover no-repeat;
+  background-attachment: fixed
 }
 .info__bg {
   position: absolute;
