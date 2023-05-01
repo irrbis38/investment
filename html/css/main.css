@@ -2903,21 +2903,6 @@ body {
     padding: 84px 0 57px 28px
   }
 }
-.resons__bg {
-  position: absolute;
-  top: 380px;
-  right: 499px;
-  z-index: -1;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  -webkit-transform-origin: top right;
-  transform-origin: top right;
-  -webkit-transform: rotate(-40deg);
-  transform: rotate(-40deg);
-  background-color: rgba(4,33,133,.07);
-  box-shadow: 0 0 500px 300px rgba(4,33,133,.07)
-}
 .resons__title {
   max-width: 1500px;
   margin: 0 auto 37px;
