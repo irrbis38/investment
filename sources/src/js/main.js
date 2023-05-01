@@ -517,11 +517,13 @@ function mainPageAnimation() {
   const info_inner = document.querySelector(".info__inner");
   const info_background = document.querySelector(".info__background");
   const info_club = document.querySelector(".info__club");
+  const resons_slides = Array.from(document.querySelectorAll(".resons__slide"));
 
   pinIntroContainer(intro_container);
   parallaxInfoInner(info_inner);
   pinInfoBackground(info_background);
   parallaxInfoClub(info_club);
+  translateResonsSlides(resons_slides);
 }
 
 function pinIntroContainer(intro_container) {
@@ -597,6 +599,23 @@ function parallaxInfoClub(info_club) {
       scrub: true,
       // markers: true,
     },
+  });
+}
+
+function translateResonsSlides(resons_slides) {
+  let transformValue = 0;
+  resons_slides.forEach((slide) => {
+    transformValue += 8;
+    return gsap.from(slide, {
+      autoAlpha: 0,
+      yPercent: transformValue,
+      scrollTrigger: {
+        trigger: slide,
+        start: "top bottom",
+        end: "top center",
+        scrub: true,
+      },
+    });
   });
 }
 
