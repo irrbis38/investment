@@ -567,9 +567,9 @@ function pinInfoBackground(info_background) {
     .to(info_background, {
       scrollTrigger: {
         trigger: ".more__link",
-        start: "top top+=8%",
+        start: "top top+=9%",
         endTrigger: ".ic__link",
-        end: "top center",
+        end: "top center-=1%",
         pin: info_background,
         scrub: true,
         // markers: true,
