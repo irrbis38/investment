@@ -554,38 +554,38 @@ function parallaxInfoInner(info_inner) {
 
 function pinInfoBackground(info_background) {
   const TL = gsap.timeline();
+  // TL.to(info_background, {
+  //   y: 300,
+  //   scrollTrigger: {
+  //     trigger: ".more__link",
+  //     start: "center bottom",
+  //     end: "top top+=8%",
+  //     scrub: true,
+  //     // markers: true,
+  //   },
+  // })
   TL.to(info_background, {
-    y: 300,
     scrollTrigger: {
-      trigger: ".more__link",
-      start: "center bottom",
-      end: "top top+=8%",
+      trigger: info_background,
+      start: "center center",
+      endTrigger: ".ic__link",
+      end: "bottom center-=1%",
+      pin: info_background,
       scrub: true,
       // markers: true,
     },
-  })
-    .to(info_background, {
-      scrollTrigger: {
-        trigger: ".more__link",
-        start: "top top+=9%",
-        endTrigger: ".ic__link",
-        end: "top center-=1%",
-        pin: info_background,
-        scrub: true,
-        // markers: true,
-      },
-    })
+  });
 
-    .to(".info__background-wrapper", {
-      y: "300",
-      scrollTrigger: {
-        trigger: ".ic__link",
-        start: "top center",
-        endTrigger: ".footer",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
+  // .to(".info__background-wrapper", {
+  //   y: "300",
+  //   scrollTrigger: {
+  //     trigger: ".ic__link",
+  //     start: "top center",
+  //     endTrigger: ".footer",
+  //     end: "bottom bottom",
+  //     scrub: true,
+  //   },
+  // });
 }
 
 function parallaxInfoClub(info_club) {
