@@ -527,9 +527,19 @@ function mainPageAnimation() {
 }
 
 function pinIntroContainer(intro_container) {
+  let heightDelta = 0;
+  if (window.innerHeight < 700) {
+    heightDelta = 700 - window.innerHeight;
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerHeight < 700) {
+      heightDelta = 700 - window.innerHeight;
+    }
+  });
   return ScrollTrigger.create({
     trigger: "body",
-    start: "top top",
+    start: () => `top top-=${heightDelta}`,
     endTrigger: "body",
     end: "bottom -=100",
     pin: intro_container,
