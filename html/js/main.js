@@ -535,6 +535,8 @@ function pinIntroContainer(intro_container) {
   window.addEventListener("resize", () => {
     if (window.innerHeight < 700) {
       heightDelta = 700 - window.innerHeight;
+    } else {
+      heightDelta = 0;
     }
   });
   return ScrollTrigger.create({
