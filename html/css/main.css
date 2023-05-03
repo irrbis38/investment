@@ -1338,6 +1338,14 @@ body {
 .lang {
   position: relative
 }
+@media (max-width:1280px) {
+  .lang {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: 0 auto
+  }
+}
 .lang .lang__shevron {
   transition: var(--transition)
 }
@@ -1375,16 +1383,6 @@ body {
   }
   .lang__selected .lang__value {
     color: var(--blue-color)!important
-  }
-}
-@media (max-width:576px) {
-  .lang__selected {
-    margin: 0 auto 0 82px
-  }
-}
-@media only screen and (max-width:360px) {
-  .lang__selected {
-    margin: 0 auto
   }
 }
 .lang__selected::after {

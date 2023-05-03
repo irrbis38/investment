@@ -345,6 +345,19 @@
 .lang {
   position: relative;
 
+  @include md {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  // @include xxs {
+  //   margin-left: 0;
+  // }
+
+  // @include r(360px) {
+  //   margin: 0 auto;
+  // }
+
   .lang__shevron {
     transition: var(--transition);
 
@@ -385,13 +398,13 @@
     }
   }
 
-  @include xxs {
-    margin: 0 auto 0 82px;
-  }
+  // @include xxs {
+  //   margin: 0 auto 0 82px;
+  // }
 
-  @include r(360px) {
-    margin: 0 auto;
-  }
+  // @include r(360px) {
+  //   margin: 0 auto;
+  // }
 
   &::after {
     display: none;
