@@ -86,11 +86,11 @@
   width: 100%;
   z-index: 1000;
 
-  &.main {
+  &.main_page_header {
     z-index: 10;
   }
 
-  &.main.active {
+  &.main_page_header.active {
     z-index: 10000;
   }
 

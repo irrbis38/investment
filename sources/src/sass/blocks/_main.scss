@@ -1,0 +1,20 @@
+.main {
+  flex-grow: 1;
+  position: relative;
+  z-index: 12;
+
+  &.hidden {
+    overflow: hidden;
+  }
+}
+
+.overlay__blue {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999999999;
+  background-color: var(--blue-color);
+  pointer-events: none;
+}
