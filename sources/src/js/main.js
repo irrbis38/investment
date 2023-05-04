@@ -528,7 +528,7 @@ function mainPageAnimation() {
 
   introAnimationByScroll(intro_images, intro_panel, intro_about_all);
   pinIntroContainer(intro_container);
-  hideIntroContainer(intro_container);
+  // hideIntroContainer(intro_container);
   parallaxInfoInner(info_inner);
   pinInfoBackground(info_background);
   parallaxInfoClub(info_club);
@@ -583,44 +583,45 @@ function introAnimationByScroll(images, panel, aboutAll) {
 }
 
 function pinIntroContainer(intro_container) {
-  let heightDelta = 0;
-  if (window.innerHeight < 700) {
-    heightDelta = 700 - window.innerHeight;
-  }
+  // let heightDelta = 0;
+  // if (window.innerHeight < 700) {
+  //   heightDelta = 700 - window.innerHeight;
+  // }
 
-  window.addEventListener("resize", () => {
-    if (window.innerHeight < 700) {
-      heightDelta = 700 - window.innerHeight;
-    } else {
-      heightDelta = 0;
-    }
-  });
+  // window.addEventListener("resize", () => {
+  //   if (window.innerHeight < 700) {
+  //     heightDelta = 700 - window.innerHeight;
+  //   } else {
+  //     heightDelta = 0;
+  //   }
+  // });
   return ScrollTrigger.create({
     trigger: "body",
-    start: () => `top top-=${heightDelta}`,
+    // start: () => `top top-=${heightDelta}`,
+    start: "top top",
     endTrigger: "body",
     end: "bottom -=100",
     pin: intro_container,
     pinSpacing: false,
     scrub: true,
-    // markers: true,
+    markers: true,
   });
 }
 
-function hideIntroContainer(intro_container) {
-  return ScrollTrigger.create({
-    target: intro_container,
-    trigger: ".intro",
-    start: "100%",
-    endTrigger: "body",
-    end: "bottom bottom-=1000",
-    toggleClass: {
-      targets: "main",
-      className: "hidden",
-    },
-    // markers: true,
-  });
-}
+// function hideIntroContainer(intro_container) {
+//   return ScrollTrigger.create({
+//     target: intro_container,
+//     trigger: ".intro",
+//     start: "100%",
+//     endTrigger: "body",
+//     end: "bottom bottom-=1000",
+//     toggleClass: {
+//       targets: "main",
+//       className: "hidden",
+//     },
+//     // markers: true,
+//   });
+// }
 
 function parallaxInfoInner(info_inner) {
   return gsap.from(info_inner, {

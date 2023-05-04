@@ -1063,11 +1063,6 @@ body {
 .header.main_page_header.active {
   z-index: 10000
 }
-@media (max-height:600px) {
-  .header {
-    position: absolute
-  }
-}
 .header__container {
   width: 100%;
   display: -webkit-flex;
@@ -1697,7 +1692,8 @@ body {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
-  z-index: 12
+  z-index: 12;
+  overflow: hidden
 }
 .main.hidden {
   overflow: hidden
