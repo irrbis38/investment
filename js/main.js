@@ -513,17 +513,73 @@ function infoCenterSliderInit() {
 }
 
 function mainPageAnimation() {
+  const intro_images = Array.from(
+    document.querySelectorAll(".intro__image img")
+  );
+  const intro_about_all = Array.from(
+    document.querySelectorAll(".intro__about")
+  );
+  const intro_panel = document.querySelector(".intro__panel");
   const intro_container = document.querySelector(".intro__container");
   const info_inner = document.querySelector(".info__inner");
   const info_background = document.querySelector(".info__background");
   const info_club = document.querySelector(".info__club");
   const resons_slides = Array.from(document.querySelectorAll(".resons__slide"));
 
+  introAnimationByScroll(intro_images, intro_panel, intro_about_all);
   pinIntroContainer(intro_container);
+  hideIntroContainer(intro_container);
   parallaxInfoInner(info_inner);
   pinInfoBackground(info_background);
   parallaxInfoClub(info_club);
   translateResonsSlides(resons_slides);
+}
+
+function introAnimationByScroll(images, panel, aboutAll) {
+  // console.log(images);
+  const TL = gsap.timeline();
+
+  TL.to(images, {
+    scale: 1.1,
+    ease: Power2.easeOut,
+    scrollTrigger: {
+      target: images,
+      trigger: "body",
+      start: "top top",
+      end: "+=1000",
+      scrub: true,
+    },
+  })
+    .to(
+      aboutAll,
+      {
+        y: -100,
+        ease: Power3.easeOut,
+        scrollTrigger: {
+          target: aboutAll,
+          trigger: "body",
+          start: "top top",
+          end: "+=300",
+          scrub: true,
+        },
+      },
+      0
+    )
+    .to(
+      panel,
+      {
+        y: -100,
+        ease: Power3.easeOut,
+        scrollTrigger: {
+          target: panel,
+          trigger: "body",
+          start: "top top",
+          end: "+=300",
+          scrub: true,
+        },
+      },
+      0
+    );
 }
 
 function pinIntroContainer(intro_container) {
@@ -547,6 +603,21 @@ function pinIntroContainer(intro_container) {
     pin: intro_container,
     pinSpacing: false,
     scrub: true,
+    // markers: true,
+  });
+}
+
+function hideIntroContainer(intro_container) {
+  return ScrollTrigger.create({
+    target: intro_container,
+    trigger: ".intro",
+    start: "100%",
+    endTrigger: "body",
+    end: "bottom bottom-=1000",
+    toggleClass: {
+      targets: "main",
+      className: "hidden",
+    },
     // markers: true,
   });
 }
@@ -576,6 +647,9 @@ function pinInfoBackground(info_background) {
   //     // markers: true,
   //   },
   // })
+  TL.set(info_background, {
+    width: "100vw",
+  });
   TL.to(info_background, {
     scrollTrigger: {
       trigger: info_background,
