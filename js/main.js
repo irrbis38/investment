@@ -604,7 +604,7 @@ function pinIntroContainer(intro_container) {
     pin: intro_container,
     pinSpacing: false,
     scrub: true,
-    markers: true,
+    // markers: true,
   });
 }
 
